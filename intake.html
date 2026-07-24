@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toughjobs — Business Intake | See How We Can Help</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#001a4a}
+  body{
+    font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background: url('assets/blueprint-background.webp') fixed center/cover no-repeat;
+    background-color:#001a4a;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  :root{
+    --ink:#0A0F1C;
+    --navy:#002768;
+    --navy-2:#001a4a;
+    --red:#C8262A;
+    --red-2:#A90100;
+    --smoke:#5B6471;
+    --mute:#C7CBD2;
+    --hairline:#E5E7EB;
+    --surface-alt:#F4F5F7;
+    --surface:#FCFCFD;
+    --white:#FFFFFF;
+
+    --bg-dark: var(--ink);
+    --accent: var(--red);
+    --accent-ink: var(--white);
+    --headline-a: var(--white);
+    --headline-b: var(--accent);
+    --headline-mute: var(--mute);
+
+    --container: 1240px;
+    --gap-step: 28px;
+  }
+  body[data-density="compact"]{ --gap-step: 16px; }
+
+  .display{
+    font-family:"Archivo Black","Archivo",ui-sans-serif,system-ui,sans-serif;
+    font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;
+    line-height:.98;text-wrap:balance;
+  }
+  .eyebrow{
+    font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;
+    font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px;
+  }
+  .container{ max-width:var(--container); margin:0 auto; padding:0 32px; }
+
+  /* Buttons (shared with components.jsx Nav/Footer) */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:16px 26px;
+    font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.06em;
+    font-size:13px;text-transform:uppercase;text-decoration:none;
+    background:var(--accent);color:var(--accent-ink);border:0;cursor:pointer;
+    transition:transform .15s ease, filter .2s ease, background .2s ease;
+  }
+  .btn:hover{ filter:brightness(.92); }
+  .btn:active{ transform:translateY(1px); }
+  .btn-dark{ background:var(--ink); color:var(--white); }
+  .btn-ghost{ background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.4); padding:14px 24px; }
+  .btn-ghost:hover{ background:rgba(255,255,255,.1); }
+  .btn:disabled{ opacity:.4; cursor:not-allowed; filter:none; }
+
+  .split .a{ color:var(--headline-a); }
+  .split .b{ color:var(--headline-b); }
+  .split .m{ color:var(--headline-mute); }
+
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+
+  /* Blueprint backgrounds reused by Nav/Footer + wizard */
+  .bg-blueprint-dark,.bg-blueprint-navy,.bg-blueprint-red,.bg-blueprint-light{
+    background-image:url('assets/blueprint-master.webp');
+    background-size:cover;background-attachment:fixed;background-position:center;
+  }
+  .placeholder{ background:#20262F; }
+
+  /* Wizard step transition */
+  @keyframes stepIn{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
+  .step-in{ animation:stepIn .42s cubic-bezier(.2,.8,.2,1) both; }
+  @media (prefers-reduced-motion: reduce){ .step-in{ animation:none; } }
+
+  input,select,textarea{ font-family:inherit; }
+
+  @keyframes spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+  @keyframes spinY{ from{ transform:rotateY(0deg); } to{ transform:rotateY(360deg); } }
+  .logo-spin{ animation:spinY 8.19s linear infinite; }
+  /* Nav logo (only img inside <header>) — revolve on vertical axis regardless of component class */
+  header img{ animation:spinY 8.19s linear infinite; transform-origin:50% 50%; }
+</style>
+<link rel="stylesheet" href="shared-header.css" />
+<style id="white-texture-sweep">
+/* Engineering blueprint texture on all white surfaces */
+.bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
+  background-color:#FFFFFF !important;
+  background-image:url('assets/white-engineering-background.png') !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-attachment:fixed !important;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+  window.__TWEAK_DEFAULTS__ = /*EDITMODE-BEGIN*/{
+    "accentHue": "#C8262A",
+    "density": "spacious",
+    "progressStyle": "bar"
+  }/*EDITMODE-END*/;
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="components.jsx?v=spin1"></script>
+<script type="text/babel" src="intake-questions.js?v=2"></script>
+<script type="text/babel" src="intake-app.jsx?v=2"></script>
+<script src="sticky-cta.js"></script>
+</body>
+</html>

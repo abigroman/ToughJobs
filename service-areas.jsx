@@ -1,0 +1,189 @@
+import React from 'react';
+import { Header, Footer } from './components.jsx';
+
+export default function Page() {
+  React.useEffect(() => {
+    document.title = 'Service Areas — Toughjobs | Trades Marketing in IL, IA &amp; the Quad Cities';
+  }, []);
+
+  return (
+    <React.Fragment>
+      <Header />
+      <main>
+        <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Service Areas — Toughjobs | Trades Marketing in IL, IA &amp; the Quad Cities</title>
+<meta name="description" content="Toughjobs serves trades and home-service businesses across Peoria IL, Davenport IA and Dubuque IA. Local SEO, websites and ads built for your market. Call (309) 233-9004." />
+<link rel="canonical" href="https://toughjobs.org/service-areas.html" />
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared-header.css" />
+<link rel="stylesheet" href="city-page.css" />
+
+<style>
+  .area-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .area-card{
+    background:rgba(10,15,28,.85); border:1px solid rgba(255,255,255,.12);
+    text-decoration:none; color:#fff; display:flex; flex-direction:column;
+    transition:border-color .2s ease, transform .2s ease;
+    overflow:hidden;
+  }
+  .area-card:hover{ border-color:var(--accent); transform:translateY(-4px); }
+  .area-card .top{
+    background:var(--accent); padding:30px 28px 24px;
+    position:relative; overflow:hidden;
+  }
+  .area-card .top .state{
+    font-family:"Archivo",sans-serif; font-weight:800; font-size:12px;
+    letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.85);
+  }
+  .area-card .top .city{
+    font-family:"Archivo Black",sans-serif; text-transform:uppercase;
+    font-size:38px; line-height:.95; letter-spacing:-.01em; margin-top:8px;
+  }
+  .area-card .body{ padding:26px 28px; flex:1; display:flex; flex-direction:column; }
+  .area-card .body p{ font-size:15px; line-height:1.6; color:rgba(255,255,255,.78); margin:0 0 18px; flex:1; }
+  .area-card .tag{
+    display:inline-block; align-self:flex-start;
+    font-family:"Archivo",sans-serif; font-weight:800; font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--accent);
+    border:1px solid rgba(200,38,42,.5); padding:6px 12px; margin-bottom:18px;
+  }
+  .area-card .go{
+    font-family:"Archivo",sans-serif; font-weight:800; font-size:13px;
+    letter-spacing:.06em; text-transform:uppercase; color:#fff;
+  }
+  .area-card:hover .go{ color:var(--accent); }
+  @media(max-width:880px){ .area-grid{ grid-template-columns:1fr; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Toughjobs Digital Marketing",
+  "telephone": "+1-309-233-9004",
+  "url": "https://toughjobs.org/service-areas.html",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "140 Oakmoor Dr",
+    "addressLocality": "East Peoria",
+    "addressRegion": "IL",
+    "postalCode": "61611",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Peoria, Illinois" },
+    { "@type": "City", "name": "Davenport, Iowa" },
+    { "@type": "City", "name": "Dubuque, Iowa" }
+  ]
+}
+</script>
+</head>
+<body>
+<style>.accessibility-btn{opacity:0}</style>
+<button class="accessibility-btn" aria-label="Accessibility" title="Accessibility">
+  <img src="assets/accessibility-logo.png" alt="Accessibility" style="width:100%;height:100%;object-fit:contain;" />
+</button>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="city-hero" style="padding-block:140px 80px; background: linear-gradient(90deg, rgba(10,15,28,.78) 0%, rgba(10,15,28,.5) 33%, rgba(10,15,28,0) 66%), url('assets/woman-mower.webp') right 80px/cover no-repeat; background-attachment: fixed;">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Service Areas</div>
+    <span class="eyebrow">Illinois · Iowa · The Quad Cities &amp; Tri-State</span>
+    <h1 class="display">Marketing built for <span style="color:var(--accent)">your market.</span></h1>
+    <p class="lede">We don't run cookie-cutter campaigns. Toughjobs is headquartered in East Peoria and knows these markets first-hand — from Central Illinois to the Mississippi river towns. Pick your city to see how we help local trades get found and win jobs.</p>
+  </div>
+</section>
+
+<!-- ── AREA CARDS ───────────────────────────────────────────────── -->
+<section class="panel-dark" style="padding-bottom:24px;">
+  <div class="container">
+    <div class="area-grid">
+      <a class="area-card" href="peoria-il.html">
+        <div class="top">
+          <div class="state">Illinois · Home Base</div>
+          <div class="city">Peoria</div>
+        </div>
+        <div class="body">
+          <span class="tag">Tri-County</span>
+          <p>Our backyard. Central Illinois' largest metro — older housing, steady repair demand, and a skeptical market that rewards a real local reputation.</p>
+          <span class="go">View Peoria &rarr;</span>
+        </div>
+      </a>
+
+      <a class="area-card" href="davenport-ia.html">
+        <div class="top">
+          <div class="state">Iowa · Quad Cities</div>
+          <div class="city">Davenport</div>
+        </div>
+        <div class="body">
+          <span class="tag">2 States, 4 Cities</span>
+          <p>The largest of the Quad Cities. A two-state metro where open riverfront drives restoration, waterproofing and emergency-service demand.</p>
+          <span class="go">View Davenport &rarr;</span>
+        </div>
+      </a>
+
+      <a class="area-card" href="dubuque-ia.html">
+        <div class="top">
+          <div class="state">Iowa · Tri-State</div>
+          <div class="city">Dubuque</div>
+        </div>
+        <div class="body">
+          <span class="tag">IA · IL · WI</span>
+          <p>One of Iowa's oldest cities. Historic brick &amp; stone homes and hard winters keep masonry, roofing and HVAC trades busy across three states.</p>
+          <span class="go">View Dubuque &rarr;</span>
+        </div>
+      </a>
+    </div>
+
+    <p style="margin-top:40px; font-size:15px; color:rgba(255,255,255,.6); max-width:70ch;">
+      Not on the list? We work with trades businesses throughout Illinois, Iowa, Missouri, Wisconsin and Indiana. <a href="contact.html" style="color:var(--accent); text-decoration:none; font-weight:600;">Tell us where you operate</a> and we'll build a plan for your market.
+    </p>
+  </div>
+</section>
+
+<!-- ── CTA ──────────────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <span class="eyebrow" style="color:rgba(255,255,255,.85)">Wherever you work</span>
+    <h2>Let's get your phone <span class="ink">ringing.</span></h2>
+    <p>Free, no-pressure teardown of your website, Google presence, and local competition — built around the market you actually serve.</p>
+    <div class="hero-actions">
+      <a class="btn" href="contact.html">Request a free teardown</a>
+      <a class="btn btn-ghost" href="tel:3092339004">Call (309) 233-9004</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────── -->
+<footer class="city-footer">
+  <div class="container">
+    <div class="row">
+      <a href="index.html"><img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" /></a>
+      <div class="links">
+        <a href="peoria-il.html">Peoria, IL</a>
+        <a href="davenport-ia.html">Davenport, IA</a>
+        <a href="dubuque-ia.html">Dubuque, IA</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="copy">&copy; 2026 Toughjobs Digital Marketing · 140 Oakmoor Dr, East Peoria, IL 61611 · Marketing built for the trades.</div>
+  </div>
+</footer>
+
+<script src="inject-header.js"></script>
+<script src="accessibility.js"></script>
+<script src="sticky-cta.js"></script>
+</body>
+</html>
+
+      </main>
+      <Footer />
+    </React.Fragment>
+  );
+}
