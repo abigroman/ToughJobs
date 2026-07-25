@@ -31,7 +31,7 @@ export default function Page() {
         </div>
         
         <div>
-          <img src="assets/taco-truck-menu-1.png" alt="Tri-fold brochure example" style="max-width: 100%; height: auto;" />
+          <img src="assets/taco-truck-menu-1.webp" alt="Tri-fold brochure example" style="max-width: 100%; height: auto;" />
         </div>
       </div>
     </div>

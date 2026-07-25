@@ -634,7 +634,7 @@ footer a:hover {
   <div class="subsection">
     <h3>Logo & Mark</h3>
     <p>The Toughjobs monogram logo (a hexagonal mark with the letter "T") represents precision, structure, and the mechanical confidence of the trades. The mark is always used at minimum 150px wide. Never stretch, distort, or modify the logo. Always maintain clear space around it.</p>
-    <p><strong>Asset:</strong> <code>assets/toughjobs-monogram-logo.png</code> — 150px wide × 100px tall</p>
+    <p><strong>Asset:</strong> <code>assets/toughjobs-monogram-logo.webp</code> — 150px wide × 100px tall</p>
   </div>
 </section>
 

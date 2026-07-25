@@ -13,7 +13,7 @@ export default function IntakeLanding() {
         <!-- ── HERO ─────────────────────────────────────────────– -->
 <section class="hero">
   <div class="hero-inner">
-    <img class="hero-photo" src="assets/woman-welder-hero.png" alt="" />
+    <img class="hero-photo" src="assets/woman-welder-hero.webp" alt="" />
     <div class="hero-scrim"></div>
     <div class="bp-grid"></div>
     <div class="ghost-word">ASSESS</div>
@@ -55,8 +55,8 @@ export default function IntakeLanding() {
         <a href="intake.jsx" class="tool-cta">Start the Assessment →</a>
       </div>
       <div class="tool-figure">
-        <img class="tool-shadow" src="assets/woman-drill.png" alt="" aria-hidden="true" />
-        <img class="tool-subject" src="assets/woman-drill.png" alt="Toughjobs tradeswoman with drill" />
+        <img class="tool-shadow" src="assets/woman-drill.webp" alt="" aria-hidden="true" />
+        <img class="tool-subject" src="assets/woman-drill.webp" alt="Toughjobs tradeswoman with drill" />
       </div>
     </div>
   </div>

@@ -31,7 +31,7 @@ export default function Page() {
         </div>
         
         <div>
-          <img src="assets/lawn-signs-examples.png" alt="Lawn sign examples" style="max-width: 100%; height: auto;" />
+          <img src="assets/lawn-signs-examples.webp" alt="Lawn sign examples" style="max-width: 100%; height: auto;" />
         </div>
       </div>
     </div>

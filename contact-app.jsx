@@ -44,7 +44,7 @@ function ContactHero() {
           </div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minWidth: 0, overflow: "visible" }}>
             <img
-              src="assets/woman-jackhammer-transparent.png"
+              src="assets/woman-jackhammer-transparent.webp"
               alt="Tradeswoman operating a jackhammer"
               style={{
                 width: "165%",

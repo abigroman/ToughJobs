@@ -76,7 +76,7 @@ function AboutPageCTA() {
             </svg>
             
             {/* Center logo */}
-            <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" style={{ width: "58%", height: "auto", position: "relative", zIndex: 3 }} />
+            <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" style={{ width: "58%", height: "auto", position: "relative", zIndex: 3 }} />
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@ function AboutHero() {
 
         {/* Right column: Woman with power drill */}
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", position: "relative" }}>
-          <img src="assets/woman-drill-philosophy.png" alt="Toughjobs tradeswoman with drill" style={{ height: "82vh", width: "auto", maxWidth: "none", objectFit: "contain", objectPosition: "bottom center", display: "block", marginLeft: "-100px", filter: "drop-shadow(0 30px 50px rgba(0,0,0,.45))" }} />
+          <img src="assets/woman-drill-philosophy.webp" alt="Toughjobs tradeswoman with drill" style={{ height: "82vh", width: "auto", maxWidth: "none", objectFit: "contain", objectPosition: "bottom center", display: "block", marginLeft: "-100px", filter: "drop-shadow(0 30px 50px rgba(0,0,0,.45))" }} />
         </div>
       </div>
     </section>

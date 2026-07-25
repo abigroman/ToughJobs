@@ -38,7 +38,7 @@ function ServicesHero() {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundImage: "url(assets/architectural-drawing-transparent.png)",
+        backgroundImage: "url(assets/architectural-drawing-transparent.webp)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -50,7 +50,7 @@ function ServicesHero() {
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "end", minHeight: "75vh" }}>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-end", position: "relative", height: "100%" }}>
-            <img src="assets/woman-trowel-fullbody.png" alt="Toughjobs construction worker with trowel" style={{
+            <img src="assets/woman-trowel-fullbody.webp" alt="Toughjobs construction worker with trowel" style={{
               width: "auto",
               height: "calc(85vh * 1.15)",
               maxHeight: 1035,
@@ -154,7 +154,7 @@ function WebsitesDeepDive() {
             
             {/* Sitelite Code logo */}
             <div style={{ marginTop: 24, display: "flex", justifyContent: "center" }}>
-              <img src="assets/sitelite-code.png" alt="Sitelite Code" style={{ maxWidth: "100%", height: "auto", maxHeight: 100 }} />
+              <img src="assets/sitelite-code.webp" alt="Sitelite Code" style={{ maxWidth: "100%", height: "auto", maxHeight: 100 }} />
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ function SocialMediaDeepDive() {
           </div>
           
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <img src="assets/woman-jackhammer-transparent.png" alt="Woman with jackhammer" style={{ width: "100%", height: "auto", display: "block", filter: "drop-shadow(12px 12px 32px rgba(0,0,0,.5))" }} />
+            <img src="assets/woman-jackhammer-transparent.webp" alt="Woman with jackhammer" style={{ width: "100%", height: "auto", display: "block", filter: "drop-shadow(12px 12px 32px rgba(0,0,0,.5))" }} />
             
             <div style={{ background: "var(--accent)", padding: "24px 28px", color: "var(--white)" }}>
               <div className="eyebrow" style={{ opacity: 0.9 }}>Posting frequency</div>
@@ -350,7 +350,7 @@ function AIAutomationsDeepDive() {
           </div>
           
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <img src="assets/woman-trowel-transparent.png" alt="Woman with trowel" style={{
+            <img src="assets/woman-trowel-transparent.webp" alt="Woman with trowel" style={{
               width: "100%",
               maxWidth: 480,
               height: "auto",
@@ -442,24 +442,24 @@ function BrandingDeepDive() {
   const [hoveredItem, setHoveredItem] = React.useState(null);
   
   const printCollateral = [
-    { name: "Truck & Cargo Van Wraps", desc: "40K+ daily impressions. Your truck is a rolling billboard.", id: "wraps", preview: "assets/wrap-truck-erik.png" },
-    { name: "Business Cards", desc: "First impression that fits in a pocket. Leave them everywhere.", id: "cards", preview: "assets/business-card-design.png" },
-    { name: "Tri-Fold Brochures", desc: "Detailed overview. Perfect for customer handouts and direct mail.", id: "brochures", preview: "assets/taco-truck-menu-1.png" },
-    { name: "Lawn Signs", desc: "Job site visibility. Free neighborhood advertising.", id: "signs", preview: "assets/lawn-signs-examples.png" },
-    { name: "Clothing & Apparel", desc: "Polo shirts, hoodies, hats. Your crew becomes walking ads.", id: "apparel", preview: "assets/clothing-apparel.png" },
-    { name: "Stickers & Decals", desc: "Window stickers, toolbox decals, bumper stickers. Cheap & sticky.", id: "stickers", preview: "assets/stickers-decals.png" },
+    { name: "Truck & Cargo Van Wraps", desc: "40K+ daily impressions. Your truck is a rolling billboard.", id: "wraps", preview: "assets/wrap-truck-erik.webp" },
+    { name: "Business Cards", desc: "First impression that fits in a pocket. Leave them everywhere.", id: "cards", preview: "assets/business-card-design.webp" },
+    { name: "Tri-Fold Brochures", desc: "Detailed overview. Perfect for customer handouts and direct mail.", id: "brochures", preview: "assets/taco-truck-menu-1.webp" },
+    { name: "Lawn Signs", desc: "Job site visibility. Free neighborhood advertising.", id: "signs", preview: "assets/lawn-signs-examples.webp" },
+    { name: "Clothing & Apparel", desc: "Polo shirts, hoodies, hats. Your crew becomes walking ads.", id: "apparel", preview: "assets/clothing-apparel.webp" },
+    { name: "Stickers & Decals", desc: "Window stickers, toolbox decals, bumper stickers. Cheap & sticky.", id: "stickers", preview: "assets/stickers-decals.webp" },
     { name: "Flyers & Door Hangers", desc: "Neighborhood blitzes. Quick way to announce new service areas.", id: "flyers" }
   ];
   
   const wrapImages = [
-    { src: "assets/wrap-truck-erik.png", label: "Erik Electrical Truck" },
-    { src: "assets/wrap-trailer-guacnroll.png", label: "Guac N Roll Trailer" },
-    { src: "assets/wrap-sedan-herbert.png", label: "Herbert Sedan" }
+    { src: "assets/wrap-truck-erik.webp", label: "Erik Electrical Truck" },
+    { src: "assets/wrap-trailer-guacnroll.webp", label: "Guac N Roll Trailer" },
+    { src: "assets/wrap-sedan-herbert.webp", label: "Herbert Sedan" }
   ];
   
   const brochureImages = [
-    { src: "assets/taco-truck-menu-1.png", label: "Guac-N-Roll Menu (Front)" },
-    { src: "assets/taco-truck-menu-2.png", label: "Guac-N-Roll Menu (Inside)" }
+    { src: "assets/taco-truck-menu-1.webp", label: "Guac-N-Roll Menu (Front)" },
+    { src: "assets/taco-truck-menu-2.webp", label: "Guac-N-Roll Menu (Inside)" }
   ];
   
   const mockups = {
@@ -764,7 +764,7 @@ function BrandingDeepDive() {
                       Business Card Design
                     </h2>
                     <img 
-                      src="assets/business-card-design.png" 
+                      src="assets/business-card-design.webp" 
                       alt="Toughjobs Business Card Design"
                       style={{
                         maxWidth: "100%",
@@ -885,7 +885,7 @@ function BrandingDeepDive() {
                       Lawn Sign Examples
                     </h2>
                     <img 
-                      src="assets/lawn-signs-examples.png" 
+                      src="assets/lawn-signs-examples.webp" 
                       alt="Lawn Signs Examples"
                       style={{
                         maxWidth: "100%",
@@ -902,7 +902,7 @@ function BrandingDeepDive() {
                       Clothing & Apparel Options
                     </h2>
                     <img 
-                      src="assets/clothing-apparel.png" 
+                      src="assets/clothing-apparel.webp" 
                       alt="Clothing & Apparel Examples"
                       style={{
                         maxWidth: "100%",
@@ -919,7 +919,7 @@ function BrandingDeepDive() {
                       Stickers & Decals Examples
                     </h2>
                     <img 
-                      src="assets/stickers-decals.png" 
+                      src="assets/stickers-decals.webp" 
                       alt="Stickers & Decals Examples"
                       style={{
                         maxWidth: "100%",

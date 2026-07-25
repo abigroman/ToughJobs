@@ -84,7 +84,7 @@ export default function Page() {
 <footer class="city-footer">
   <div class="container">
     <div class="row">
-      <a href="#"><img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" /></a>
+      <a href="#"><img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" /></a>
       <div class="links">
         <a href="#">Peoria, IL</a>
         <a href="#">Davenport, IA</a>

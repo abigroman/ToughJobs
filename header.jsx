@@ -31,7 +31,7 @@ function Header({ activePage = "" }) {
     <header>
       <div className="nav-container">
         <a href="index.html" className="logo-link">
-          <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" width="150" height="100" />
+          <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" width="150" height="100" />
           <span className="logo-text"><span className="tight">TOUGH</span><span className="light">JOBS</span></span>
         </a>
         <nav className="nav-links">

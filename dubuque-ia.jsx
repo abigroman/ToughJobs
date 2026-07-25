@@ -53,7 +53,7 @@ export default function Page() {
 <body>
 <style>.accessibility-btn{opacity:0}</style>
 <button class="accessibility-btn" aria-label="Accessibility" title="Accessibility">
-  <img src="assets/accessibility-logo.png" alt="Accessibility" style="width:100%;height:100%;object-fit:contain;" />
+  <img src="assets/accessibility-logo.webp" alt="Accessibility" style="width:100%;height:100%;object-fit:contain;" />
 </button>
 
 <!-- ── HERO ─────────────────────────────────────────────────────── -->
@@ -193,7 +193,7 @@ export default function Page() {
 <footer class="city-footer">
   <div class="container">
     <div class="row">
-      <a href="index.html"><img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" /></a>
+      <a href="index.html"><img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" /></a>
       <div class="links">
         <a href="service-areas.html">All Service Areas</a>
         <a href="services.html">Services</a>

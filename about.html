@@ -256,7 +256,7 @@
     }
     
     .bg-blueprint-navy {
-      background: var(--navy) url('assets/engineering-schematics.png') center/cover;
+      background: var(--navy) url('assets/engineering-schematics.webp') center/cover;
       background-attachment: fixed;
       color: var(--white);
     }
@@ -364,21 +364,22 @@
 /* Engineering blueprint texture on all white surfaces */
 .bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
   background-color:#FFFFFF !important;
-  background-image:url('assets/white-engineering-background.png') !important;
+  background-image:url('assets/white-engineering-background.webp') !important;
   background-size:cover !important;
   background-position:center !important;
   background-attachment:fixed !important;
 }
 </style>
 <style id="white-texture-body">
-body { background-image:url('assets/white-engineering-background.png') !important; background-size:cover !important; background-position:center !important; background-attachment:fixed !important; background-color:#FFFFFF !important; }
+body { background-image:url('assets/white-engineering-background.webp') !important; background-size:cover !important; background-position:center !important; background-attachment:fixed !important; background-color:#FFFFFF !important; }
 </style>
+  <link rel="stylesheet" href="tough-responsive.css">
 </head>
 <body>
   <header>
     <div class="nav-container">
       <a href="index.html" class="logo-link">
-        <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" width="150" height="100" />
+        <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" width="150" height="100" />
         <span class="logo-text"><span class="tough">TOUGH</span><span class="jobs">JOBS</span></span>
       </a>
       <nav class="nav-links">
@@ -450,7 +451,7 @@ body { background-image:url('assets/white-engineering-background.png') !importan
   <main>
     <!-- Hero Section -->
     <section data-screen-label="hero" class="bg-blueprint-dark" style="position: relative; overflow: hidden;">
-      <img src="assets/woman-power-drill.png" alt="Tradeswoman with power drill" style="position: absolute; right: calc(4% + 20px); bottom: 0; height: 92%; width: auto; z-index: 1; pointer-events: none;" />
+      <img src="assets/woman-power-drill.webp" alt="Tradeswoman with power drill" style="position: absolute; right: calc(4% + 20px); bottom: 0; height: 92%; width: auto; z-index: 1; pointer-events: none;" />
       <div class="container" style="position: relative; z-index: 2;">
         <span class="eyebrow">Who we are</span>
         <h1 class="display" style="font-size: clamp(64px, 9vw, 132px); margin: 20px 0 32px; max-width: 1100px;">
@@ -580,7 +581,7 @@ body { background-image:url('assets/white-engineering-background.png') !importan
                 </textPath>
               </text>
             </svg>
-            <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" style="width:58%;height:auto;position:relative;z-index:3" />
+            <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" style="width:58%;height:auto;position:relative;z-index:3" />
           </div>
         </div>
       </div>
@@ -649,7 +650,7 @@ body { background-image:url('assets/white-engineering-background.png') !importan
         <div class="footer-main">
           <div class="footer-section footer-brand">
             <h3>
-              <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" />
+              <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" />
               <span><span style="color:var(--accent)">TOUGH</span><span style="color:var(--white)">JOBS</span></span>
             </h3>
             <p>Marketing & branding solutions built for the trades. We help service businesses get found, win jobs, and grow their revenue through integrated digital strategies.</p>
@@ -698,5 +699,6 @@ body { background-image:url('assets/white-engineering-background.png') !importan
     </div>
   </footer>
   <script src="sticky-cta.js"></script>
+<script src="mobile-nav.js"></script>
 </body>
 </html>

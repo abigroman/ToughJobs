@@ -179,7 +179,7 @@ export default function Page() {
         </div>
         
         <div>
-          <img src="assets/wrap-truck-erik.png" alt="Erik Electrical truck wrap" style="max-width: 100%; height: auto;" />
+          <img src="assets/wrap-truck-erik.webp" alt="Erik Electrical truck wrap" style="max-width: 100%; height: auto;" />
         </div>
       </div>
     </div>

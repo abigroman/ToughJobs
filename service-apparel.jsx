@@ -32,7 +32,7 @@ export default function Page() {
         </div>
         
         <div>
-          <img src="assets/clothing-apparel.png" alt="Branded apparel examples" style="max-width: 100%; height: auto;" />
+          <img src="assets/clothing-apparel.webp" alt="Branded apparel examples" style="max-width: 100%; height: auto;" />
         </div>
       </div>
     </div>

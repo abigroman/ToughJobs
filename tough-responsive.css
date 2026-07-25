@@ -1,0 +1,444 @@
+/* ══════════════════════════════════════════════════════════════════
+   TOUGHJOBS — RESPONSIVE LAYER
+   Loaded LAST on every page. Overrides only what breaks below 1024px.
+   Breakpoints:  1024 tablet  ·  768 large phone  ·  480 phone
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 0. GLOBAL GUARDS (all viewports) ───────────────────────────── */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;              /* kill horizontal scroll */
+}
+
+img, video, canvas, svg, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* long URLs / headlines must not force the page wide */
+h1, h2, h3, h4, p, li, a, td, th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+table { max-width: 100%; }
+
+/* ══════════════════════════════════════════════════════════════════
+   1. TABLET  ≤1024px
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  :root {
+    --pad-section: 72px;
+    --pad-section-tight: 52px;
+  }
+
+  .container,
+  .nav-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  section { padding-block: 72px; }
+
+  /* 4- and 5-column grids → 2 columns */
+  [style*="repeat(4"],
+  [style*="repeat(5"],
+  [style*="repeat(4,"],
+  [style*="repeat(5,"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* asymmetric 4-col sidebars → 2 columns */
+  [style*="1.5fr 1fr 1fr 1fr"],
+  [style*="1.4fr 1fr 1fr 1fr"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* 3-column → 2 */
+  [style*="repeat(3"],
+  [style*="repeat(3,"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* oversized display type */
+  .display { font-size: clamp(34px, 6vw, 60px) !important; }
+  h1 { font-size: clamp(32px, 5.5vw, 48px) !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   2. LARGE PHONE / SMALL TABLET  ≤768px
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  :root {
+    --pad-section: 48px;
+    --pad-section-tight: 36px;
+    --nav-height: 64px;
+  }
+
+  .container,
+  .nav-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  section { padding-block: 48px; }
+
+  /* ── EVERY multi-column grid collapses to one ── */
+  [style*="grid-template-columns"],
+  [style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mix-card-list,
+  .footer-section,
+  [class*="grid"],
+  [class*="cols"],
+  [class*="two-col"],
+  [class*="three-col"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* flex rows must wrap */
+  nav,
+  .nav-right,
+  [style*="display:flex"],
+  [style*="display: flex"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* ── iOS: fixed backgrounds cause jank + huge repaints ── */
+  body,
+  .bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
+    background-attachment: scroll !important;
+  }
+
+  /* ── typography step-down ── */
+  .display  { font-size: clamp(28px, 8vw, 40px) !important; line-height: 1.05 !important; }
+  h1        { font-size: clamp(26px, 7.5vw, 36px) !important; }
+  h2        { font-size: clamp(22px, 6vw, 30px) !important; }
+  h3        { font-size: clamp(18px, 5vw, 24px) !important; }
+  body, p, li { font-size: 16px !important; line-height: 1.6 !important; }
+  .eyebrow  { font-size: 11px !important; }
+
+  /* prevent the giant decorative numerals from overflowing */
+  [style*="font-size: 160"],
+  [style*="fontSize: 160"],
+  [style*="clamp(220px"],
+  [style*="clamp(96px"] {
+    font-size: clamp(48px, 18vw, 96px) !important;
+  }
+
+  /* ── touch targets: 44px minimum ── */
+  .btn,
+  button,
+  .nav-link,
+  .nav-phone,
+  a.btn {
+    min-height: 44px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 14px 20px !important;
+    font-size: 13px !important;
+    width: auto;
+  }
+
+  /* form fields ≥16px or iOS auto-zooms on focus */
+  input, select, textarea {
+    font-size: 16px !important;
+    max-width: 100%;
+  }
+
+  /* decorative chrome that costs more than it gives on a phone */
+  .chev-top, .chev-bot { clip-path: none !important; }
+  .marquee-track { animation-duration: 25s; }
+  .lift:hover { transform: none !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   3. PHONE  ≤480px
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  :root {
+    --pad-section: 36px;
+    --pad-section-tight: 28px;
+  }
+
+  .container,
+  .nav-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  section { padding-block: 36px; }
+
+  .display { font-size: clamp(24px, 9vw, 32px) !important; }
+  h1       { font-size: clamp(23px, 8vw, 30px) !important; }
+
+  /* full-width CTAs read better on a narrow screen */
+  .btn {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .nav-right .btn { width: auto !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   4. MOBILE NAVIGATION
+   Covers BOTH header systems:
+     A) injected  — header > .nav-container > nav.nav-links
+     B) inline    — header#nav-header > div > nav
+   ══════════════════════════════════════════════════════════════════ */
+
+.tj-nav-toggle { display: none; }
+
+@media (max-width: 1024px) {
+
+  /* the hamburger */
+  .tj-nav-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 1002;
+    flex-shrink: 0;
+  }
+  .tj-nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #fff;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .tj-nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .tj-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .tj-nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* header row: logo left, hamburger right */
+  header > .nav-container,
+  header#nav-header > div:not([class*="tj-cta"]),
+  header.tj-header > div:not([class*="tj-cta"]) {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px !important;
+  }
+
+  /* logo must shrink — it was 150px wide at 100px tall */
+  .nav-logo img,
+  .logo-img {
+    height: 44px !important;
+    width: auto !important;
+    max-width: 90px;
+  }
+  .nav-logo-text,
+  .logo-text { font-size: 18px !important; }
+
+  /* ── the drawer ── */
+  nav.nav-links,
+  header#nav-header nav,
+  .tj-nav {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(84vw, 340px);
+    height: 100dvh;
+    background: #0A0F1C;
+    border-left: 2px solid #C8262A;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 84px 0 32px !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1001;
+    box-shadow: -8px 0 32px rgba(0,0,0,.5);
+  }
+
+  body.tj-nav-open nav.nav-links,
+  body.tj-nav-open header#nav-header nav,
+  body.tj-nav-open .tj-nav {
+    display: flex !important;
+  }
+
+  body.tj-nav-open { overflow: hidden; }
+
+  /* drawer links */
+  nav.nav-links > a,
+  nav.nav-links .nav-link,
+  header#nav-header nav > a,
+  .tj-nav > a {
+    display: flex !important;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 24px !important;
+    font-size: 15px !important;
+    color: #fff !important;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-left: 3px solid transparent;
+    white-space: normal !important;
+  }
+  nav.nav-links > a.active,
+  header#nav-header nav > a.active,
+  .tj-nav > a.active {
+    border-left-color: #C8262A;
+    color: #C8262A !important;
+  }
+
+  /* dropdown becomes an inline accordion, not a hover flyout */
+  .nav-dropdown {
+    display: block !important;
+    position: static !important;
+    width: 100%;
+  }
+  .nav-dropdown-toggle {
+    display: flex !important;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 24px !important;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    font-size: 15px !important;
+  }
+  .nav-dropdown-toggle::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 20px;
+    line-height: 1;
+  }
+  .nav-dropdown.tj-open .nav-dropdown-toggle::after { content: "–"; }
+
+  .nav-dropdown-menu {
+    display: none !important;
+    position: static !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 8px 0 !important;
+    background: rgba(255,255,255,.04) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .nav-dropdown.tj-open .nav-dropdown-menu {
+    display: grid !important;
+  }
+  .nav-dropdown-item {
+    display: flex !important;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 24px 0 36px !important;
+    font-size: 14px !important;
+    color: rgba(255,255,255,.82) !important;
+  }
+
+  /* phone + quote button pinned to the bottom of the drawer */
+  .nav-right {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px !important;
+    margin: 0 !important;
+    width: 100%;
+  }
+  body.tj-nav-open .nav-right {
+    order: 99;
+  }
+  .nav-right .nav-phone {
+    font-size: 18px !important;
+    color: #fff !important;
+    justify-content: center;
+  }
+  .nav-right .btn {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  /* backdrop */
+  .tj-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  body.tj-nav-open .tj-nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* the desktop-only rule that hid nav with no replacement */
+  @media (max-width: 880px) {
+    .nav-links { display: none; }
+    body.tj-nav-open .nav-links { display: flex !important; }
+    .nav-dropdown-menu { display: none; }
+    .nav-dropdown.tj-open .nav-dropdown-menu { display: grid !important; }
+  }
+}
+
+/* keep the header compact once scrolled on mobile */
+@media (max-width: 1024px) {
+  header.scrolled .nav-logo img,
+  header.scrolled .logo-img { height: 36px !important; }
+  header, header#nav-header { height: auto !important; min-height: 64px; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   5. REDUCED MOTION
+   ══════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   6. STICKY CTA BADGE (injected by sticky-cta.js)
+   134px decorative wedge anchored to the header's right edge. Its
+   ring-text overshoots the viewport and it crowds content on small
+   screens, so scale it down and tuck it inside the gutter.
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .tj-cta-container {
+    width: 96px !important;
+    height: 96px !important;
+    right: 8px !important;
+    overflow: hidden;
+  }
+  .tj-cta-badge {
+    width: 68px !important;
+    height: 68px !important;
+    top: 10px !important;
+    right: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* on a phone the badge overlaps the hero — hide it; the drawer and
+     the sticky footer CTA already carry the call-to-action */
+  .tj-cta-container { display: none !important; }
+}

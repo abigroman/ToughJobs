@@ -45,7 +45,7 @@ function TradeHero({ data }) {
 
       {hasImage && (
         <img
-          src={"assets/trade-hero-" + data.slug + ".png"}
+          src={"assets/trade-hero-" + data.slug + ".webp"}
           alt={data.name + " worker"}
           style={{
             position: "absolute",
@@ -501,7 +501,7 @@ function TradeCTA({ data }) {
                 </textPath>
               </text>
             </svg>
-            <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" style={{ width: "58%", height: "auto", position: "relative", zIndex: 3 }} />
+            <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs" style={{ width: "58%", height: "auto", position: "relative", zIndex: 3 }} />
           </div>
         </div>
       </div>

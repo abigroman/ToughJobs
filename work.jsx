@@ -205,7 +205,7 @@ export default function Page() {
 <body>
 <style>.accessibility-btn{opacity:0}</style>
 <button class="accessibility-btn" aria-label="Accessibility" title="Accessibility">
-  <img src="assets/accessibility-logo.png" alt="Accessibility" style="width: 100%; height: 100%; object-fit: contain;"/>
+  <img src="assets/accessibility-logo.webp" alt="Accessibility" style="width: 100%; height: 100%; object-fit: contain;"/>
 </button>
 <div id="root"></div>
 

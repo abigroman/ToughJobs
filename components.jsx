@@ -29,7 +29,7 @@ function Voltage({ size = 24, color = "currentColor" }) {
 function TJMark({ size = 40 }) {
   return (
     <img
-      src="assets/toughjobs-monogram.png"
+      src="assets/toughjobs-monogram.webp"
       alt="Toughjobs"
       width={size}
       height={size}
@@ -53,7 +53,7 @@ function Nav() {
       }}>
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--white)" }}>
           <img
-            src="assets/toughjobs-logo-static.png"
+            src="assets/toughjobs-logo-static.webp"
             alt="Toughjobs logo"
             style={{ display: "block", height: 42 }} />
           
@@ -157,7 +157,7 @@ function Hero({ heroStyle }) {
   return (
     <section data-screen-label="01 Hero" style={{ position: "relative", padding: 0 }}>
       <div style={{ position: "relative", height: "min(82vh, 760px)", minHeight: 560, overflow: "hidden" }}>
-        <img src="assets/electrician-hero.png" alt=""
+        <img src="assets/electrician-hero.webp" alt=""
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
         {/* Scrim — left to right dark fade so headline reads */}
         <div aria-hidden="true" style={{
@@ -310,7 +310,7 @@ function Services() {
       }} />
 
       {/* ── girl with cut-saw — LEFT side, still facing right ── */}
-      <img src="assets/girl-saw.png" alt=""
+      <img src="assets/girl-saw.webp" alt=""
       style={{
         position: "absolute",
         left: 0,
@@ -468,10 +468,10 @@ function Wraps() {
 
         {/* Wrap-format strip: featured trailer on the left, truck + sedan stacked on the right */}
         <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 16, alignItems: "stretch" }}>
-          <WrapTile label={tiles[1].label} format="Trailer" badge="01" cover="assets/wrap-trailer-guacnroll.png" />
+          <WrapTile label={tiles[1].label} format="Trailer" badge="01" cover="assets/wrap-trailer-guacnroll.webp" />
           <div style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: 16 }}>
-            <WrapTile label={tiles[0].label} format="Service truck" badge="02" cover="assets/wrap-truck-erik.png" compact />
-            <WrapTile label={tiles[2].label} format="Fleet car" badge="03" cover="assets/wrap-sedan-herbert.png" compact />
+            <WrapTile label={tiles[0].label} format="Service truck" badge="02" cover="assets/wrap-truck-erik.webp" compact />
+            <WrapTile label={tiles[2].label} format="Fleet car" badge="03" cover="assets/wrap-sedan-herbert.webp" compact />
           </div>
         </div>
 
@@ -934,9 +934,9 @@ function SlashTile({ city, borderRight, borderBottom }) {
 // ── Insights / Tips & Tools 3-up ──────────────────────────────────────────
 function Insights() {
   const cards = [
-  { tag: "Field guide", title: "Why your Google Business Profile is doing 60% of your SEO work", read: "6 min read", cover: "assets/insight-teardown.png" },
-  { tag: "Teardown", title: "The 4 reasons a $4K WordPress site outperforms a $40K custom build", read: "9 min read", cover: "assets/insight-field-guide.png" },
-  { tag: "Playbook", title: "How to spend $1,000/mo on Google Ads without lighting it on fire", read: "7 min read", cover: "assets/insight-playbook.png" }];
+  { tag: "Field guide", title: "Why your Google Business Profile is doing 60% of your SEO work", read: "6 min read", cover: "assets/insight-teardown.webp" },
+  { tag: "Teardown", title: "The 4 reasons a $4K WordPress site outperforms a $40K custom build", read: "9 min read", cover: "assets/insight-field-guide.webp" },
+  { tag: "Playbook", title: "How to spend $1,000/mo on Google Ads without lighting it on fire", read: "7 min read", cover: "assets/insight-playbook.webp" }];
 
 
   return (
@@ -1020,7 +1020,7 @@ function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
               <img
-                src="assets/toughjobs-logo-static.png"
+                src="assets/toughjobs-logo-static.webp"
                 alt="Toughjobs logo"
                 style={{ display: "block", height: 46 }} />
               

@@ -32,7 +32,7 @@ export default function Page() {
         </div>
         
         <div>
-          <img src="assets/stickers-decals.png" alt="Stickers and decals examples" style="max-width: 100%; height: auto;" />
+          <img src="assets/stickers-decals.webp" alt="Stickers and decals examples" style="max-width: 100%; height: auto;" />
         </div>
       </div>
     </div>

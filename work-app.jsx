@@ -6,19 +6,19 @@ function WorkApp() {
   const caseStudies = [
     {
       id: 'erik',
-      image: 'assets/wrap-truck-erik.png',
+      image: 'assets/wrap-truck-erik.webp',
       title: 'Erik Electrical',
       description: 'One-truck electrical operation in Peoria County. Scaled from $180K to $400K+ annually through targeted truck wrap + SEO strategy.'
     },
     {
       id: 'guac',
-      image: 'assets/wrap-trailer-guacnroll.png',
+      image: 'assets/wrap-trailer-guacnroll.webp',
       title: 'Guac N Roll',
       description: 'Taco truck expanded into corporate catering through visual branding + social media ads. 280% increase in private event bookings.'
     },
     {
       id: 'herbert',
-      image: 'assets/wrap-sedan-herbert.png',
+      image: 'assets/wrap-sedan-herbert.webp',
       title: 'Herbert Counseling',
       description: 'Professional therapy practice scaled to full capacity in 18 weeks via car wrap + local SEO targeting high-value counseling searches.'
     }
@@ -132,7 +132,7 @@ function WorkHero() {
           </p>
         </div>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
-          <img src="assets/woman-power-drill.png" alt="" style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", filter: "drop-shadow(12px 12px 32px rgba(0,0,0,.6))" }} />
+          <img src="assets/woman-power-drill.webp" alt="" style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", filter: "drop-shadow(12px 12px 32px rgba(0,0,0,.6))" }} />
         </div>
       </div>
     </section>
@@ -154,7 +154,7 @@ function CaseStudy1({ onImageClick }) {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "start" }}>
           <div>
             <div style={{ marginBottom: 32, cursor: 'pointer' }} onClick={onImageClick}>
-              <img src="assets/wrap-truck-erik.png" alt="Erik Electrical truck wrap" style={{ width: "100%", height: "auto", display: "block", transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
+              <img src="assets/wrap-truck-erik.webp" alt="Erik Electrical truck wrap" style={{ width: "100%", height: "auto", display: "block", transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
             </div>
             <span className="eyebrow" style={{ color: "var(--accent)" }}>Peoria, IL · Electrical</span>
             <h2 className="display" style={{ fontSize: 42, margin: "12px 0 20px", color: "var(--white)" }}>Erik Electrical</h2>
@@ -239,7 +239,7 @@ function CaseStudy2({ onImageClick }) {
           </div>
           
           <div style={{ cursor: 'pointer' }} onClick={onImageClick}>
-            <img src="assets/wrap-trailer-guacnroll.png" alt="Guac N Roll trailer wrap" style={{ width: "100%", height: "auto", display: "block", transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
+            <img src="assets/wrap-trailer-guacnroll.webp" alt="Guac N Roll trailer wrap" style={{ width: "100%", height: "auto", display: "block", transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
           </div>
         </div>
       </div>
@@ -255,7 +255,7 @@ function CaseStudy3({ onImageClick }) {
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
           <div style={{ cursor: 'pointer' }} onClick={onImageClick}>
-            <img src="assets/wrap-sedan-herbert.png" alt="Herbert Counseling sedan wrap" style={{ width: "100%", height: "auto", display: "block", marginBottom: 32, transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
+            <img src="assets/wrap-sedan-herbert.webp" alt="Herbert Counseling sedan wrap" style={{ width: "100%", height: "auto", display: "block", marginBottom: 32, transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
           </div>
           
           <div>

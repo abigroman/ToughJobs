@@ -31,7 +31,7 @@ export default function Page() {
         </div>
         
         <div>
-          <img src="assets/business-card-design.png" alt="Business card design example" style="max-width: 100%; height: auto;" />
+          <img src="assets/business-card-design.webp" alt="Business card design example" style="max-width: 100%; height: auto;" />
         </div>
       </div>
     </div>

@@ -74,7 +74,7 @@ export default function Page() {
   @keyframes drift{0%{transform:translateY(20px) rotate(0deg);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(-120px) rotate(20deg);opacity:0}}
 
   /* Hero */
-  .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--white);background-image:url(assets/roofer-woman.png);background-size:cover;background-position:right center;background-attachment:fixed}
+  .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--white);background-image:url(assets/roofer-woman.webp);background-size:cover;background-position:right center;background-attachment:fixed}
   .hero-inner{position:relative;padding:120px 0 85px;background:linear-gradient(90deg, rgba(10,15,28,.65) 0%, rgba(10,15,28,.45) 35%, transparent 70%)}}
   .hero-bar{position:absolute;top:0;left:74%;width:10px;height:100%;background:var(--red);transform:skewX(-10deg);z-index:2;animation:barDrop .9s cubic-bezier(.3,.7,.2,1) .3s backwards}
   @keyframes barDrop{0%{transform:translateY(-101%) skewX(-10deg)}80%{transform:translateY(2%) skewX(-10deg)}100%{transform:translateY(0) skewX(-10deg)}}
