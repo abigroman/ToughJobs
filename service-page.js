@@ -1,5 +1,16 @@
 // service-page.js — scroll reveals, KPI counters, animated comparison + ROI calculator
 (function () {
+  // Replace legacy compact service footers with the shared main-site footer.
+  // Main service pages already load inject-footer.js directly; this branch
+  // keeps apparel, print, kit, and licensing detail pages consistent.
+  var legacyFooter = document.querySelector('body > footer');
+  var sharedFooterLoader = document.querySelector('script[src="inject-footer.js"]');
+  if (legacyFooter && !sharedFooterLoader) {
+    legacyFooter.remove();
+    sharedFooterLoader = document.createElement('script');
+    sharedFooterLoader.src = 'inject-footer.js';
+    document.body.appendChild(sharedFooterLoader);
+  }
   // ── Scroll reveal ──────────────────────────────────────────────────
   var reveals = document.querySelectorAll('.sp .reveal');
   var ro = new IntersectionObserver(function (entries) {
@@ -70,7 +81,9 @@
 
   // ── Nav scroll shrink (in case page-local handler absent) ──────────
   var nh = document.getElementById('nav-header');
-  if (nh) window.addEventListener('scroll', function () {
-    nh.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
+  if (nh) {
+    window.addEventListener('scroll', function () {
+      nh.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
 })();

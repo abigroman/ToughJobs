@@ -1,228 +1,419 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toughjobs — Marketing for the Trades</title>
-  <link rel="stylesheet" href="fonts.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Toughjobs | Marketing for the Trades</title>
+  <meta name="description" content="Privacy Policy for Toughjobs Digital Marketing." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Toughjobs" />
+  <meta name="publisher" content="ToughJobs Digital Marketing" />
+  <link rel="canonical" href="https://toughjobs.org/privacy.html" />
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="shared-header.css" />
+  <link rel="stylesheet" href="page-styles.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
+
     :root {
       --ink: #0A0F1C;
-      --white: #FFFFFF;
-      --accent: #C8262A;
       --navy: #002768;
-      --gray-bg: #282828;
-      --nav-height: 100px;
+      --red: #C8262A;
+      --dark-red: #A90100;
+      --white: #FFFFFF;
+      --surface: #FCFCFD;
+      --surface-alt: #F4F5F7;
+      --hairline: #E5E7EB;
+      --body-copy: #26303F;
+      --accent: var(--red);
+      --container: 1240px;
     }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--surface);
+    }
+
     body {
-      font-family: "Archivo", sans-serif;
-      background: var(--white);
+      margin: 0;
+      background-color: var(--surface);
       color: var(--ink);
-      line-height: 1.6;
+      font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
-    /* ── HEADER ─────────────────────────────────────────────────── */
-    header {
-      background: var(--ink);
-      color: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      height: var(--nav-height);
-      transition: height 0.3s ease;
-      border-bottom: 2px solid rgba(200, 38, 42, .3);
-      width: 100%;
-    }
-    header.scrolled {
-      height: 50px;
-      --nav-height: 50px;
-    }
-    header > div {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      padding: 0 32px;
-      max-width: 100%;
+    .container {
+      width: min(100%, var(--container));
       margin: 0 auto;
-      width: 100%;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      text-decoration: none;
-      color: var(--white);
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-    .nav-logo img {
-      height: 100px;
-      width: 150px;
-      object-fit: contain;
-      transition: all 0.3s ease;
-    }
-    header.scrolled .nav-logo img {
-      height: 50px;
-      width: 75px;
-    }
-    .nav-logo-text {
-      font-family: "Archivo Black", sans-serif;
-      font-size: 28px;
-      letter-spacing: 0.01em;
-      line-height: 1.2;
-      text-transform: uppercase;
-      font-weight: 900;
-      transition: font-size 0.3s ease;
-    }
-    header.scrolled .nav-logo-text {
-      font-size: 16px;
-    }
-    .nav-logo-text .tough { color: var(--accent); }
-    .nav-logo-text .jobs { color: var(--white); }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      flex-wrap: nowrap;
-      align-items: center;
-      flex: 1;
-      justify-content: center;
-    }
-    nav a {
-      font-family: "Archivo", sans-serif;
-      font-weight: 700;
-      font-size: 11.5px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-      padding: 8px 0;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-    nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-    nav a.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+      padding-inline: 32px;
     }
 
-    .nav-right {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      margin-left: auto;
-    }
-    .nav-phone {
+    main { min-height: 50vh; }
+
+    .legal-hero {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      padding: clamp(68px, 8vw, 104px) 0 clamp(76px, 9vw, 118px);
+      background:
+        linear-gradient(rgba(10, 15, 28, .9), rgba(10, 15, 28, .94)),
+        url("assets/blueprint-background.webp") center / cover fixed;
       color: var(--white);
-      text-decoration: none;
-      font-family: "Archivo", sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 66% calc(100% - 14px), 62% 100%, 0 100%);
     }
-    .btn {
-      background: var(--accent);
-      color: var(--white);
-      padding: 14px 22px;
+
+    .legal-hero .eyebrow {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--accent);
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-family: "Archivo", sans-serif;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
-    .btn:hover {
-      opacity: 0.9;
+
+    .legal-hero h1 {
+      max-width: 900px;
+      margin: 0 0 20px;
+      color: var(--white);
+      font-family: "Archivo Black", "Arial Black", sans-serif;
+      font-size: clamp(46px, 7vw, 88px);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: .95;
+      text-transform: uppercase;
+      text-wrap: balance;
     }
 
-    main { min-height: 400px; padding: 80px 0; }
-    h1 { font-family: "Archivo Black", sans-serif; font-size: 48px; text-transform: uppercase; margin: 20px 0; }
-    p { margin: 16px 0; }
+    .legal-hero h1 span { color: var(--accent); }
 
-    /* ── FOOTER ─────────────────────────────────────────────────── */
-    footer {
-      background: var(--ink);
-      color: var(--white);
-      padding: 40px 0;
-      text-align: center;
+    .legal-hero .lede {
+      max-width: 670px;
+      margin: 0;
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(16px, 1.5vw, 18px);
+      line-height: 1.7;
+    }
+
+    .legal-content {
+      margin-top: -14px;
+      padding: clamp(58px, 7vw, 88px) 0 clamp(82px, 10vw, 128px);
+      background:
+        linear-gradient(rgba(252, 252, 253, .94), rgba(252, 252, 253, .97)),
+        url("assets/white-engineering-background.webp") center top / cover fixed;
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 780px);
+      gap: clamp(36px, 5vw, 68px);
+      align-items: start;
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: 120px;
+      padding: 26px 24px 24px;
+      border-top: 4px solid var(--accent);
+      background: var(--surface-alt);
+    }
+
+    .legal-toc h2 {
+      margin: 0 0 18px;
+      color: var(--ink);
+      font-family: "Archivo Black", "Arial Black", sans-serif;
+      font-size: 15px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .legal-toc ol {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: privacy-toc;
+    }
+
+    .legal-toc li { counter-increment: privacy-toc; }
+
+    .legal-toc a {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      padding: 6px 0;
+      color: var(--ink);
       font-size: 13px;
-      margin-top: 80px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+
+    .legal-toc a::before {
+      content: counter(privacy-toc, decimal-leading-zero);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .legal-toc a:hover { color: var(--accent); }
+
+    .legal-toc a:focus-visible,
+    .legal-section a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .legal-updated {
+      margin-bottom: 38px;
+      color: #5B6471;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .legal-section {
+      padding: 0 0 42px;
+      scroll-margin-top: 120px;
+    }
+
+    .legal-section + .legal-section { padding-top: 6px; }
+
+    .legal-section h2 {
+      margin: 0 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid rgba(10, 15, 28, .1);
+      color: var(--ink);
+      font-family: "Archivo Black", "Arial Black", sans-serif;
+      font-size: clamp(22px, 2.5vw, 28px);
+      letter-spacing: -.01em;
+      line-height: 1.08;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      color: var(--body-copy);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .legal-section p { margin: 0 0 16px; }
+
+    .legal-section ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .legal-section li {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .legal-section li::before {
+      position: absolute;
+      top: .72em;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .legal-section a {
+      color: var(--dark-red);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .legal-section a:hover { color: var(--navy); }
+
+    .contact-block {
+      padding: 24px 26px;
+      background: var(--surface-alt);
+    }
+
+    .contact-block p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 900px) {
+      .legal-layout {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .legal-toc {
+        position: static;
+        top: auto;
+      }
+
+      .legal-toc ol {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding-inline: 20px; }
+
+      .legal-hero {
+        padding-top: 54px;
+        padding-bottom: 76px;
+        background-attachment: scroll;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), 62% calc(100% - 10px), 56% 100%, 0 100%);
+      }
+
+      .legal-content {
+        margin-top: -10px;
+        background-attachment: scroll;
+      }
+
+      .legal-toc ol { grid-template-columns: 1fr; }
+      .legal-section { scroll-margin-top: 92px; }
+      .contact-block { padding: 22px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
-<style id="white-texture-sweep">
-/* Engineering blueprint texture on all white surfaces */
-.bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
-  background-color:#FFFFFF !important;
-  background-image:url('assets/white-engineering-background.webp') !important;
-  background-size:cover !important;
-  background-position:center !important;
-  background-attachment:fixed !important;
-}
-</style>
-<style id="white-texture-body">
-body { background-image:url('assets/white-engineering-background.webp') !important; background-size:cover !important; background-position:center !important; background-attachment:fixed !important; background-color:#FFFFFF !important; }
-</style>
-  <link rel="stylesheet" href="tough-responsive.css">
 </head>
-<body>
-  <!-- HEADER -->
-  <header id="nav-header">
-    <div>
-      <a href="index.html" class="nav-logo">
-        <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs">
-        <div class="nav-logo-text">
-          <span class="tough">TOUGH</span><span class="jobs">JOBS</span>
-        </div>
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="partnerships.html">Partnerships</a>
-        <a href="intake-landing.html">Free Tools</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="nav-right">
-        <a href="tel:3099289080" class="nav-phone">309-928-9080</a>
-        <a href="contact.html" class="btn">Request a Quote</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAIN CONTENT -->
+<body data-page="privacy">
   <main>
-    <div class="container">
-      <h1>Page Under Construction</h1>
-      <p>This page is being rebuilt. Please check back soon.</p>
-      <p><a href="index.html">← Back to Home</a></p>
-    </div>
+    <section class="legal-hero" aria-labelledby="privacy-title">
+      <div class="container">
+        <span class="eyebrow">Legal</span>
+        <h1 id="privacy-title">Privacy <span>Policy</span></h1>
+        <p class="lede">This Privacy Policy explains how Toughjobs Digital Marketing collects, uses, and protects your information.</p>
+      </div>
+    </section>
+
+    <section class="legal-content" data-screen-label="Privacy Policy">
+      <div class="container">
+        <div class="legal-layout">
+          <aside class="legal-toc" aria-label="Privacy Policy table of contents">
+            <h2>On this page</h2>
+            <ol>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#collect">Information We Collect</a></li>
+              <li><a href="#use">How We Use Your Information</a></li>
+              <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+              <li><a href="#sharing">How We Share Information</a></li>
+              <li><a href="#adplatforms">Advertising Platforms</a></li>
+              <li><a href="#retention">Data Retention</a></li>
+              <li><a href="#security">Data Security</a></li>
+              <li><a href="#rights">Your Rights &amp; Choices</a></li>
+              <li><a href="#children">Children's Privacy</a></li>
+              <li><a href="#changes">Changes to This Policy</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ol>
+          </aside>
+
+          <article class="legal-body">
+            <div class="legal-updated">Last updated: July 9, 2026</div>
+
+            <section class="legal-section" id="overview">
+              <h2>1. Overview</h2>
+              <p>Toughjobs Digital Marketing ("Toughjobs," "we," "us," or "our") respects your privacy. This Policy describes what information we collect when you visit our website or engage our services, how we use it, and the choices you have.</p>
+            </section>
+
+            <section class="legal-section" id="collect">
+              <h2>2. Information We Collect</h2>
+              <ul>
+                <li><strong>Contact details</strong> you submit through forms — name, email, phone, company, and trade/service selections.</li>
+                <li><strong>Communications</strong> you send us, including messages, call recordings, and consultation notes.</li>
+                <li><strong>Usage data</strong> collected automatically — pages visited, device/browser type, IP address, and referral source.</li>
+                <li><strong>Cookies and similar technologies</strong> used for analytics and advertising, described below.</li>
+              </ul>
+            </section>
+
+            <section class="legal-section" id="use">
+              <h2>3. How We Use Your Information</h2>
+              <ul>
+                <li>Respond to inquiries and schedule consultations.</li>
+                <li>Deliver, bill for, and support the services you've engaged us for.</li>
+                <li>Send updates, offers, or marketing communications, with an opt-out available.</li>
+                <li>Improve our website and measure marketing performance.</li>
+                <li>Comply with legal obligations.</li>
+              </ul>
+            </section>
+
+            <section class="legal-section" id="cookies">
+              <h2>4. Cookies &amp; Tracking</h2>
+              <p>Our website uses cookies and similar technologies, such as pixels and tags, from services like Google Analytics and Meta to understand site usage and measure advertising performance. You can control cookies through your browser settings; disabling them may affect site functionality.</p>
+            </section>
+
+            <section class="legal-section" id="sharing">
+              <h2>5. How We Share Information</h2>
+              <p>We do not sell your personal information. We may share it with:</p>
+              <ul>
+                <li>Service providers who support our operations, including hosting, CRM, email, scheduling, and analytics.</li>
+                <li>Advertising platforms, to the extent needed to run and measure campaigns on your behalf.</li>
+                <li>Authorities, when required by law or to protect our legal rights.</li>
+              </ul>
+            </section>
+
+            <section class="legal-section" id="adplatforms">
+              <h2>6. Advertising Platforms</h2>
+              <p>As part of our services, we may use platforms such as Google Ads and Meta Ads to run campaigns for our clients and for Toughjobs itself. These platforms may set their own cookies and collect data governed by their respective privacy policies.</p>
+            </section>
+
+            <section class="legal-section" id="retention">
+              <h2>7. Data Retention</h2>
+              <p>We retain personal information for as long as necessary to provide services, maintain business records, and comply with legal, tax, and accounting requirements. When information is no longer needed, we take reasonable steps to delete or anonymize it.</p>
+            </section>
+
+            <section class="legal-section" id="security">
+              <h2>8. Data Security</h2>
+              <p>We use reasonable administrative, technical, and physical safeguards to protect your information. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+            </section>
+
+            <section class="legal-section" id="rights">
+              <h2>9. Your Rights &amp; Choices</h2>
+              <p>Depending on your location, you may have the right to access, correct, or delete your personal information, or to opt out of marketing communications. To exercise these rights, contact us using the details below.</p>
+            </section>
+
+            <section class="legal-section" id="children">
+              <h2>10. Children's Privacy</h2>
+              <p>Our website and services are intended for business owners and are not directed to children under 13. We do not knowingly collect personal information from children.</p>
+            </section>
+
+            <section class="legal-section" id="changes">
+              <h2>11. Changes to This Policy</h2>
+              <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised "Last updated" date.</p>
+            </section>
+
+            <section class="legal-section" id="contact">
+              <h2>12. Contact Us</h2>
+              <p>Questions about this Privacy Policy can be directed to:</p>
+              <div class="contact-block">
+                <p><strong>Toughjobs Digital Marketing</strong></p>
+                <p>140 Oakmoor Dr, East Peoria, IL 61611</p>
+                <p><a href="tel:3099289080">(309) 928-9080</a></p>
+                <p><a href="mailto:team@toughjobs.org">team@toughjobs.org</a></p>
+              </div>
+            </section>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Toughjobs · Marketing for the Trades · 309-928-9080</p>
-    </div>
-  </footer>
-
-  <script>
-    const navHeader = document.getElementById('nav-header');
-    window.addEventListener('scroll', () => {
-      navHeader.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-  </script>
-<script src="sticky-cta.js"></script>
-<script src="mobile-nav.js"></script>
+  <script src="inject-footer.js"></script>
+  <script src="inject-header.js"></script>
+  <script src="cookie-consent.js"></script>
+  <script src="back-cta.js"></script>
+  <script src="sticky-cta.js"></script>
+  <script src="chat-launcher.js"></script>
+  <script src="accessibility.js"></script>
+  <script src="image-finder-tab.js"></script>
 </body>
 </html>

@@ -1,22 +1,26 @@
 # Toughjobs Project Instructions
 
-## 🔒 LOCKED — DO NOT EDIT without explicit per-change permission
+## Engineering principles
 
-These files are hand-tuned and keep breaking when touched. Before editing ANY file
-on this list, STOP and ask the user for permission for that specific change. Never
-edit them as a side effect of other work, never "improve" them unprompted, never
-overwrite them with a rebuild.
+- **Never add `!important` without asking first.** Ask the user before inserting any `!important` rule. It is a bandaid that masks specificity/ordering problems.
+- **Fix root causes, not symptoms.** Prefer solving the underlying problem (remove the offending script, fix the source rule, correct the asset) over layering overrides on top of it.
 
-- `v1-quad-cities/sticky-cta.js` — the top-right "Start Assessment" badge
-- `v1-quad-cities/shared-header.html` — the Universal Header markup
-- `v1-quad-cities/shared-header.css` — Universal Header styles
-- `v1-quad-cities/inject-header.js` — header injection script
-- `v1-quad-cities/trade-base.css` — shared trade-page styles
-- `v1-quad-cities/trade-page-template.jsx` — source of truth for all 27 trade pages
-- `v1-quad-cities/trade-data.js` — trade content data
+## 🔓 UNLOCKED (temporary) — user directive, until they say otherwise
 
-A frozen known-good copy of every locked file lives in `_LOCKED/2026-06-30/`.
-If a live locked file gets damaged, restore it from there.
+The user has instructed that ALL previously-locked files below are unlocked and may
+be edited freely without asking per-change permission. This overrides the lock list
+until the user says to re-lock them.
+
+- `sticky-cta.js` — the top-right "Start Assessment" badge
+- `shared-header.html` — the Universal Header markup
+- `shared-header.css` — Universal Header styles
+- `inject-header.js` — header injection script
+- `trade-base.css` — shared trade-page styles
+- `trade-page-template.jsx` — source of truth for all 27 trade pages
+- `trade-data.js` — trade content data
+
+A frozen known-good copy of every previously-locked file lives in `_LOCKED/2026-06-30/`.
+If a live file gets damaged, restore it from there.
 Do NOT edit anything inside `_LOCKED/` — it is the backup of last resort.
 
 ## Brand Identity
@@ -39,6 +43,15 @@ Do NOT edit anything inside `_LOCKED/` — it is the backup of last resort.
 ## Layout Rules (apply to every page)
 
 **Never let two same-background sections touch.** Adjacent sections must contrast each other — alternate light (white) ⇄ dark (ink/navy). A white section must never sit directly above or below another white section; the same goes for two dark sections. If two same-color sections would end up adjacent, merge them into one or change one's background. Going down a page the backgrounds should visibly alternate.
+
+**Text color contrast — critical for readability:**
+- Navy backgrounds (`#002768`) → use white (`#FFFFFF`) or red (`#C8262A`) text ONLY. Never use navy or near-navy text on navy backgrounds.
+- Ink backgrounds (`#0A0F1C`) → use white or red text ONLY.
+- White backgrounds → use navy, ink, or red text.
+- Always test: text must have strong, visible contrast with its background. Blue-on-blue or any color-on-similar-color is unreadable and must be fixed immediately.
+- **Never use the navy accent (`.accent2c` / `#002768`) for text on ink or navy backgrounds** — it disappears. On dark heroes and dark sections, accent/highlight words must be RED (`#C8262A`) or WHITE. Reserve navy-colored text for white/light backgrounds only.
+
+**White containers on white/light backgrounds must have a drop shadow.** Any white (or near-white) card, box, or container sitting on a white or light-textured background needs `box-shadow:0 0 2px 0 rgba(10,15,28,.35)` (a subtle 2px-blur shadow) so its edges separate from the background. Never place a white container on a white background with no shadow — it visually disappears.
 
 ## Project Structure
 ```

@@ -16,10 +16,93 @@
       
       // Initialize header functionality
       initHeaderInteractions();
+      initMobileDrawer();
       setActiveNavLink();
     })
     .catch(error => console.error('Failed to inject header:', error));
 })();
+
+// ── Mobile drawer ─────────────────────────────────────────────────────
+
+function initMobileDrawer() {
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  const backdrop = document.getElementById('mobileBackdrop');
+  const closeBtn = document.getElementById('mdClose');
+  let previousFocus = null;
+  if (!toggle || !drawer || !backdrop) return;
+
+  function openDrawer() {
+    previousFocus = document.activeElement;
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (previousFocus && typeof previousFocus.focus === 'function') {
+      previousFocus.focus();
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  const sub = document.getElementById('mdTrades');
+  if (sub) {
+    const subToggle = sub.querySelector('.md-sub-toggle');
+    if (subToggle) subToggle.addEventListener('click', () => {
+      const isOpen = sub.classList.toggle('open');
+      subToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
+  const svcSub = document.getElementById('mdServices');
+  if (svcSub) {
+    const svcToggle = svcSub.querySelector('.md-sub-toggle');
+    if (svcToggle) svcToggle.addEventListener('click', () => {
+      const isOpen = svcSub.classList.toggle('open');
+      svcToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (!drawer.classList.contains('open')) return;
+
+    if (event.key === 'Escape') {
+      closeDrawer();
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+    const focusable = drawer.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+}
 
 // ── Header Interactions ──────────────────────────────────────────────
 
@@ -27,10 +110,7 @@ function initHeaderInteractions() {
   const header = document.querySelector('header');
   if (!header) return;
 
-  // ── Scroll shrink ────────────────────────────────────────────────
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
-  });
+  // ── Scroll shrink removed — header stays full height ─────────────
 
   const dropdowns = header.querySelectorAll('.nav-dropdown');
   
@@ -40,23 +120,16 @@ function initHeaderInteractions() {
     
     if (!toggle || !menu) return;
 
-    // Close when clicking a link in the dropdown
-    const items = menu.querySelectorAll('a');
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        menu.style.display = 'none';
-      });
-    });
-  });
+    const setExpanded = expanded => {
+      toggle.setAttribute('aria-expanded', String(expanded));
+    };
 
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!header.contains(e.target)) {
-      dropdowns.forEach(dropdown => {
-        const menu = dropdown.querySelector('.nav-dropdown-menu');
-        if (menu) menu.style.display = 'none';
-      });
-    }
+    dropdown.addEventListener('mouseenter', () => setExpanded(true));
+    dropdown.addEventListener('mouseleave', () => setExpanded(false));
+    dropdown.addEventListener('focusin', () => setExpanded(true));
+    dropdown.addEventListener('focusout', event => {
+      if (!dropdown.contains(event.relatedTarget)) setExpanded(false);
+    });
   });
 }
 

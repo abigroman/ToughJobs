@@ -3,11 +3,13 @@
 // the TOP-LEFT of the header (so it coexists with the right-side Start Assessment
 // badge), and clicking it returns the user to the previous page.
 (function () {
+  if (window.__tjBackCtaInit) return;
+  window.__tjBackCtaInit = true;
   var css = `
   .tj-back-container {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     width: 134px;
     height: 134px;
     z-index: 949;
@@ -26,13 +28,13 @@
         #0A0F1C 2px,
         #0A0F1C 4px
       );
-    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    clip-path: polygon(0 0, 0 100%, 100% 0);
     box-shadow: 0 8px 20px rgba(0,0,0,.30);
   }
   .tj-back-badge {
     position: absolute;
     top: 16px;
-    right: 16px;
+    left: 16px;
     width: 112px;
     height: 112px;
     display: block;
@@ -49,9 +51,11 @@
   .tj-back-badge:active { transform: scale(1.0); }
   .tj-back-badge:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; border-radius: 50%; }
   .tj-back-badge svg { width: 100%; height: 100%; display: block; overflow: visible; }
-  .tj-back-ring-text { animation: tj-back-spin 18s linear infinite; transform-origin: 100px 100px; }
-  .tj-back-badge:hover .tj-back-ring-text { animation-duration: 6s; }
-  @keyframes tj-back-spin { to { transform: rotate(360deg); } }
+  .tj-back-ring-text { transform-origin: 100px 100px; animation: tj-back-spin 18s linear infinite; }
+  @keyframes tj-back-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
   @keyframes tj-back-in {
     from { opacity: 0; transform: translate(20px,-20px); }
     to   { opacity: 1; transform: translate(0,0); }
@@ -115,13 +119,17 @@
       <circle cx="100" cy="100" r="54" fill="none" stroke="#0A0F1C" stroke-width="3"/>
 
       <!-- Back arrow mark -->
-      <path d="M 112 78 L 86 100 L 112 122" fill="none" stroke="#C8262A" stroke-width="11"
+      <path d="M 110 78 L 84 100 L 110 122" fill="none" stroke="#C8262A" stroke-width="11"
             stroke-linecap="round" stroke-linejoin="round"/>
-      <line x1="86" y1="100" x2="120" y2="100" stroke="#C8262A" stroke-width="11" stroke-linecap="round"/>
+      <line x1="84" y1="100" x2="118" y2="100" stroke="#C8262A" stroke-width="11" stroke-linecap="round"/>
     </svg>
   `;
   btn.addEventListener('click', function () {
-    window.location.href = 'jobs.html';
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = 'services.html';
+    }
   });
   container.appendChild(btn);
 

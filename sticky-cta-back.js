@@ -2,6 +2,12 @@
 // Mirror of the Start Assessment badge, anchored TOP-LEFT under the header.
 // Sends the visitor back to the TRADE page they came from.
 (function () {
+  // Service pages now use the main navigation and footer consistently.
+  // The former corner Return badge is intentionally disabled site-wide.
+  document.querySelectorAll('.tj-back-container').forEach(function (badge) {
+    badge.remove();
+  });
+  return;
   // ── Work out where "back" should go ──────────────────────────────
   // 1. If the referrer is a trade-*.html page on this site, use it (and cache it).
   // 2. Else fall back to a previously cached trade origin.
@@ -136,9 +142,9 @@
       <circle cx="100" cy="100" r="54" fill="none" stroke="#0A0F1C" stroke-width="3"/>
 
       <!-- Back (left) arrow mark -->
-      <path d="M 112 78 L 86 100 L 112 122" fill="none" stroke="#C8262A" stroke-width="11"
+      <path d="M 110 78 L 84 100 L 110 122" fill="none" stroke="#C8262A" stroke-width="11"
             stroke-linecap="round" stroke-linejoin="round"/>
-      <line x1="120" y1="100" x2="86" y2="100" stroke="#C8262A" stroke-width="11" stroke-linecap="round"/>
+      <line x1="118" y1="100" x2="84" y2="100" stroke="#C8262A" stroke-width="11" stroke-linecap="round"/>
     </svg>
   `;
   btn.addEventListener('click', function () {

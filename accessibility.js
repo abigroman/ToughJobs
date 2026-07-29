@@ -57,7 +57,7 @@
   }
   .a11y-close {
     position: absolute; top: 18px; right: 18px;
-    width: 40px; height: 40px; border-radius: 50%;
+    width: 44px; height: 44px; border-radius: 50%;
     background: rgba(0,0,0,.25); border: 2px solid rgba(255,255,255,.7);
     color: #fff; font-size: 20px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
@@ -81,7 +81,7 @@
   .a11y-sub {
     background: none; border: none; color: rgba(255,255,255,.85);
     font-size: .85rem; text-decoration: underline; cursor: pointer; margin-top: 8px;
-    font-family: inherit;
+    font-family: inherit; min-height: 44px; padding: 10px 8px;
   }
   .a11y-sub:hover { color: #fff; }
 
@@ -112,7 +112,7 @@
     display: flex; align-items: center; gap: 14px; width: 100%; justify-content: center;
   }
   .a11y-step-btn {
-    width: 38px; height: 38px; border-radius: 50%;
+    width: 44px; height: 44px; border-radius: 50%;
     background: #C8262A; color: #fff; border: none;
     font-size: 22px; font-weight: 700; cursor: pointer; line-height: 1;
     display: flex; align-items: center; justify-content: center;
@@ -159,7 +159,7 @@
     background: #0A0F1C; color: #fff;
     font-family: "Archivo",sans-serif;
     font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: .8rem;
-    cursor: pointer; transition: filter .2s ease;
+    cursor: pointer; transition: filter .2s ease; min-height: 44px;
   }
   .a11y-reset:hover { filter: brightness(1.4); }
   .a11y-reset:focus-visible { outline: 3px solid #C8262A; outline-offset: 2px; }
@@ -273,7 +273,7 @@
         <ul class="a11y-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="work.html">Work</a></li>
+          <li><a href="website-examples.html">Work</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -286,8 +286,16 @@
   document.body.appendChild(overlay);
   document.body.appendChild(panel);
 
-  // ── Wire up button ────────────────────────────────────────────────────────
+  // ── Wire up button (self-inject if the page didn't include one) ───────────
   var btn = document.querySelector('.accessibility-btn');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.className = 'accessibility-btn';
+    btn.setAttribute('aria-label', 'Accessibility');
+    btn.setAttribute('title', 'Accessibility');
+    btn.innerHTML = '<img src="assets/accessibility-logo.webp" alt="Accessibility" style="width:100%;height:100%;object-fit:contain;" />';
+    document.body.appendChild(btn);
+  }
   var closeBtn = panel.querySelector('.a11y-close');
   var lastFocus = null;
 
@@ -312,8 +320,8 @@
     btn.setAttribute('aria-expanded', 'false');
     btn.setAttribute('aria-haspopup', 'dialog');
     btn.addEventListener('click', togglePanel);
-    // Fade in after 5s
-    setTimeout(function () { btn.classList.add('visible'); }, 5000);
+    // Fade in shortly after load
+    setTimeout(function () { btn.classList.add('visible'); }, 1000);
   }
 
   closeBtn.addEventListener('click', closePanel);

@@ -1,36 +1,120 @@
-// flying-tools.js — drifting faded power-tool silhouettes for light/bright sections.
-// Targets any section the design system marks as a white section (.on-light / .bg-light).
+// flying-tools.js — drifting real-tool cutouts for light/bright sections.
 // Safe to include on every page: dark sections are skipped automatically.
 (function () {
-  // Tool silhouettes. Hammers and screwdrivers are listed multiple times so
-  // they appear more frequently in the drift than the other tools.
-  var DRILL = '<svg viewBox="0 0 64 64" fill="currentColor"><path d="M6 24h22l4-4h6v-4h10v4h6l4 4v8l-4 4h-6v4h-4l-4 6h-6v-6l-6-6H6z"/><rect x="20" y="40" width="10" height="18" rx="2"/></svg>';
-  var WRENCH = '<svg viewBox="0 0 64 64" fill="currentColor"><path d="M46 6a14 14 0 0 0-13 19L8 50a5 5 0 0 0 7 7l25-25a14 14 0 0 0 19-13l-9 9-8-2-2-8z"/></svg>';
-  var HAMMER = '<svg viewBox="0 0 64 64" fill="currentColor"><path d="M30 6l20 8-4 8-6-2-4 4 4 4-18 26-6-6 16-22-4-4-4 4-2-6z"/></svg>';
-  var SAW = '<svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4l5 8 9-4-1 10 10 1-7 7 7 7-10 1 1 10-9-4-5 8-5-8-9 4 1-10-10-1 7-7-7-7 10-1-1-10 9 4z"/><circle cx="32" cy="32" r="7" fill="#fff"/></svg>';
-  var SCREWDRIVER = '<svg viewBox="0 0 64 64" fill="currentColor"><path d="M40 6l18 18-10 6-4-4-22 22-6 8-8 2 2-8 8-6 22-22-4-4z"/></svg>';
   var TOOLS = [
-    HAMMER, SCREWDRIVER, HAMMER, SCREWDRIVER,  // weighted heavier
-    DRILL, WRENCH, SAW,
-    HAMMER, SCREWDRIVER
+    {
+      name: 'chainsaw',
+      src: 'assets/floating-tools/chainsaw.webp',
+      minSize: 310,
+      maxSize: 350
+    },
+    {
+      name: 'hammer',
+      src: 'assets/floating-tools/hammer.webp',
+      minSize: 255,
+      maxSize: 285
+    },
+    {
+      name: 'trowel',
+      src: 'assets/floating-tools/trowel.webp',
+      minSize: 210,
+      maxSize: 240
+    },
+    {
+      name: 'screwdriver',
+      src: 'assets/floating-tools/screwdriver.webp',
+      minSize: 165,
+      maxSize: 195
+    },
+    {
+      name: 'tape-measure',
+      src: 'assets/floating-tools/tape-measure.webp',
+      minSize: 110,
+      maxSize: 140
+    }
+  ];
+
+  // Every decorated section receives all five tools. The repeats keep the
+  // composition full while preserving the requested visual size hierarchy.
+  var TOOL_SEQUENCE = [
+    TOOLS[0],
+    TOOLS[1],
+    TOOLS[2],
+    TOOLS[3],
+    TOOLS[4],
+    TOOLS[1],
+    TOOLS[2],
+    TOOLS[3]
   ];
 
   var css = `
-  .ft-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-  .ft-float{position:absolute;color:var(--navy,#002768);opacity:0;animation:ftDrift linear infinite}
-  .ft-float svg{display:block;width:100%;height:100%}
-  @keyframes ftDrift{
-    0%{opacity:0;transform:translateY(40px) rotate(var(--r0))}
-    12%{opacity:.07}
-    88%{opacity:.07}
-    100%{opacity:0;transform:translateY(-80px) rotate(var(--r1))}
+  .ft-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+    contain:layout paint;
   }
-  @media(prefers-reduced-motion:reduce){.ft-float{animation:none;opacity:.05}}
+  .ft-float{
+    position:absolute;
+    width:min(var(--ft-size),var(--ft-cap));
+    height:min(var(--ft-size),var(--ft-cap));
+    opacity:0;
+    animation:ftDrift var(--ft-duration) linear var(--ft-delay) infinite;
+    animation-play-state:paused;
+    transform-origin:center;
+    will-change:transform,opacity;
+  }
+  .ft-float img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    filter:saturate(.15) contrast(.94);
+  }
+  .ft-chainsaw{--ft-cap:58vw}
+  .ft-hammer{--ft-cap:50vw}
+  .ft-trowel{--ft-cap:43vw}
+  .ft-screwdriver{--ft-cap:36vw}
+  .ft-tape-measure{--ft-cap:28vw}
+  @keyframes ftDrift{
+    0%{opacity:0;transform:translate3d(0,48px,0) rotate(var(--r0))}
+    12%{opacity:.11}
+    88%{opacity:.11}
+    100%{opacity:0;transform:translate3d(var(--drift-x),-96px,0) rotate(var(--r1))}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ft-float{
+      animation:none;
+      opacity:.065;
+      will-change:auto;
+    }
+  }
   `;
+
   var style = document.createElement('style');
   style.id = 'ft-styles';
   style.textContent = css;
   document.head.appendChild(style);
+
+  var decoratedSections = [];
+  var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function setMotionState(sec, isVisible) {
+    var shouldRun = isVisible && !document.hidden && !motionQuery.matches;
+    sec.querySelectorAll('.ft-float').forEach(function (tool) {
+      tool.style.animationPlayState = shouldRun ? 'running' : 'paused';
+    });
+  }
+
+  var observer = 'IntersectionObserver' in window
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          setMotionState(entry.target, entry.isIntersecting);
+        });
+      }, { rootMargin: '120px 0px' })
+    : null;
 
   function populate(sec) {
     if (sec.dataset.ftDone) return;
@@ -39,38 +123,61 @@
 
     var bg = document.createElement('div');
     bg.className = 'ft-bg';
+    bg.setAttribute('aria-hidden', 'true');
 
-    var n = 8 + Math.floor(Math.random() * 3); // 8–10 tools
-    // Shuffle a copy so each section gets a varied mix (still hammer/driver-heavy).
-    var bag = TOOLS.slice().sort(function () { return Math.random() - 0.5; });
-    for (var i = 0; i < n; i++) {
+    TOOL_SEQUENCE.forEach(function (tool, index) {
       var el = document.createElement('div');
-      el.className = 'ft-float';
-      var size = 70 + Math.random() * 120;
-      el.style.width = size + 'px';
-      el.style.height = size + 'px';
-      el.style.left = (Math.random() * 88 + 2) + '%';
-      el.style.top = (Math.random() * 78 + 4) + '%';
-      el.style.setProperty('--r0', (Math.random() * 60 - 30) + 'deg');
-      el.style.setProperty('--r1', (Math.random() * 120 - 60) + 'deg');
-      el.style.animationDuration = (16 + Math.random() * 16) + 's';
-      el.style.animationDelay = (-Math.random() * 24) + 's';
-      el.innerHTML = bag[i % bag.length];
+      var image = document.createElement('img');
+      var size = tool.minSize + Math.random() * (tool.maxSize - tool.minSize);
+
+      el.className = 'ft-float ft-' + tool.name;
+      el.style.setProperty('--ft-size', size.toFixed(1) + 'px');
+      el.style.left = (Math.random() * 88 - 2) + '%';
+      el.style.top = (Math.random() * 82 - 4) + '%';
+      el.style.setProperty('--r0', (Math.random() * 56 - 28) + 'deg');
+      el.style.setProperty('--r1', (Math.random() * 100 - 50) + 'deg');
+      el.style.setProperty('--drift-x', (Math.random() * 70 - 35) + 'px');
+      el.style.setProperty('--ft-duration', (20 + Math.random() * 14) + 's');
+      el.style.setProperty('--ft-delay', (-index * 2.7 - Math.random() * 9) + 's');
+
+      image.src = tool.src;
+      image.alt = '';
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.draggable = false;
+
+      el.appendChild(image);
       bg.appendChild(el);
-    }
+    });
+
     sec.insertBefore(bg, sec.firstChild);
+    decoratedSections.push(sec);
+
+    if (observer) {
+      observer.observe(sec);
+    } else {
+      setMotionState(sec, true);
+    }
   }
 
   function run() {
     document.querySelectorAll('section.on-light, section.bg-light').forEach(populate);
   }
 
+  document.addEventListener('visibilitychange', function () {
+    decoratedSections.forEach(function (sec) {
+      var rect = sec.getBoundingClientRect();
+      setMotionState(sec, rect.bottom >= -120 && rect.top <= window.innerHeight + 120);
+    });
+  });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', run);
   } else {
     run();
   }
-  // Re-scan shortly after, in case sections are rendered by React (trade pages).
+
+  // Re-scan for sections rendered after the initial document.
   setTimeout(run, 400);
   setTimeout(run, 1200);
 })();

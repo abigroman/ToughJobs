@@ -1,165 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toughjobs — Marketing for the Trades</title>
-  <link rel="stylesheet" href="fonts.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --ink: #0A0F1C;
-      --white: #FFFFFF;
-      --accent: #C8262A;
-      --navy: #002768;
-      --gray-bg: #282828;
-      --nav-height: 100px;
-    }
-    body {
-      font-family: "Archivo", sans-serif;
-      background: var(--white);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toughjobs — Business Software | Dispatch, Scheduling & CRM for Trades</title>
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Toughjobs" />
+<meta name="publisher" content="ToughJobs Digital Marketing" />
+<link rel="canonical" href="https://toughjobs.org/software.html" />
 
-    /* ── HEADER ─────────────────────────────────────────────────── */
-    header {
-      background: var(--ink);
-      color: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      height: var(--nav-height);
-      transition: height 0.3s ease;
-      border-bottom: 2px solid rgba(200, 38, 42, .3);
-      width: 100%;
-    }
-    header.scrolled {
-      height: 50px;
-      --nav-height: 50px;
-    }
-    header > div {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      padding: 0 32px;
-      max-width: 100%;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      text-decoration: none;
-      color: var(--white);
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-    .nav-logo img {
-      height: 100px;
-      width: 150px;
-      object-fit: contain;
-      transition: all 0.3s ease;
-    }
-    header.scrolled .nav-logo img {
-      height: 50px;
-      width: 75px;
-    }
-    .nav-logo-text {
-      font-family: "Archivo Black", sans-serif;
-      font-size: 28px;
-      letter-spacing: 0.01em;
-      line-height: 1.2;
-      text-transform: uppercase;
-      font-weight: 900;
-      transition: font-size 0.3s ease;
-    }
-    header.scrolled .nav-logo-text {
-      font-size: 16px;
-    }
-    .nav-logo-text .tough { color: var(--accent); }
-    .nav-logo-text .jobs { color: var(--white); }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      flex-wrap: nowrap;
-      align-items: center;
-      flex: 1;
-      justify-content: center;
-    }
-    nav a {
-      font-family: "Archivo", sans-serif;
-      font-weight: 700;
-      font-size: 11.5px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-      padding: 8px 0;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-    nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-    nav a.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .nav-right {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      margin-left: auto;
-    }
-    .nav-phone {
-      color: var(--white);
-      text-decoration: none;
-      font-family: "Archivo", sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-    .btn {
-      background: var(--accent);
-      color: var(--white);
-      padding: 14px 22px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-family: "Archivo", sans-serif;
-      text-transform: uppercase;
-    }
-    .btn:hover {
-      opacity: 0.9;
-    }
-
-    main { min-height: 400px; padding: 80px 0; }
-    h1 { font-family: "Archivo Black", sans-serif; font-size: 48px; text-transform: uppercase; margin: 20px 0; }
-    p { margin: 16px 0; }
-
-    /* ── FOOTER ─────────────────────────────────────────────────── */
-    footer {
-      background: var(--ink);
-      color: var(--white);
-      padding: 40px 0;
-      text-align: center;
-      font-size: 13px;
-      margin-top: 80px;
-    }
-  </style>
+<meta name="description" content="Toughjobs — Business Software | Dispatch, Scheduling & CRM for Trades — Toughjobs Digital Marketing, marketing built for the trades. Serving Illinois, Iowa, Missouri, Wisconsin and Indiana. Call (309) 928-9080." />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="service-page.css" />
+<meta name="keywords" content="field service software, dispatch and scheduling software, business software, trades marketing, contractor marketing, field service software Quad Cities, field service software Peoria, Midwest trades marketing" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0A0F1C}
+  body{font-family:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;color:#0A0F1C;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  :root{--ink:#0A0F1C;--navy:#002768;--navy-2:#001a4a;--red:#C8262A;--accent:#C8262A;--smoke:#5B6471;--white:#FFFFFF;--container:1240px}
+  .logo-text span.tight{color:var(--red)}.logo-text span.light{color:var(--white)}
+  header a.logo-link{display:flex;align-items:center;gap:1px;text-decoration:none;color:var(--white);animation:logoSlideIn .65s cubic-bezier(.22,.9,.3,1) .35s backwards}
+  header img{height:auto;width:auto;max-height:70px;object-fit:contain;transition:all .3s ease}
+  header.scrolled img{height:auto;width:auto;max-height:45px}
+  nav.nav-links a.nav-link:hover{color:var(--red);border-bottom-color:var(--red)}
+  .nav-phone:hover{color:var(--red)}
+  header .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;text-decoration:none;background:var(--red);color:var(--white);border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
+  header .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+  .nav-dropdown-toggle{display:inline-flex;align-items:center;gap:6px}
+  .nav-dropdown-menu > div{display:flex;flex-direction:column;gap:10px}
+  .nav-dropdown-item:hover{color:var(--red)}
+  .nav-quote{background:var(--red);animation:navQuoteIn .65s cubic-bezier(.22,.9,.3,1) .35s backwards}
+  @media(max-width:880px){nav.mega{display:none}}
+  body{--accent2:#002768}
+</style>
+<link rel="stylesheet" href="shared-header.css" />
 <style id="white-texture-sweep">
 /* Engineering blueprint texture on all white surfaces */
 .bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
@@ -170,60 +44,211 @@
   background-attachment:fixed !important;
 }
 </style>
-<style id="white-texture-body">
-body { background-image:url('assets/white-engineering-background.webp') !important; background-size:cover !important; background-position:center !important; background-attachment:fixed !important; background-color:#FFFFFF !important; }
-</style>
-  <link rel="stylesheet" href="tough-responsive.css">
 </head>
-<body>
-  <!-- HEADER -->
-  <header id="nav-header">
-    <div>
-      <a href="index.html" class="nav-logo">
-        <img src="assets/toughjobs-monogram-logo.webp" alt="Toughjobs">
-        <div class="nav-logo-text">
-          <span class="tough">TOUGH</span><span class="jobs">JOBS</span>
-        </div>
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="partnerships.html">Partnerships</a>
-        <a href="intake-landing.html">Free Tools</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="nav-right">
-        <a href="tel:3099289080" class="nav-phone">309-928-9080</a>
-        <a href="contact.html" class="btn">Request a Quote</a>
+<body class="sp">
+<main>
+  <!-- HERO -->
+  <section class="bg-dark hero">
+    <div class="tex tex-grid"></div>
+    <div class="container">
+      <div class="hero-text">
+      <span class="eyebrow accent reveal">Software & dispatch</span>
+      <h1 class="display reveal d1">Stop juggling schedules<br><span class="accent2c">in email and notebooks</span>.</h1>
+      <p class="lede reveal d2">Real-time dispatch, automatic scheduling, customer self-booking, and crew management. Built for trades with 2–20 techs. No bloated enterprise BS.</p>
+      <div class="reveal d3"><a class="btn" href="contact.html">See a live demo &rarr;</a></div>
+      <div class="kpis"><div class="kpi reveal"><div class="num"><span data-count="60">0</span><span class="suf">%</span></div><div class="lbl">Less time scheduling</div></div><div class="kpi reveal"><div class="num"><span data-count="40">0</span><span class="suf">%</span></div><div class="lbl">Fewer no-shows</div></div><div class="kpi reveal"><div class="num"><span data-count="30">0</span><span class="suf">%</span></div><div class="lbl">More jobs booked</div></div></div>
+      </div>
+      <div class="hero-img-slot">
+        <img src="assets/trade-hero-painters.webp" alt="Professional painter representing field-service scheduling software" fetchpriority="high" decoding="async" style="width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center bottom;padding:0 42px 0 18px;" />
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- MAIN CONTENT -->
-  <main>
+  <!-- FEATURES -->
+  <section class="bg-light">
+    <div class="tex tex-dots-d"></div>
     <div class="container">
-      <h1>Page Under Construction</h1>
-      <p>This page is being rebuilt. Please check back soon.</p>
-      <p><a href="index.html">← Back to Home</a></p>
+      <div class="head reveal">
+        <span class="eyebrow">What you get</span>
+        <h2 class="display">Software that talks to your customers — and your crew.</h2>
+        <p class="lede">Every tool in one place. No app switching. No manual syncing.</p>
+      </div>
+      <div class="flow" style="--steps:4"><div class="step reveal d1"><div class="node">📅</div><h4>Smart scheduling</h4><p>Drag-and-drop assignments. Travel time auto-calculated. No double-booking.</p></div><div class="step reveal d2"><div class="node">📱</div><h4>Customer self-booking</h4><p>Your customers pick their own time slots. Fills your schedule while you sleep.</p></div><div class="step reveal d3"><div class="node">🚗</div><h4>Crew dispatch</h4><p>GPS tracking. Real-time updates to customers. Notifications sent automatically.</p></div><div class="step reveal d4"><div class="node">💬</div><h4>Text & email</h4><p>Confirmations, reminders, and follow-ups on autopilot. No cold calls.</p></div></div>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
-  <footer>
+  <!-- BENEFITS -->
+  <section class="bg-navy">
+    <div class="tex tex-dots"></div>
     <div class="container">
-      <p>&copy; 2026 Toughjobs · Marketing for the Trades · 309-928-9080</p>
+      <div class="head reveal">
+        <span class="eyebrow">What you'll gain</span>
+        <h2 class="display">Time back. Fewer headaches. More profit.</h2>
+      </div>
+      <div class="earn"><div class="card reveal d1"><div class="ic">01</div><h4>No manual rescheduling</h4><p>One cancellation doesn't cascade through your entire day. Software handles it.</p></div><div class="card reveal d2"><div class="ic">02</div><h4>Higher attendance</h4><p>Automatic reminders cut no-shows. Your crew knows exactly where to go.</p></div><div class="card reveal d3"><div class="ic">03</div><h4>Upsell opportunities</h4><p>See service history. Know what each customer needs before the call.</p></div></div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const navHeader = document.getElementById('nav-header');
-    window.addEventListener('scroll', () => {
-      navHeader.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-  </script>
+  <!-- COMPARE -->
+  <section class="bg-light">
+    <div class="tex tex-dots-d"></div>
+    <div class="container">
+      <div class="head reveal">
+        <span class="eyebrow">CRM + AI answering</span>
+        <h2 class="display">One system from first hello to booked job.</h2>
+        <p class="lede">Toughjobs pairs a trades-focused CRM with AI-assisted answering. Calls, texts, web chats, appointments, and follow-up land in one pipeline so your office and field crew always know what happens next.</p>
+      </div>
+      <div class="cmp-wrap reveal d1">
+        <table class="cmp">
+          <thead><tr><th>Customer moment</th><th>AI answering system</th><th class="tj"><span class="tjhead">Toughjobs CRM</span></th></tr></thead>
+          <tbody>
+            <tr><td class="rowlbl">New call, text, or chat</td><td>Responds 24/7 and captures the customer, service, urgency, and location</td><td class="tj"><span class="yes">Creates the lead and logs the conversation</span></td></tr>
+            <tr><td class="rowlbl">New job inquiry</td><td>Answers routine questions and collects the details needed to qualify the job</td><td class="tj"><span class="yes">Assigns an owner, pipeline stage, and next task</span></td></tr>
+            <tr><td class="rowlbl">Ready to schedule</td><td>Offers available appointment times and confirms the selection</td><td class="tj"><span class="yes">Books the job and notifies the office and crew</span></td></tr>
+            <tr><td class="rowlbl">Before the appointment</td><td>Sends confirmations, reminders, and updates automatically</td><td class="tj"><span class="yes">Keeps every message in the customer history</span></td></tr>
+            <tr><td class="rowlbl">After the job</td><td>Sends follow-up and review requests at the right time</td><td class="tj"><span class="yes">Keeps the customer record ready for future service</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cmp-note">Instead of separate call notes, inboxes, and spreadsheets, you get one connected customer history from first contact through follow-up.</p>
+      <div class="reveal d2" style="margin-top:24px"><a class="btn" href="contact.html?service=crm-ai">See the CRM + AI answering demo &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ROI -->
+  <section class="bg-dark">
+    <div class="edge-accent"></div>
+    <div class="tex tex-grid"></div>
+    <div class="container">
+      <div class="head reveal">
+        <span class="eyebrow accent">Quick payback math</span>
+        <h2 class="display">What your time back is worth.</h2>
+        <p class="lede muted">At 5 hours saved per week, software pays for itself in a single month.</p>
+      </div>
+      <div class="roi reveal d1">
+        <div class="controls">
+          <div class="field">
+            <label for="roi-driver">Hours spent scheduling per week <span class="val" id="roi-driver-val"></span></label>
+            <input type="range" id="roi-driver" min="1" max="20" step="0.5" value="5" />
+          </div>
+          <div class="field">
+            <label for="roi-job">Your hourly rate <span class="val" id="roi-job-val"></span></label>
+            <input type="range" id="roi-job" min="25" max="200" step="5" value="75" />
+          </div>
+          <div style="margin-top:30px;display:flex;gap:26px;flex-wrap:wrap">
+            <div><div style="font-family:'Archivo Black',sans-serif;font-size:30px;color:var(--accent2)" id="roi-leads">0</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;opacity:.7;margin-top:4px">Recovered per month</div></div>
+            <div><div style="font-family:'Archivo Black',sans-serif;font-size:30px;color:var(--accent2)" id="roi-multiple">0×</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;opacity:.7;margin-top:4px">Payback ratio</div></div>
+          </div>
+        </div>
+        <div class="out">
+          <div>
+            <div class="big" id="roi-revenue">$0</div>
+            <div class="reslbl">Time recovered monthly</div>
+          </div>
+          <div class="divline"></div>
+          <div class="sub">Software costs $99–299/mo. You recover that in week one.</div>
+          <div><a class="btn" href="contact.html" style="background:var(--ink)">Schedule a live demo &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-light">
+    <div class="tex tex-dots-d"></div>
+    <div class="container">
+      <div class="head reveal">
+        <span class="eyebrow">From the field</span>
+        <h2 class="display">Crews using it right now.</h2>
+      </div>
+      <div class="tess"><div class="t reveal"><p class="q">&ldquo;Cut our scheduling time by half. Customer confirmations are automatic now.&rdquo;</p><div class="who"><div class="av">👨</div><div><div class="nm">Jim C.</div><div class="rl">Electrical contractor, Rock Island IL</div></div></div></div><div class="t reveal"><p class="q">&ldquo;Crew loves the GPS tracking. No more 'where are you' calls. Customers get real-time updates.&rdquo;</p><div class="who"><div class="av">👩</div><div><div class="nm">Lisa S.</div><div class="rl">HVAC, Bettendorf IA</div></div></div></div></div>
+    </div>
+  <div class="container seo-longform" style="max-width:900px;margin:64px auto 0;padding-top:44px;border-top:1px solid rgba(10,15,28,.14)">
+    <h2 class="display" style="font-size:clamp(26px,3vw,38px);line-height:1.05;color:#0A0F1C;margin:0 0 20px">Business Software built for trades businesses in the Midwest</h2>
+    <div style="font-size:16.5px;line-height:1.72;color:#1c2536">
+      <p style="margin:0 0 18px"><strong>Field service software</strong> is how a service business stop juggling schedules and dispatch your crew from one simple platform. At Toughjobs, we build dispatch and scheduling software for trades owners across Illinois, Iowa, Missouri, Wisconsin and Indiana &mdash; from the Quad Cities and Peoria to Dubuque and anywhere within about three hours of home. Whether you're an electrician, plumber, HVAC tech, roofer, painter, contractor, or any other home-services pro, our business software is designed to do one thing: fill your schedule with better jobs.</p>
+      <p style="margin:0 0 18px">Most trades owners are great at the work and short on time for marketing. That's exactly why our dispatch and scheduling software exists. We handle the strategy, the setup, and the ongoing work so you can stay on the job while your business grows. Everything we do with field service software is tied to measurable results &mdash; real calls, real booked work, and reporting you can actually read. No jargon, no bloated agency retainers, and no long lock-in contracts. We only serve the trades, so we already understand your customers, your seasons, and your margins.</p>
+      <p style="margin:0">Toughjobs gives independent trades companies the same firepower the national franchises use, at a fair price and with straight answers. Pair business software with our websites, local SEO, paid ads, branding, and automation and you get one connected system that compounds over time. Below are the questions owners ask us most about field service software.</p>
+    </div>
+    <h2 class="display" style="font-size:clamp(22px,2.4vw,30px);line-height:1.05;color:#0A0F1C;margin:44px 0 8px">Business Software FAQ</h2>
+    <div style="font-size:16px;line-height:1.7;color:#1c2536">
+      <div style="padding:20px 0;border-top:1px solid rgba(10,15,28,.12)">
+        <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:18px;color:#0A0F1C;margin:0 0 8px">How much does field service software cost?</h3>
+        <p style="margin:0">It depends on your goals and market. We scope every engagement up front and give you real numbers before you commit &mdash; no surprise fees. Most trades owners see field service software pay for itself in a handful of booked jobs.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid rgba(10,15,28,.12)">
+        <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:18px;color:#0A0F1C;margin:0 0 8px">How fast will I see results?</h3>
+        <p style="margin:0">Some wins are immediate; others compound. Setup and quick fixes move within the first few weeks, while search-driven results typically build steadily over 60&ndash;90 days. You'll get monthly reporting so you always know what your business software is producing.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid rgba(10,15,28,.12)">
+        <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:18px;color:#0A0F1C;margin:0 0 8px">What areas do you serve?</h3>
+        <p style="margin:0">We serve trades businesses across the Midwest &mdash; the Quad Cities, Peoria, Dubuque and surrounding communities in Illinois, Iowa, Missouri, Wisconsin and Indiana. If you're within about three hours of home, we can help.</p>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid rgba(10,15,28,.12);border-bottom:1px solid rgba(10,15,28,.12)">
+        <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:18px;color:#0A0F1C;margin:0 0 8px">Do I have to sign a long contract?</h3>
+        <p style="margin:0">No long lock-in. We ask for enough runway to get field service software producing steady results, but we earn your business every month with transparent reporting instead of fine print.</p>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-accent2 ctaband">
+    <div class="tex tex-grid"></div>
+    <div class="container">
+      <h2 class="display reveal">Stop losing jobs to chaos.</h2>
+      <p class="reveal d1">One platform for scheduling, dispatch, and crew management. Built by people who fix things for a living.</p>
+      <div class="reveal d2"><a class="btn" href="contact.html">Get a live demo &rarr;</a></div>
+    </div>
+  </section>
+</main>
+
+
+    <section data-screen-label="Our Endeavors" class="gb-section" style="background:#ECEFF4;background-image:url('assets/white-engineering-background.webp');background-size:cover;background-position:center;padding:56px 32px;position:relative;overflow:hidden;box-shadow:inset 0 2px 2px rgba(0,0,0,.45), inset 0 -2px 2px rgba(0,0,0,.45);">
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:1;">
+      <div class="gb-outer" style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;">
+        <div>
+          <div style="margin-bottom:24px;">
+            <span style="font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#C8262A;">More than marketing</span>
+            <h2 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(32px,3.6vw,50px);line-height:1.02;color:#0A0F1C;margin:12px 0 0;"><span style="color:#C8262A;">Two ways we</span> give back</h2>
+          </div>
+          <div class="gb-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;">
+            <div class="gb-card" style="background:#002768;padding:36px 30px;box-shadow:0 20px 50px -30px rgba(0,39,104,.5);border-top:4px solid #C8262A;">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.2em;color:#C8262A;font-weight:700;">01 / PARTNERSHIP</span>
+              <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:22px;color:#fff;margin:16px 0 12px;line-height:1.05;">Go independent, backed by us</h3>
+              <p style="font-family:'Archivo',sans-serif;font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 28px;">You bring the truck, tools, and skill. We hand you the website, brand, systems, and marketing to turn one truck into a real company.</p>
+              <a href="partnerships.html" style="display:inline-block;background:#C8262A;color:#fff;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.06em;padding:14px 30px;border-radius:6px;text-decoration:none;">Explore Partnership</a>
+            </div>
+            <div class="gb-card" style="background:#0A0F1C;padding:36px 30px;box-shadow:0 20px 50px -30px rgba(0,39,104,.5);border-top:4px solid #C8262A;">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.2em;color:#C8262A;font-weight:700;">02 / HELPING HANDS</span>
+              <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:22px;color:#fff;margin:16px 0 12px;line-height:1.05;">A hand up when budget is tight</h3>
+              <p style="font-family:'Archivo',sans-serif;font-size:15px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 28px;">One day a week we help people with more grit than budget get a business off the ground — honest guidance, real direction, no pressure.</p>
+              <a href="helping-hands.html" style="display:inline-block;background:#C8262A;color:#fff;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.06em;padding:14px 30px;border-radius:6px;text-decoration:none;">Explore Helping Hands</a>
+            </div>
+          </div>
+        </div>
+        <div class="gb-img" style="position:relative;height:100%;min-height:420px;">
+          <img src="assets/trade-hero-excavation.webp" alt="Toughjobs tradesman on the job" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:top center;" />
+        </div>
+      </div>
+    </div>
+    <style>@media(max-width:900px){ .gb-outer{ grid-template-columns:1fr !important; } .gb-grid{ grid-template-columns:1fr !important; } .gb-img{ min-height:280px !important; order:-1; } }</style>
+  </section>
+
+<script src="inject-footer.js"></script>
+
+<script type="application/json" id="service-data">
+{"roi":{"liftPct":0.02,"closeRate":0.40,"ourCost":150,"driverSuffix":""}}
+</script>
+<script src="trade-data.js"></script>
+<script src="service-page.js"></script>
+<script src="flying-tools.js"></script>
+<script src="inject-header.js"></script>
 <script src="sticky-cta.js"></script>
-<script src="sticky-cta-back.js"></script>
-<script src="mobile-nav.js"></script>
+<script src="cookie-consent.js"></script>
+<script src="chat-launcher.js"></script>
+<script src="all-services-section.js"></script>
+<script src="accessibility.js"></script>
+<script src="image-finder-tab.js"></script>
 </body>
 </html>

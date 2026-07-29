@@ -1,20 +1,27 @@
-# Uploaded reference files (425 MB — not source code)
-uploads/
-
-# Old site versions
-v1-quad-cities/
-v1-sacramento/
-v2-peoria/
-
-# Renders and screenshots
-renders/
-screenshots/
-
-# Backup snapshots
+# Archived / backup snapshots — kept locally, not in git
+_ARCHIVE/
 _BACKUP_*/
 _LOCKED/
+scraps/
 
-# OS junk
+# ZIP exports — too large for GitHub, and the working tree is the source of truth
+*.zip
+
+# OS
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Tool state / thumbnails
+.image-slots.state.json
+.thumbnail
+
+# Node (in case a build gets added later)
+node_modules/
+.env
+.env.local

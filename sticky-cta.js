@@ -48,13 +48,15 @@
   .tj-cta-badge:active { transform: scale(1.0); }
   .tj-cta-badge:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; border-radius: 50%; }
   .tj-cta-badge svg { width: 100%; height: 100%; display: block; overflow: visible; }
-  .tj-cta-ring-text { animation: tj-cta-spin 18s linear infinite; transform-origin: 100px 100px; }
-  .tj-cta-badge:hover .tj-cta-ring-text { animation-duration: 6s; }
-  @keyframes tj-cta-spin { to { transform: rotate(360deg); } }
   @keyframes tj-cta-in {
     from { opacity: 0; transform: translate(20px,-20px); }
     to   { opacity: 1; transform: translate(0,0); }
   }
+  @keyframes tj-cta-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .tj-cta-ring-text { transform-origin: 100px 100px; animation: tj-cta-spin 8s linear infinite; }
   @media (max-width: 768px) {
     .tj-cta-container { width: 134px; height: 134px; }
     .tj-cta-badge { width: 92px; height: 92px; top: 14px; right: 14px; }
@@ -120,7 +122,7 @@
     </svg>
   `;
   btn.addEventListener('click', function () {
-    window.location.href = 'intake-landing.html';
+    window.location.href = 'free-tools.html';
   });
   container.appendChild(btn);
 
