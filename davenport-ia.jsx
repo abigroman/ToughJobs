@@ -16,7 +16,7 @@ export default function Page() {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Trades Marketing in Davenport, IA — Toughjobs | Quad Cities Local SEO &amp; Ads</title>
-<meta name="description" content="Toughjobs builds websites, local SEO and ads for HVAC, plumbing, electrical, roofing & restoration contractors across Davenport and the Quad Cities. Win jobs on both sides of the river. Call (309) 233-9004." />
+<meta name="description" content="Toughjobs builds websites, local SEO and ads for HVAC, plumbing, electrical, roofing & restoration contractors across Davenport and the Quad Cities. Win jobs on both sides of the river. Call 309-928-9080." />
 <link rel="canonical" href="https://toughjobs.org/davenport-ia.html" />
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@ export default function Page() {
   "@type": "ProfessionalService",
   "name": "Toughjobs Digital Marketing",
   "description": "Digital marketing agency for trades and home-service businesses in Davenport, Iowa and the Quad Cities.",
-  "telephone": "+1-309-233-9004",
+  "telephone": "+1-309-928-9080",
   "url": "https://toughjobs.org/davenport-ia.html",
   "address": {
     "@type": "PostalAddress",
@@ -66,7 +66,7 @@ export default function Page() {
     <p class="lede">Davenport is the biggest city in the Quad Cities — a two-state, four-city metro where your customers live on both banks of the Mississippi. We help local trades show up across that whole footprint without burning ad budget on the wrong side of the river.</p>
     <div class="hero-actions">
       <a class="btn" href="contact.html">Get a free Quad Cities teardown</a>
-      <a class="btn btn-ghost" href="tel:3092339004">(309) 233-9004</a>
+      <a class="btn btn-ghost" href="tel:3099289080">309-928-9080</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="n">100K+</div><div class="l">Davenport is the largest of the four Quad Cities</div></div>
@@ -185,7 +185,7 @@ export default function Page() {
     <p>Free teardown of your website, Google presence, and how you stack up against the other Davenport-area trades. No pressure, real numbers.</p>
     <div class="hero-actions">
       <a class="btn" href="contact.html">Request a free teardown</a>
-      <a class="btn btn-ghost" href="tel:3092339004">Call (309) 233-9004</a>
+      <a class="btn btn-ghost" href="tel:3099289080">Call 309-928-9080</a>
     </div>
   </div>
 </section>
@@ -200,7 +200,7 @@ export default function Page() {
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="tel:3092339004">(309) 233-9004</a>
+        <a href="tel:3099289080">309-928-9080</a>
       </div>
     </div>
     <div class="copy">&copy; 2026 Toughjobs Digital Marketing · Serving Davenport &amp; the Quad Cities · Marketing built for the trades across Iowa &amp; Illinois.</div>

@@ -169,7 +169,7 @@ export default function Page() {
 </main>
 
 <footer style="background:var(--ink);color:#fff;padding:48px 0;text-align:center">
-  <div class="container" style="max-width:var(--container);margin:0 auto;padding:0 22px"><p style="margin:0;font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.04em">&copy; 2026 Toughjobs &middot; Marketing for the Trades &middot; (309) 233-9004</p></div>
+  <div class="container" style="max-width:var(--container);margin:0 auto;padding:0 22px"><p style="margin:0;font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.04em">&copy; 2026 Toughjobs &middot; Marketing for the Trades &middot; 309-928-9080</p></div>
 </footer>
 
 <script>

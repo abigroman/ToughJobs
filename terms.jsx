@@ -311,7 +311,7 @@ export default function Page() {
       <p>Questions about these terms? Reach out:</p>
       <ul>
         <li><strong>Email:</strong> <span id="email5"></span><script>document.getElementById('email5').innerHTML = atob('dG91Z2hqb2JzLmRyZXdAZ21haWwuY29t')</script></li>
-        <li><strong>Phone:</strong> (309) 233-9004</li>
+        <li><strong>Phone:</strong> 309-928-9080</li>
         <li><strong>Address:</strong> 140 Oakmoor Dr, East Peoria, IL 61611</li>
       </ul>
 

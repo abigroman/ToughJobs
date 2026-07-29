@@ -1068,7 +1068,7 @@ footer a:hover {
         <a href="#">Contact</a>
       </nav>
       <div class="nav-demo-right">
-        <a href="tel:" class="nav-demo-phone">(309) 233-9004</a>
+        <a href="tel:" class="nav-demo-phone">309-928-9080</a>
       </div>
     </div>
   </div>

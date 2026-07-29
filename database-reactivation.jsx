@@ -332,7 +332,7 @@ export default function Page() {
 </section>
 
 <footer>
-  <div class="container"><p>&copy; 2026 Toughjobs · Marketing for the Trades · (309) 233-9004</p></div>
+  <div class="container"><p>&copy; 2026 Toughjobs · Marketing for the Trades · 309-928-9080</p></div>
 </footer>
 
 <script>

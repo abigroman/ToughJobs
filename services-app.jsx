@@ -993,7 +993,7 @@ function BrandingDeepDive() {
                           opacity: 0.9,
                           marginTop: 20
                         }}>
-                          (309) 233-9004 • Quad Cities, IL
+                          309-928-9080 • Quad Cities, IL
                         </div>
                       </div>
                     </div>

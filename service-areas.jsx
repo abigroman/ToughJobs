@@ -16,7 +16,7 @@ export default function Page() {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Service Areas — Toughjobs | Trades Marketing in IL, IA &amp; the Quad Cities</title>
-<meta name="description" content="Toughjobs serves trades and home-service businesses across Peoria IL, Davenport IA and Dubuque IA. Local SEO, websites and ads built for your market. Call (309) 233-9004." />
+<meta name="description" content="Toughjobs serves trades and home-service businesses across Peoria IL, Davenport IA and Dubuque IA. Local SEO, websites and ads built for your market. Call 309-928-9080." />
 <link rel="canonical" href="https://toughjobs.org/service-areas.html" />
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -65,7 +65,7 @@ export default function Page() {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Toughjobs Digital Marketing",
-  "telephone": "+1-309-233-9004",
+  "telephone": "+1-309-928-9080",
   "url": "https://toughjobs.org/service-areas.html",
   "address": {
     "@type": "PostalAddress",
@@ -154,7 +154,7 @@ export default function Page() {
     <p>Free, no-pressure teardown of your website, Google presence, and local competition — built around the market you actually serve.</p>
     <div class="hero-actions">
       <a class="btn" href="contact.html">Request a free teardown</a>
-      <a class="btn btn-ghost" href="tel:3092339004">Call (309) 233-9004</a>
+      <a class="btn btn-ghost" href="tel:3099289080">Call 309-928-9080</a>
     </div>
   </div>
 </section>

@@ -75,7 +75,7 @@ export default function Page() {
     <p>Free, no-pressure teardown of your website, Google presence, and local competition — built around the market you actually serve.</p>
     <div class="hero-actions">
       <a class="btn" href="#">Request a free teardown</a>
-      <a class="btn btn-ghost" href="tel:3092339004">Call (309) 233-9004</a>
+      <a class="btn btn-ghost" href="tel:3099289080">Call 309-928-9080</a>
     </div>
   </div>
 </section>

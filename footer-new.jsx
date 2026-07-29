@@ -312,8 +312,8 @@ function FooterNew() {
             <div className="footer-contact">
               <div className="footer-phone">
                 <div className="footer-phone-label">Call us</div>
-                <a href="tel:3092339004" className="footer-phone-number">
-                  (309) 233-9004
+                <a href="tel:3099289080" className="footer-phone-number">
+                  309-928-9080
                 </a>
               </div>
             </div>

@@ -209,7 +209,7 @@ Before initiating arbitration, you agree to attempt to resolve the dispute infor
 </p>
 <p style="margin-left: 24px;">
 <strong>Toughjobs Digital Marketing</strong><br>
-Phone: (309) 233-9004<br>
+Phone: 309-928-9080<br>
 Email: <span id="email1"></span><script>document.getElementById('email1').innerHTML = atob('dG91Z2hqb2JzLmRyZXdAZ21haWwuY29t')</script>
 </p>
 <p>

@@ -137,7 +137,7 @@ export default function IntakeLanding() {
         <div class="dd-buy">
           <div class="price"><small>$</small>497</div>
           <div class="terms">One-time. Fully credited toward your first month if you sign on.</div>
-          <button class="cta" onclick="alert('Deep-dive booking coming soon. Call (309) 233-9004 to scope your audit.')">Book My Deep-Dive →</button>
+          <button class="cta" onclick="alert('Deep-dive booking coming soon. Call 309-928-9080 to scope your audit.')">Book My Deep-Dive →</button>
         </div>
       </div>
       <div class="dd-grid">
@@ -188,7 +188,7 @@ export default function IntakeLanding() {
 </section>
 
 <footer>
-  <div class="container"><p>&copy; 2026 Toughjobs · Marketing for the Trades · (309) 233-9004</p></div>
+  <div class="container"><p>&copy; 2026 Toughjobs · Marketing for the Trades · 309-928-9080</p></div>
 </footer>
 
 <script>

@@ -47,7 +47,7 @@ export default function Page() {
 
   <footer>
     <div class="container">
-      <p style="color: #0A0F1C;">&copy; 2026 Toughjobs Digital Marketing. (309) 233-9004</p>
+      <p style="color: #0A0F1C;">&copy; 2026 Toughjobs Digital Marketing. 309-928-9080</p>
     </div>
   </footer>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>

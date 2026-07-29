@@ -81,12 +81,12 @@ function Nav() {
           )}
         </nav>
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <a href="tel:3097414599" style={{
+          <a href="tel:3099289080" style={{
             color: "var(--white)", textDecoration: "none",
             fontFamily: '"Archivo",sans-serif', fontWeight: 700, fontSize: 13,
             letterSpacing: ".04em", whiteSpace: "nowrap"
           }}>
-            (309) 741-4599
+            309-928-9080
           </a>
           <a className="btn" href="#contact">Request a Quote</a>
         </div>
@@ -1001,8 +1001,8 @@ function CtaBand() {
           </p>
           <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
             <a className="btn btn-dark" href="#">Charge ahead →</a>
-            <a className="btn" href="tel:3097414599" style={{ background: "transparent", color: "var(--accent-ink)", border: "2px solid rgba(255,255,255,.4)", padding: "14px 24px" }}>
-              <Voltage size={16} /> (309) 741-4599
+            <a className="btn" href="tel:3099289080" style={{ background: "transparent", color: "var(--accent-ink)", border: "2px solid rgba(255,255,255,.4)", padding: "14px 24px" }}>
+              <Voltage size={16} /> 309-928-9080
             </a>
           </div>
         </div>
@@ -1037,7 +1037,7 @@ function Footer() {
           {[
           { h: "Services", l: ["Websites", "SEO", "Paid media", "Branding", "Truck wraps"] },
           { h: "Company", l: ["About", "Work", "Insights", "Careers", "Contact"] },
-          { h: "Visit", l: ["416 Main St", "Peoria, IL 61602", "(309) 741-4599", "hello@toughjobs.com"] }].
+          { h: "Visit", l: ["416 Main St", "Peoria, IL 61602", "309-928-9080", "team@toughjobs.org"] }].
           map((col) =>
           <div key={col.h}>
               <span className="eyebrow" style={{ color: "var(--accent)" }}>{col.h}</span>

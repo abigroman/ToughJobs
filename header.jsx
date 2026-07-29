@@ -102,7 +102,7 @@ function Header({ activePage = "" }) {
           <a href="contact.html" className={`nav-link ${activePage === 'contact' ? 'active' : ''}`}>CONTACT</a>
         </nav>
         <div className="nav-right">
-          <a href="tel:3092339004" className="nav-phone">(309) 233-9004</a>
+          <a href="tel:3099289080" className="nav-phone">309-928-9080</a>
           <a href="contact.html" className="btn">REQUEST A QUOTE</a>
         </div>
       </div>

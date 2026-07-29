@@ -218,7 +218,7 @@ export default function Page() {
         <li><strong>Opt out</strong> — Unsubscribe from emails anytime</li>
       </ul>
 
-      <p>To exercise these rights, contact us at <strong><span id="email3"></span><script>document.getElementById('email3').innerHTML = atob('dG91Z2hqb2JzLmRyZXdAZ21haWwuY29t')</script></strong> or call <strong>(309) 233-9004</strong>.</p>
+      <p>To exercise these rights, contact us at <strong><span id="email3"></span><script>document.getElementById('email3').innerHTML = atob('dG91Z2hqb2JzLmRyZXdAZ21haWwuY29t')</script></strong> or call <strong>309-928-9080</strong>.</p>
 
       <!-- Third Parties -->
       <h2>Third-Party Services</h2>
@@ -260,7 +260,7 @@ export default function Page() {
       <p>If you have questions about how we handle your data, reach out:</p>
       <ul>
         <li><strong>Email:</strong> <span id="email4"></span><script>document.getElementById('email4').innerHTML = atob('dG91Z2hqb2JzLmRyZXdAZ21haWwuY29t')</script></li>
-        <li><strong>Phone:</strong> (309) 233-9004</li>
+        <li><strong>Phone:</strong> 309-928-9080</li>
         <li><strong>Address:</strong> 140 Oakmoor Dr, East Peoria, IL 61611</li>
       </ul>
 

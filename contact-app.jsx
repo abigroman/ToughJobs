@@ -37,7 +37,7 @@ function ContactHero() {
               <span className="m" style={{ color: "var(--accent)", textShadow: "0 4px 12px rgba(0, 0, 0, 0.6)" }}>profit.</span>
             </h1>
             <p style={{ maxWidth: 680, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,.82)", margin: "0 0 40px" }}>
-              Call us at <a href="tel:+13092339004" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}>(309) 233-9004</a> or
+              Call us at <a href="tel:+13099289080" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}>309-928-9080</a> or
               fill out the form below. We'll get back to you within 24 hours with a ballpark quote and
               next steps.
             </p>
@@ -129,7 +129,7 @@ function ContactForm() {
             <div className="display" style={{ fontSize: 64, marginBottom: 20 }}>✓</div>
             <h2 className="display" style={{ fontSize: 42, marginBottom: 20 }}>Got it.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, margin: 0 }}>
-              We'll call you within 24 hours to discuss your project. Keep an eye on (309) 233-9004.
+              We'll call you within 24 hours to discuss your project. Keep an eye on 309-928-9080.
             </p>
           </div>
         </div>
@@ -265,7 +265,7 @@ function LocationInfo() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 32 }}>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", opacity: 0.7, marginBottom: 4 }}>Phone</div>
-                <a href="tel:+13092339004" style={{ fontSize: 24, fontFamily: '"Archivo"', fontWeight: 700, color: "var(--accent)", textDecoration: "none" }}>(309) 233-9004</a>
+                <a href="tel:+13099289080" style={{ fontSize: 24, fontFamily: '"Archivo"', fontWeight: 700, color: "var(--accent)", textDecoration: "none" }}>309-928-9080</a>
               </div>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", opacity: 0.7, marginBottom: 4 }}>Email</div>

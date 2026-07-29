@@ -586,8 +586,8 @@ function SubmittedStep({ contact }) {
         </p>
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
           <a className="btn btn-dark" href="contact.html">Book my strategy call →</a>
-          <a className="btn" href="tel:+13092339004" style={{ background: "rgba(0,0,0,.25)", border: "2px solid rgba(255,255,255,.5)" }}>
-            <Voltage size={16} /> (309) 233-9004
+          <a className="btn" href="tel:+13099289080" style={{ background: "rgba(0,0,0,.25)", border: "2px solid rgba(255,255,255,.5)" }}>
+            <Voltage size={16} /> 309-928-9080
           </a>
         </div>
         <p style={{ fontSize: 13, color: "rgba(255,255,255,.7)", marginTop: 28 }}>

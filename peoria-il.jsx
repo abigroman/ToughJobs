@@ -16,7 +16,7 @@ export default function Page() {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Trades Marketing in Peoria, IL — Toughjobs | Local SEO, Websites &amp; Ads</title>
-<meta name="description" content="Toughjobs is a digital marketing agency based in East Peoria, IL, built for HVAC, plumbing, electrical, roofing & contractor businesses across Greater Peoria. Websites, local SEO, and ads that book jobs. Call (309) 233-9004." />
+<meta name="description" content="Toughjobs is a digital marketing agency based in East Peoria, IL, built for HVAC, plumbing, electrical, roofing & contractor businesses across Greater Peoria. Websites, local SEO, and ads that book jobs. Call 309-928-9080." />
 <link rel="canonical" href="https://toughjobs.org/peoria-il.html" />
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@ export default function Page() {
   "@type": "ProfessionalService",
   "name": "Toughjobs Digital Marketing",
   "description": "Digital marketing agency for trades and home-service businesses in Peoria, Illinois.",
-  "telephone": "+1-309-233-9004",
+  "telephone": "+1-309-928-9080",
   "url": "https://toughjobs.org/peoria-il.html",
   "address": {
     "@type": "PostalAddress",
@@ -66,7 +66,7 @@ export default function Page() {
     <p class="lede">We're not an out-of-state agency renting a PO box. Toughjobs is headquartered on Oakmoor Drive in East Peoria — we live here, our clients are our neighbors, and we know what it takes for a trades business to win work from Dunlap to Pekin.</p>
     <div class="hero-actions">
       <a class="btn" href="contact.html">Get a free Peoria market teardown</a>
-      <a class="btn btn-ghost" href="tel:3092339004">(309) 233-9004</a>
+      <a class="btn btn-ghost" href="tel:3099289080">309-928-9080</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="n">180K+</div><div class="l">Residents across the City of Peoria &amp; immediate suburbs</div></div>
@@ -186,7 +186,7 @@ export default function Page() {
     <p>Free, no-pressure teardown of your website, Google presence, and what your Peoria competitors are doing. We'll tell you exactly where you're losing jobs.</p>
     <div class="hero-actions">
       <a class="btn" href="contact.html">Request a free teardown</a>
-      <a class="btn btn-ghost" href="tel:3092339004">Call (309) 233-9004</a>
+      <a class="btn btn-ghost" href="tel:3099289080">Call 309-928-9080</a>
     </div>
   </div>
 </section>
@@ -201,7 +201,7 @@ export default function Page() {
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="tel:3092339004">(309) 233-9004</a>
+        <a href="tel:3099289080">309-928-9080</a>
       </div>
     </div>
     <div class="copy">&copy; 2026 Toughjobs Digital Marketing · 140 Oakmoor Dr, East Peoria, IL 61611 · Marketing built for the trades across Illinois &amp; Iowa.</div>
