@@ -3,7 +3,7 @@
 
   var css = document.createElement('style');
   css.textContent = [
-    '#tj-chat-launcher{position:fixed;right:24px;bottom:24px;z-index:9998;',
+    '#tj-chat-launcher{position:fixed;right:10px;bottom:10px;z-index:9998;',
       'display:flex;align-items:center;gap:12px;background:#12182a;',
       'border:1px solid rgba(255,255,255,.14);border-radius:14px;',
       'padding:10px 18px 10px 10px;box-shadow:0 12px 30px rgba(0,0,0,.45);',

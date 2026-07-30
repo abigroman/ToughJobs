@@ -55,7 +55,7 @@
   if (!D && window.SERVICE_DATA && window.SERVICE_DATA.roi) {
     D = window.SERVICE_DATA.roi;
   }
-  if (D) {
+  if (D && document.getElementById('roi-driver') && document.getElementById('roi-job')) {
     var fmt = function (n) { return n.toLocaleString('en-US', { maximumFractionDigits: 0 }); };
     var money = function (n) { return '$' + fmt(n); };
     var driver = document.getElementById('roi-driver');

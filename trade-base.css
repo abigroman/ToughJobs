@@ -36,6 +36,7 @@
     --pad-section-tight: 80px;
     --gray: #282828;
     --dark-red: var(--red-2);
+    --text-shadow-tight: 1px 1px 0 rgba(10,15,28,.9);
   }
 
   .display{
@@ -131,7 +132,7 @@
   .hero-text { max-width:620px; text-align:left; margin:0; }
   .eyebrow-accent { color:var(--accent); }
   .h1-hero { font-size:clamp(56px, 8vw, 116px); margin:20px 0 28px; max-width:1100px; line-height:0.95; color:var(--white); }
-  .h2-hero { font-family:'Archivo Black', sans-serif; font-size:clamp(28px, 4vw, 48px); color:var(--accent); text-shadow:2px 2px 1px rgba(0,0,0,1); text-transform:uppercase; letter-spacing:-0.01em; margin:0 0 40px; max-width:900px; line-height:1.0; }
+  .h2-hero { font-family:'Archivo Black', sans-serif; font-size:clamp(28px, 4vw, 48px); color:var(--accent); text-shadow:var(--text-shadow-tight); text-transform:uppercase; letter-spacing:-0.01em; margin:0 0 40px; max-width:900px; line-height:1.0; }
   .button-group { display:flex; gap:14px; flex-wrap:wrap; }
   .btn-accent { background:var(--accent); }
   .btn-black { background:#000000; color:var(--white); }
@@ -187,6 +188,7 @@
   .bg-blueprint-light h1, .bg-blueprint-light h2, .bg-blueprint-light h3,
   .bg-blueprint-light h4, .bg-blueprint-light h5, .bg-blueprint-light h6 {
     color: var(--ink);
+    text-shadow: none;
   }
   .bg-blueprint-light .eyebrow { color: var(--accent); opacity: 1; text-shadow: none; }
   .bg-blueprint-light p, .bg-blueprint-light li { color: rgba(10,15,28,.82); font-weight: 700; }
@@ -198,7 +200,7 @@
   .bg-blueprint-light .mix-lever-header.lever-b .mix-lever-title{ color: #F0A030; }
   .bg-blueprint-light .mix-lever-header.lever-c .mix-lever-title{ color: #7DA8FF; }
   .bg-blueprint-light .mix-lever-subtitle{ color: var(--ink); text-shadow: none; }
-  .bg-blueprint-light .mix-lever-letter{ text-shadow: 2px 2px 1px rgba(0,0,0,1); }
+  .bg-blueprint-light .mix-lever-letter{ text-shadow:var(--text-shadow-tight); }
 
 /* ── CTA section (special red layout with gradient) ── */
   .cta-section {
@@ -238,10 +240,10 @@
   }
 
   /* ── Accent headline glow (the red "punch word" in H1/H2s) ── */
-  .headline-glow{ text-shadow: 2px 2px 1px rgba(0,0,0,1); }
+  .headline-glow{ text-shadow:var(--text-shadow-tight); }
 
   /* ── CTA headline (crisp shadow, no blur) ── */
-  .cta-headline{ font-size:clamp(48px, 7vw, 96px); margin:0 0 32px; color:var(--white); text-shadow:2px 2px 1px rgba(0,0,0,1); }
+  .cta-headline{ font-size:clamp(48px, 7vw, 96px); margin:0 0 32px; color:var(--white); text-shadow:var(--text-shadow-tight); }
 
   /* ── Title color utilities (replace inline color on headline spans) ── */
   .c-white{ color:var(--white); }
@@ -355,6 +357,24 @@
   .mix-card-price.lever-c{ color:#7DA8FF; }
   .mix-card-roi{ font-size:11px; opacity:.7; font-weight:600; }
 
+  @media (max-width:760px){
+    .mix-grid-2, .mix-grid-3, .mix-grid-4, .mix-grid-5{
+      flex-direction:column;
+    }
+    .mix-grid-2 > div, .mix-grid-3 > div, .mix-grid-4 > div, .mix-grid-5 > div{
+      flex-basis:auto;
+      width:100%;
+    }
+    .mix-grid-2 > div > div:nth-child(1), .mix-grid-3 > div > div:nth-child(1),
+    .mix-grid-4 > div > div:nth-child(1), .mix-grid-5 > div > div:nth-child(1),
+    .mix-grid-2 > div > div:nth-child(2), .mix-grid-3 > div > div:nth-child(2),
+    .mix-grid-4 > div > div:nth-child(2), .mix-grid-5 > div > div:nth-child(2),
+    .mix-grid-2 > div > div:nth-child(3), .mix-grid-3 > div > div:nth-child(3),
+    .mix-grid-4 > div > div:nth-child(3), .mix-grid-5 > div > div:nth-child(3){
+      min-height:0;
+    }
+  }
+
 /* ── Text shadow (applied sitewide on trade pages) ──
    Scoped to real, explicit selectors — the old version used
    [class*="title"|"heading"|"label"|"card"|"hero"|"cta"] wildcards
@@ -365,7 +385,7 @@
 h1, h2, h3, h4, h5, h6,
   li, span, a, button, label, td, th,
   .display, .stat-num, .stat-label {
-    text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+    text-shadow:var(--text-shadow-tight);
   }
   p { text-shadow: none; }
 
@@ -415,3 +435,21 @@ h1, h2, h3, h4, h5, h6,
   body.page-services footer .footer-main{ padding:60px 0; }
   body.page-services footer .footer-section h4{ padding-bottom:8px; }
   body.page-services footer .footer-bottom{ padding:24px 0; }
+
+  @media (max-width:760px){
+    .mix-grid-2, .mix-grid-3, .mix-grid-4, .mix-grid-5{
+      flex-direction:column;
+    }
+    .mix-grid-2 > div, .mix-grid-3 > div, .mix-grid-4 > div, .mix-grid-5 > div{
+      flex-basis:auto;
+      width:100%;
+    }
+    .mix-grid-2 > div > div:nth-child(1), .mix-grid-3 > div > div:nth-child(1),
+    .mix-grid-4 > div > div:nth-child(1), .mix-grid-5 > div > div:nth-child(1),
+    .mix-grid-2 > div > div:nth-child(2), .mix-grid-3 > div > div:nth-child(2),
+    .mix-grid-4 > div > div:nth-child(2), .mix-grid-5 > div > div:nth-child(2),
+    .mix-grid-2 > div > div:nth-child(3), .mix-grid-3 > div > div:nth-child(3),
+    .mix-grid-4 > div > div:nth-child(3), .mix-grid-5 > div > div:nth-child(3){
+      min-height:0;
+    }
+  }

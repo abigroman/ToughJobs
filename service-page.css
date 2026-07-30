@@ -31,7 +31,11 @@ header .container{padding:0}
 .sp .hero-img-slot .num{font-family:"Archivo Black",sans-serif;font-size:clamp(40px,5vw,64px);line-height:1;color:rgba(255,255,255,.22)}
 .sp .hero-img-slot .lbl{font-family:"Archivo",sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .sp .hero-img-slot img{height:100%;width:auto;object-fit:contain}
-@media(max-width:880px){.sp .hero .container{grid-template-columns:1fr}.sp .hero-img-slot{aspect-ratio:16/10;order:-1;margin-bottom:8px}}
+@media(max-width:1024px){
+  .sp .hero .container{grid-template-columns:1fr}
+  .sp .hero-text{max-width:100%}
+  .sp .hero-img-slot{display:none!important}
+}
 
 /* ── Hero ────────────────────────────────────────────────────────────── */
 .sp .hero{padding:clamp(80px,10vw,150px) 0 clamp(60px,7vw,96px);position:relative;overflow:visible}

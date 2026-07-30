@@ -179,6 +179,9 @@
   html.a11y-bold body, html.a11y-bold body * { font-weight: 700 !important; }
   html.a11y-align body p, html.a11y-align body li { text-align: left !important; }
 
+  @media (max-width: 1024px) {
+    video[muted][playsinline] { display: none !important; }
+  }
   @media (max-width: 480px) { .a11y-panel { max-width: 100%; } }
   @media (prefers-reduced-motion: reduce) {
     .a11y-panel, .a11y-overlay, .a11y-toggle, .a11y-step-btn, .a11y-nav a, .accessibility-btn { transition: none; }
@@ -189,6 +192,49 @@
   style.id = 'a11y-styles';
   style.textContent = css;
   document.head.appendChild(style);
+
+  // Disable decorative background video playback on tablets and phones.
+  var compactVideoMedia = window.matchMedia('(max-width: 1024px)');
+  var decorativeVideoSelector = 'video[muted][playsinline]';
+
+  function updateDecorativeVideo(video) {
+    if (compactVideoMedia.matches) {
+      if (video.hasAttribute('autoplay')) {
+        video.dataset.desktopAutoplay = 'true';
+        video.removeAttribute('autoplay');
+      }
+      video.pause();
+      video.preload = 'none';
+    } else if (video.dataset.desktopAutoplay === 'true') {
+      video.setAttribute('autoplay', '');
+      delete video.dataset.desktopAutoplay;
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function () {});
+      }
+    }
+  }
+
+  function scanDecorativeVideos(root) {
+    if (root.matches && root.matches(decorativeVideoSelector)) {
+      updateDecorativeVideo(root);
+    }
+    if (root.querySelectorAll) {
+      root.querySelectorAll(decorativeVideoSelector).forEach(updateDecorativeVideo);
+    }
+  }
+
+  scanDecorativeVideos(document);
+  new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1) scanDecorativeVideos(node);
+      });
+    });
+  }).observe(document.documentElement, { childList: true, subtree: true });
+  compactVideoMedia.addEventListener('change', function () {
+    document.querySelectorAll(decorativeVideoSelector).forEach(updateDecorativeVideo);
+  });
 
   // ── Build panel DOM ───────────────────────────────────────────────────────
   var overlay = document.createElement('div');

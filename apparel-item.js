@@ -3,7 +3,6 @@
   var p=(window.TJ_APPAREL||[]).find(function(x){return x.id===id;});
   var H=window.TJ_HEX||{};
   if(!p)return;
-  document.title="Toughjobs — "+p.name;
   function hex(n){return H[n]||"#cccccc";}
   var ci=p.colorImages||{};
 
@@ -131,7 +130,7 @@
         +'<p class="price-note">Decoration and additional charges depend on artwork, print size, number of colors, placement and quantity.</p>'
         +'<p class="blurb">'+p.blurb+'</p>'
         +(p.fabric?'<ul class="spec-list"><li><b>Fabric:</b> '+p.fabric+'</li>'+(p.blank?'<li><b>Blank price:</b> '+p.blank+'</li>':'')+'</ul>':'')
-        +'<p class="ship-note">Usually ships within 1&ndash;2 weeks. Rush shipping is available subject to product availability and decoration capacity.</p>'
+        +'<p class="ship-note">We confirm stock, decoration capacity, production timing, and the delivery date before the order is approved.</p>'
         +'<div class="logo-tool">'
           +'<h3>Your logo on it</h3>'
           +'<label class="logo-drop" id="logoDrop"><input type="file" accept="image/*" id="logoFile" /><span id="logoDropTxt">Drop your logo here or <u>browse</u></span><img id="logoPrev" alt="" /></label>'
@@ -185,17 +184,16 @@
     +'<div class="head" style="margin-top:70px"><span class="eyebrow">Why order through Toughjobs</span><h2 class="display">Built for bulk. Priced for crews.</h2></div>'
     +'<div class="bene-grid">'
       +'<div class="bene"><h3>Volume pricing</h3><p>Tiered discounts at 12, 48 and 144 units. Mix colors and sizes — the whole order counts toward your tier.</p></div>'
-      +'<div class="bene"><h3>Decorated turnaround</h3><p>Typical 7&ndash;10 business days from logo approval to delivery, local to the Quad Cities.</p></div>'
+      +'<div class="bene"><h3>Decorated turnaround</h3><p>The production and delivery timeline is confirmed after stock, decoration method, quantity, proof approval, and destination are known.</p></div>'
       +'<div class="bene"><h3>Spec &amp; compliance</h3><p>'+(p.fabric||p.materials.join(', '))+'. Moisture-wicking and hi-vis safety options available on request.</p></div>'
       +'<div class="bene"><h3>One point of contact</h3><p>We handle art, proofs, production and delivery. You approve a proof before anything is printed or stitched.</p></div>'
     +'</div>'
-    +'<div class="quote-row"><blockquote>&ldquo;Ordered 40 pieces for our install crews. One proof, one delivery, everybody sized right.&rdquo;<cite>&mdash; HVAC contractor, Quad Cities</cite></blockquote>'
-    +'<blockquote>&ldquo;The size link saved me a week of texting the guys. Reorders take five minutes.&rdquo;<cite>&mdash; Electrical shop owner, Moline</cite></blockquote></div>'
+    +'<div class="bene-grid"><div class="bene"><h3>Before approval</h3><p>Check product, color, size counts, artwork, placement, delivery address, and in-hands date on the final proof.</p></div><div class="bene"><h3>After approval</h3><p>Keep the approved proof and order summary together so reorders begin from documented specifications.</p></div></div>'
   +'</div></section>'
   // 5 — CTA
   +'<section class="bg-accent2 ctaband"><div class="tex tex-grid"></div><div class="container">'
     +'<h2 class="display reveal">Ready to outfit the crew?</h2>'
-    +'<p class="reveal d1">Send us your logo and the grid above — we\'ll confirm colors, price your tier, and get a proof over same-week.</p>'
+    +'<p class="reveal d1">Send us your logo and the grid above — we\'ll confirm the product, colors, quantity, price, timeline, and production proof.</p>'
     +'<div class="reveal d2"><a class="btn" href="contact.html">Get a quote &rarr;</a> <a class="btn" href="clothing-apparel.html" style="background:var(--ink)">All apparel &rarr;</a></div>'
   +'</div></section>';
 

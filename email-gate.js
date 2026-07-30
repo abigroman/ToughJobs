@@ -155,12 +155,12 @@
       }
     </style>
     <div class="gate-card">
-      <div class="gate-eyebrow">✓ Unlock Access</div>
+      <div class="gate-eyebrow">✓ Get Access</div>
       <h2 class="gate-h">Get your free tool access</h2>
-      <p class="gate-p">Enter your email to unlock all four free Toughjobs marketing tools — no credit card required.</p>
+      <p class="gate-p">Enter your email to open all four free Toughjobs marketing tools — no credit card required.</p>
       <form class="gate-form" id="gate-form">
         <input type="email" id="gate-email" placeholder="your@email.com" required />
-        <button type="submit" class="gate-submit">Unlock Tools →</button>
+        <button type="submit" class="gate-submit">Open Tools →</button>
         <div class="gate-consent">
           We'll send you updates on new tools and marketing insights. <a href="privacy.html">Privacy</a> · Unsubscribe anytime.
         </div>
