@@ -13,6 +13,7 @@
   +'.tj-peek .bub img{display:block;width:100%;height:auto;filter:drop-shadow(3px 3px 0 rgba(10,15,28,.35))}'
   +'.tj-peek .x{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border:2px solid #0A0F1C;background:#fff;border-radius:50%;font-size:16px;line-height:1;cursor:pointer;color:#0A0F1C;padding:0;z-index:4}'
   +'.tj-peek .x:focus-visible,.tj-peek .bub a:focus-visible{outline:3px solid #fff;outline-offset:3px}'
+  +'@media(min-width:641px) and (max-width:1024px){.tj-peek.up{transform:translateY(calc(100% - clamp(360px,48vh,440px)))}}'
   +'@media(max-width:640px){.tj-peek{display:none!important}}'
   +'@media(prefers-reduced-motion:reduce){.tj-peek,.tj-peek .bub{transition-duration:.01ms!important}}';
   document.head.appendChild(css);
