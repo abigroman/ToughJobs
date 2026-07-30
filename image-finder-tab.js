@@ -1,5 +1,9 @@
 // Self-injecting Image Finder slide-out tab + modal (loads image-finder.html in an iframe)
 (function () {
+  // Internal editing utility: never inject it into public or preview deployments.
+  var localHosts = { 'localhost': true, '127.0.0.1': true, '::1': true };
+  if (!localHosts[window.location.hostname]) return;
+
   // Inject stylesheet if not already present
   if (!document.querySelector('link[href="image-finder-tab.css"]')) {
     var link = document.createElement('link');
