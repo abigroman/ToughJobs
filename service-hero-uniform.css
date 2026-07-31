@@ -1,0 +1,108 @@
+/* Uniform first-section hero media for Toughjobs service pages.
+   Loaded by inject-header.js so page-specific inline CSS can be normalized. */
+
+@media (min-width: 1025px) {
+  body.sp main > section.hero > .container {
+    min-height: clamp(520px, 48vw, 660px);
+  }
+
+  body.sp main > section.hero .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 58% !important;
+    padding-right: clamp(16px, 2vw, 30px);
+  }
+
+  body.sp main > section.hero .hero-img-slot:not(:has(.pc-carousel)) {
+    position: absolute !important;
+    left: auto !important;
+    right: 0 !important;
+    top: 50% !important;
+    bottom: auto !important;
+    width: 38% !important;
+    height: clamp(430px, 46vw, 560px) !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+  }
+
+  body.sp main > section.hero .hero-img-slot:not(:has(.pc-carousel)) > img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 490px !important;
+    height: 100% !important;
+    max-height: 560px !important;
+    object-fit: contain !important;
+    object-position: center right !important;
+    margin: 0 0 0 auto !important;
+  }
+
+  /* Print & Collateral carousel: 15% smaller and slightly higher on desktop. */
+  body.sp main > section.hero .hero-img-slot:has(.pc-carousel) {
+    position: absolute !important;
+    left: auto !important;
+    right: 0 !important;
+    top: 50% !important;
+    bottom: auto !important;
+    width: 40% !important;
+    height: clamp(460px, 50vw, 620px) !important;
+    transform: translateY(calc(-50% - 24px)) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.sp main > section.hero .hero-img-slot .pc-carousel {
+    width: 85% !important;
+    height: 85% !important;
+    max-width: 470px !important;
+    max-height: 610px !important;
+    min-height: 0 !important;
+    margin: 0 0 0 auto !important;
+  }
+
+  body.sp main > section.hero .hero-img-slot .pc-slide img {
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Keep normal service-page hero art hidden on compact layouts, as designed. */
+  body.sp main > section.hero .hero-img-slot:not(:has(.pc-carousel)) {
+    display: none !important;
+  }
+
+  /* Print & Collateral remains visible on mobile, reduced 15% and raised substantially. */
+  body.sp main > section.hero .hero-img-slot:has(.pc-carousel) {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  body.sp main > section.hero .hero-img-slot .pc-carousel {
+    width: 85% !important;
+    height: 85% !important;
+    min-height: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateY(-88px) !important;
+    transform-origin: center top !important;
+  }
+
+  body.sp main > section.hero .hero-img-slot .pc-slide img {
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
+
+@media (max-width: 560px) {
+  body.sp main > section.hero .hero-img-slot .pc-carousel {
+    transform: translateY(-105px) !important;
+  }
+}
