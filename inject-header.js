@@ -25,6 +25,61 @@
   document.head.appendChild(stylesheet);
 })();
 
+/*
+  Some trade-page SEO sections were written into the HTML as escaped text,
+  for example: &lt;section class="td-analysis"&gt;...&lt;/section&gt;.
+  Browsers decode the entities into a text node and print the markup on screen.
+  Convert only that known trade-content block back into real DOM elements.
+*/
+(function repairEscapedTradeContent() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  if (!/^trade-.*\.html$/i.test(currentPage)) return;
+
+  const main = document.querySelector('main');
+  if (!main || main.querySelector('section.td-analysis')) return;
+
+  const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
+  const brokenNodes = [];
+
+  while (walker.nextNode()) {
+    const value = walker.currentNode.nodeValue || '';
+    if (
+      value.includes('<section class="td-analysis"') ||
+      value.includes("<section class='td-analysis'")
+    ) {
+      brokenNodes.push(walker.currentNode);
+    }
+  }
+
+  brokenNodes.forEach(textNode => {
+    const raw = textNode.nodeValue || '';
+    const doubleQuoteStart = raw.indexOf('<section class="td-analysis"');
+    const singleQuoteStart = raw.indexOf("<section class='td-analysis'");
+    const start = doubleQuoteStart >= 0 ? doubleQuoteStart : singleQuoteStart;
+    const closingTag = '</section>';
+    const end = raw.lastIndexOf(closingTag);
+
+    if (start < 0 || end < start) return;
+
+    const escapedBlock = raw.slice(start, end + closingTag.length);
+    const template = document.createElement('template');
+    template.innerHTML = escapedBlock.trim();
+
+    const repairedSection = template.content.querySelector('section.td-analysis');
+    if (!repairedSection) return;
+
+    const replacement = document.createDocumentFragment();
+    const before = raw.slice(0, start);
+    const after = raw.slice(end + closingTag.length);
+
+    if (before.trim()) replacement.append(document.createTextNode(before));
+    replacement.append(template.content.cloneNode(true));
+    if (after.trim()) replacement.append(document.createTextNode(after));
+
+    textNode.replaceWith(replacement);
+  });
+})();
+
 (function injectHeader() {
   // Fetch the shared header HTML
   fetch('shared-header.html')
@@ -97,7 +152,7 @@ function initMobileDrawer() {
     });
   }
 
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', event => {
     if (!drawer.classList.contains('open')) return;
 
     if (event.key === 'Escape') {
