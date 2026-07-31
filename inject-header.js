@@ -6,14 +6,22 @@
   Place it BEFORE any other scripts that need the header to exist.
 */
 
-(function loadServiceHeroStyles() {
-  if (!document.body.classList.contains('sp')) return;
-  if (document.querySelector('link[data-service-hero-uniform]')) return;
+(function loadSharedHeroStyles() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const isServicePage = document.body.classList.contains('sp');
+  const isTradePage = /^trade-.*\.html$/i.test(currentPage);
+
+  if (!isServicePage && !isTradePage) return;
+
+  document.body.classList.toggle('is-service-page', isServicePage);
+  document.body.classList.toggle('is-trade-page', isTradePage);
+
+  if (document.querySelector('link[data-shared-hero-layout]')) return;
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = 'service-hero-uniform.css?v=20260730';
-  stylesheet.dataset.serviceHeroUniform = 'true';
+  stylesheet.href = 'service-hero-uniform.css?v=20260730b';
+  stylesheet.dataset.sharedHeroLayout = 'true';
   document.head.appendChild(stylesheet);
 })();
 
