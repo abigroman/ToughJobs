@@ -6,6 +6,17 @@
   Place it BEFORE any other scripts that need the header to exist.
 */
 
+(function loadServiceHeroStyles() {
+  if (!document.body.classList.contains('sp')) return;
+  if (document.querySelector('link[data-service-hero-uniform]')) return;
+
+  const stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href = 'service-hero-uniform.css?v=20260730';
+  stylesheet.dataset.serviceHeroUniform = 'true';
+  document.head.appendChild(stylesheet);
+})();
+
 (function injectHeader() {
   // Fetch the shared header HTML
   fetch('shared-header.html')
