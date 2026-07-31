@@ -383,11 +383,14 @@
    The mix-* classes now carry their own explicit text-shadow, so the
    wildcards are removed; this rule covers only real page elements. */
 h1, h2, h3, h4, h5, h6,
-  li, span, a, button, label, td, th,
+  li, span, button, label, td, th,
   .display, .stat-num, .stat-label {
     text-shadow:var(--text-shadow-tight);
   }
-  p { text-shadow: none; }
+  p, a { text-shadow: none; }
+  a:not(.btn):not(.nav-link):not(.service-pill):not(.back-btn) {
+    text-decoration: none;
+  }
 
 /* ── services.html-only layout utilities (not used by trade-*.html) ── */
   .resource-title { text-shadow: none; }
