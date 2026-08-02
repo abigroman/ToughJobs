@@ -530,10 +530,10 @@ function TradeFAQs({ data }) {
           
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {data.faqs.map((faq, i) => (
-              <div key={i} style={{ 
-                background: "var(--ink)", 
+              <div key={i} style={{
+                background: "var(--ink)",
                 padding: "28px 32px",
-                borderLeft: "4px solid var(--accent)"
+                borderTop: "1px solid rgba(200,38,42,.3)"
               }}>
                 <div style={{
                   fontFamily: '"Archivo Black", sans-serif',

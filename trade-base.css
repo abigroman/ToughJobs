@@ -3,7 +3,7 @@
 *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;background:#001a4a}
   body{
-    font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
     color:var(--ink);
     background: url('assets/blueprint-background.webp') fixed center/cover no-repeat;
     background-color: #001a4a;
@@ -396,6 +396,14 @@ h1, h2, h3, h4, h5, h6,
   .resource-title { text-shadow: none; }
 
   .section-equal{ min-height:clamp(680px,80vh,900px); display:flex; flex-direction:column; justify-content:center; }
+
+/* ── Footer ticker accessibility ───────────────────────────────────────
+   Higher-specificity selectors (.footer-ticker .ticker-track) override
+   the inline <style> .ticker-track rules defined per-page. */
+  .footer-ticker:hover .ticker-track { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) {
+    .footer-ticker .ticker-track { animation: none; }
+  }
 
   .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
   @media (max-width:1024px){
