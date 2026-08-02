@@ -176,6 +176,50 @@ button.dash-row:hover .td-name { color: var(--accent); }
   .detail-grid, .stat-grid { grid-template-columns: 1fr; }
   .kanban { grid-template-columns: repeat(5, 220px); }
 }
+
+@media (max-width: 768px) {
+  .app { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--accent);
+  }
+  .side-brand, .side-foot { display: none !important; }
+  .side-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 14px;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+  .side-nav::-webkit-scrollbar { display: none; }
+  .side-link {
+    padding: 8px 14px;
+    font-size: 11px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .side-badge {
+    padding: 1px 5px;
+    font-size: 10px;
+    margin-left: 4px;
+  }
+  .main {
+    padding: 20px 16px 40px;
+  }
+  .screen-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+}
 </style>
 </head>
 <body>

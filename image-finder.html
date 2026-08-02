@@ -114,6 +114,16 @@
     background: #14151a; border: 1px solid #282828; border-radius: 6px;
     padding: 8px 14px; font-size: 13px; color: #ccc;
   }
+
+  @media (max-width: 640px) {
+    body { padding: 16px; }
+    h1 { font-size: 24px; }
+    .search-wrap { flex-direction: column; align-items: stretch !important; }
+    .search-wrap input, .search-wrap button { width: 100% !important; max-width: none !important; }
+    .lightbox { padding: 20px; }
+    .lightbox .lb-close { top: 12px; right: 16px; font-size: 24px; }
+    .lightbox .lb-path { font-size: 11px; word-break: break-all; }
+  }
 </style>
 </head>
 <body>
@@ -304,5 +314,8 @@ document.getElementById('closeBtn').addEventListener('click', () => {
 
 </script>
 
+<!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js?token=19f259b2-bf41-4547-a2ea-088ae600fb6b"></script>
+<!-- impeccable-live-end -->
 </body>
 </html>
