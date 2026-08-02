@@ -209,6 +209,7 @@
     background: linear-gradient(180deg, rgba(168, 1, 0, 0.45) 0%, rgba(200, 38, 42, 0.35) 100%);
     position: relative;
     padding-block: 100px;
+    border-bottom: 8px solid #472345;
   }
 
 
