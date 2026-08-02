@@ -37,9 +37,6 @@
   .nav-dropdown-menu > div{display:flex;flex-direction:column;gap:10px}
   .nav-dropdown-item:hover{color:var(--red)}
   .nav-quote{background:var(--red);animation:navQuoteIn .65s cubic-bezier(.22,.9,.3,1) .35s backwards}
-  to{opacity:1;transform:translateX(0)}}
-  to{opacity:1;transform:translateX(0)}}
-  @media(max-width:880px){nav}
   body{--accent2:#002768}
   @media(min-width:881px){
     .sp .hero .hero-img-slot{padding-right:clamp(64px,5.5vw,76px)}
@@ -53,18 +50,19 @@
     background:var(--red);
     color:var(--white);
   }
+  .sp .cmp-note{font-size:15px;color:#1c2536;margin-top:20px;font-style:italic}
+  .work-strip{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:clamp(40px,5vw,64px)}
+  .work-item{position:relative;overflow:hidden;aspect-ratio:16/9;background:#0A0F1C;cursor:zoom-in}
+  .work-item img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s ease}
+  .work-item:hover img{transform:scale(1.03)}
+  .work-lbl{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:rgba(10,15,28,.72);font-family:'Archivo',sans-serif;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF}
+  #work-lb{display:none;position:fixed;inset:0;background:rgba(10,15,28,.94);z-index:9000;cursor:zoom-out;align-items:center;justify-content:center}
+  #work-lb.open{display:flex}
+  #work-lb img{max-width:92vw;max-height:88vh;object-fit:contain}
+  #work-lb-close{position:absolute;top:20px;right:28px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;padding:0;font-family:'Archivo',sans-serif;font-weight:800;line-height:1}
+  @media(max-width:680px){.work-strip{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="shared-header.css" />
-<style id="white-texture-sweep">
-/* Engineering blueprint texture on all white surfaces */
-.bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
-  background-color:#FFFFFF !important;
-  background-image:url('assets/white-engineering-background.webp') !important;
-  background-size:cover !important;
-  background-position:center !important;
-  background-attachment:fixed !important;
-}
-</style>
 <!-- SEO-FAQ-SCHEMA:START -->
 <script type="application/ld+json">
 {
@@ -120,7 +118,7 @@
       <h1 class="display reveal d1">Contractor branding<br><span class="accent2c">built for the field.</span></h1>
       <p class="lede reveal d2">Contractor branding should stay recognizable on a truck at road speed, a shirt at the door, a phone screen, an estimate, and a yard sign. Toughjobs builds the logo, color, type, messaging, and production files as one working system instead of a mark that only looks finished in a presentation.</p>
       <div class="reveal d3"><a class="btn" href="contact.html">Book a free strategy call &rarr;</a></div>
-      <div class="kpis"><div class="kpi reveal"><div class="num" style="font-size:clamp(20px,2.7vw,38px)">ONE LOOK</div><div class="lbl">The same recognizable system across every touchpoint</div></div><div class="kpi reveal"><div class="num" style="font-size:clamp(20px,2.7vw,38px)">FIELD</div><div class="lbl">Layouts tested for trucks, uniforms, signs, and small screens</div></div><div class="kpi reveal"><div class="num" style="font-size:clamp(20px,2.7vw,38px)">FILES</div><div class="lbl">Production-ready formats organized for future vendors</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+      <div class="kpis"><div class="kpi reveal"><div class="num" style="font-size:clamp(20px,2.7vw,38px)">ONE LOOK</div><div class="lbl">The same recognizable system across every touchpoint</div></div><div class="kpi reveal"><div class="num" style="font-size:clamp(20px,2.7vw,38px)">FIELD</div><div class="lbl">Layouts tested for trucks, uniforms, signs, and small screens</div></div><div class="kpi reveal"><div class="num" style="font-size:clamp(20px,2.7vw,38px)">FILES</div><div class="lbl">Production-ready formats organized for future vendors</div></div></div></div>
       </div>
       <div class="hero-img-slot"><img src="assets/trade-hero-restoration.webp" alt="Toughjobs restoration professional"></div>
     </div>
@@ -148,6 +146,12 @@
         <h2 class="display">Instant credibility on every street.</h2>
       </div>
       <div class="earn"><div class="card reveal d1"><div class="ic">01</div><h4>Look bigger than you are</h4><p>Consistent branding makes a solo operator read as an established firm.</p></div><div class="card reveal d2"><div class="ic">02</div><h4>Rolling billboards</h4><p>A wrapped truck advertises 40,000+ times a day for pennies per view.</p></div><div class="card reveal d3"><div class="ic">03</div><h4>Trust before the call</h4><p>A pro look wins the bid before you ever quote a price.</p></div></div>
+      <div class="work-strip">
+        <div class="work-item reveal"><img src="assets/wrap-truck-erik.webp" alt="Erik Electrical truck wrap" loading="lazy" /><span class="work-lbl">Vehicle Wrap</span></div>
+        <div class="work-item reveal d1"><img src="assets/wrap-trailer-guacnroll.webp" alt="Guac N Roll trailer wrap" loading="lazy" /><span class="work-lbl">Trailer Wrap</span></div>
+        <div class="work-item reveal d2"><img src="assets/customer-technician.webp" alt="Branded crew on the job" loading="lazy" /><span class="work-lbl">Crew Apparel</span></div>
+        <div class="work-item reveal d3"><img src="assets/print-collateral-carousel01.webp" alt="Print collateral design" loading="lazy" /><span class="work-lbl">Print & Collateral</span></div>
+      </div>
     </div>
   </section>
 
@@ -168,23 +172,7 @@
       </div>
       <p class="cmp-note">A mismatched logo on a magnet says 'small.' A wrapped truck and matching crew says 'call them.'</p>
     </div>
-  </section>
-
-  <!-- OPERATIONAL PROOF -->
-  <section class="bg-light">
-    <div class="tex tex-dots-d"></div>
-    <div class="container">
-      <div class="head reveal">
-        <span class="eyebrow">Evidence, not anecdotes</span>
-        <h2 class="display">What belongs in a useful performance record.</h2>
-      </div>
-      <div class="tess">
-        <div class="t reveal"><h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;margin:0 0 10px">Baseline</h3><p class="q" style="font-style:normal">Record the starting assets, access, tracking, market, budget, and operating constraints before work begins.</p></div>
-        <div class="t reveal"><h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;margin:0 0 10px">Work log</h3><p class="q" style="font-style:normal">Document what changed, when it changed, who approved it, and what still depends on the client or another vendor.</p></div>
-        <div class="t reveal"><h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;margin:0 0 10px">Verified outcome</h3><p class="q" style="font-style:normal">Connect calls and forms to lead quality or booked work when the business can supply that information. Never substitute a stock quote for proof.</p></div>
-      </div>
-    </div>
-  <div class="container seo-longform" style="max-width:900px;margin:64px auto 0;padding-top:44px;border-top:1px solid rgba(10,15,28,.14)">
+    <div class="container seo-longform" style="max-width:900px;margin:0 auto;padding-top:64px">
     <h2 class="display" style="font-size:clamp(26px,3vw,38px);line-height:1.05;color:#0A0F1C;margin:0 0 20px">A contractor brand has to survive real use</h2>
     <div style="font-size:16.5px;line-height:1.72;color:#1c2536">
       <p style="margin:0 0 18px"><strong>Contractor branding</strong> is not a logo file by itself. The identity has to work in sunlight, dust, embroidery, vinyl, print, invoices, social profiles, and a mobile header. That requires a simple hierarchy, readable type, controlled colors, and versions that stay clear at different sizes.</p>
@@ -242,7 +230,7 @@
   .td-note-list li{padding-left:4px;font-size:15px;line-height:1.5}
   .td-soft-cta{margin:28px 0;padding:20px 0;border-top:1px solid rgba(10,15,28,.15);border-bottom:1px solid rgba(10,15,28,.15)}
   .td-soft-cta p{margin:0}
-  .td-analysis a{color:#4a5568;font-weight:inherit;text-decoration:none;text-shadow:none}
+  .td-analysis a{color:#3a4254;font-weight:inherit;text-decoration:none;text-shadow:none}
   .td-analysis a:hover{color:#0A0F1C;text-decoration:none}
   .td-analysis li,.td-analysis span,.td-analysis td,.td-analysis th{text-shadow:none}
   .td-faq-list{margin-top:12px}
@@ -311,25 +299,24 @@
   </div>
 </section>
 <!-- SEO-TRADE-CONTENT:END -->
-</main>
 
-
-    <section data-screen-label="Our Endeavors" class="gb-section" style="background:#ECEFF4;background-image:url('assets/white-engineering-background.webp');background-size:cover;background-position:center;padding:56px 32px;position:relative;overflow:hidden;box-shadow:inset 0 2px 2px rgba(0,0,0,.45), inset 0 -2px 2px rgba(0,0,0,.45);">
+  <!-- GIVE BACK -->
+  <section data-screen-label="Our Endeavors" class="gb-section" style="background:#0A0F1C;background-image:url('assets/blueprint-bg-darker.webp');background-size:cover;background-position:center;padding:56px 32px;position:relative;overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:1;">
       <div class="gb-outer" style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;">
         <div>
           <div style="margin-bottom:24px;">
             <span style="font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#C8262A;">More than marketing</span>
-            <h2 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(32px,3.6vw,50px);line-height:1.02;color:#0A0F1C;margin:12px 0 0;"><span style="color:#C8262A;">Two ways we</span> give back</h2>
+            <h2 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(32px,3.6vw,50px);line-height:1.02;color:#FFFFFF;margin:12px 0 0;"><span style="color:#C8262A;">Two ways we</span> give back</h2>
           </div>
           <div class="gb-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;">
-            <div class="gb-card" style="background:#002768;padding:36px 30px;box-shadow:0 20px 50px -30px rgba(0,39,104,.5);border-top:4px solid #C8262A;">
+            <div class="gb-card" style="background:#002768;padding:36px 30px;box-shadow:0 4px 24px rgba(0,0,0,.30);border-top:4px solid #C8262A;">
               <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.2em;color:#C8262A;font-weight:700;">01 / PARTNERSHIP</span>
               <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:22px;color:#fff;margin:16px 0 12px;line-height:1.05;">Go independent, backed by us</h3>
               <p style="font-family:'Archivo',sans-serif;font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 28px;">You bring the truck, tools, and skill. We hand you the website, brand, systems, and marketing to turn one truck into a real company.</p>
               <a href="partnerships.html" style="display:inline-block;background:#C8262A;color:#fff;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.06em;padding:14px 30px;border-radius:6px;text-decoration:none;">Explore Partnership</a>
             </div>
-            <div class="gb-card" style="background:#0A0F1C;padding:36px 30px;box-shadow:0 20px 50px -30px rgba(0,39,104,.5);border-top:4px solid #C8262A;">
+            <div class="gb-card" style="background:#0A0F1C;padding:36px 30px;box-shadow:0 4px 24px rgba(0,0,0,.30);border-top:4px solid #C8262A;">
               <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.2em;color:#C8262A;font-weight:700;">02 / HELPING HANDS</span>
               <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:22px;color:#fff;margin:16px 0 12px;line-height:1.05;">A hand up when budget is tight</h3>
               <p style="font-family:'Archivo',sans-serif;font-size:15px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 28px;">One day a week we help people with more grit than budget get a business off the ground — honest guidance, real direction, no pressure.</p>
@@ -344,6 +331,7 @@
     </div>
     <style>@media(max-width:900px){ .gb-outer{ grid-template-columns:1fr !important; } .gb-grid{ grid-template-columns:1fr !important; } .gb-img{ min-height:280px !important; order:-1; } }</style>
   </section>
+</main>
 
 <script src="inject-footer.js"></script>
 
@@ -371,5 +359,24 @@
 <script src="all-services-section.js"></script>
 <script src="accessibility.js?v=20260729"></script>
 <script src="image-finder-tab.js"></script>
+<script>
+(function(){
+  var lb=document.createElement('div');lb.id='work-lb';
+  var close=document.createElement('button');close.id='work-lb-close';close.setAttribute('aria-label','Close');close.textContent='×';
+  var lbImg=document.createElement('img');lbImg.alt='';
+  lb.appendChild(close);lb.appendChild(lbImg);document.body.appendChild(lb);
+  function closeLb(){lb.classList.remove('open');}
+  lb.addEventListener('click',closeLb);
+  close.addEventListener('click',function(e){e.stopPropagation();closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+  document.querySelectorAll('.work-item').forEach(function(el){
+    el.addEventListener('click',function(){
+      var src=el.querySelector('img');
+      lbImg.src=src.src;lbImg.alt=src.alt||'';
+      lb.classList.add('open');
+    });
+  });
+})();
+</script>
 </body>
 </html>

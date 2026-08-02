@@ -44,6 +44,8 @@ Do NOT edit anything inside `_LOCKED/` — it is the backup of last resort.
 
 **Never let two same-background sections touch.** Adjacent sections must contrast each other — alternate light (white) ⇄ dark (ink/navy). A white section must never sit directly above or below another white section; the same goes for two dark sections. If two same-color sections would end up adjacent, merge them into one or change one's background. Going down a page the backgrounds should visibly alternate.
 
+**The footer (`<footer>`) is not a `<section>` and does not count in the alternation rule.** The shared footer has a dark navy gradient (`#001a4a → #002768`), but a dark final `<section>` before it is acceptable — do not change section colors just to contrast with the footer.
+
 **Text color contrast — critical for readability:**
 - Navy backgrounds (`#002768`) → use white (`#FFFFFF`) or red (`#C8262A`) text ONLY. Never use navy or near-navy text on navy backgrounds.
 - Ink backgrounds (`#0A0F1C`) → use white or red text ONLY.
