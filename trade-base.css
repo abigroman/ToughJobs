@@ -180,8 +180,11 @@
   .bg-blueprint-red p, .bg-blueprint-red li { color: rgba(255,255,255,.9); }
 
   .bg-blueprint-light{
-    background-color: rgba(236,240,246,0.91);
-    background-image: none;
+    background-color: #f8f9fb;
+    background-image: url('assets/partnership-schematics-light.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--ink);
   }
   .bg-blueprint-light h1, .bg-blueprint-light h2, .bg-blueprint-light h3,
