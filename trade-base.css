@@ -91,16 +91,15 @@
     min-height: clamp(620px, calc(100svh - 172px), 900px);
     display:flex; align-items:stretch;
   }
-  /* Layered hero background (higher specificity than .bg-blueprint-dark so the
-     blueprint texture + gradients win instead of flat ink). */
+  /* Layered hero background — gradients only; the body's fixed blueprint
+     image shows through underneath, no need to re-declare it here. */
   .hero-section.bg-blueprint-dark{
-    background-color: var(--ink);
+    background-color: rgba(8,12,22,0.82);
     background-image:
       radial-gradient(115% 92% at 85% 30%, rgba(200,38,42,.30) 0%, rgba(200,38,42,0) 55%),
-      linear-gradient(90deg, rgba(8,12,22,.97) 0%, rgba(8,12,22,.9) 38%, rgba(8,12,22,.64) 72%, rgba(8,12,22,.82) 100%),
-      url('assets/blueprint-background.webp');
-    background-size: cover, cover, cover;
-    background-position: center, center, center;
+      linear-gradient(90deg, rgba(8,12,22,.97) 0%, rgba(8,12,22,.9) 38%, rgba(8,12,22,.64) 72%, rgba(8,12,22,.82) 100%);
+    background-size: cover, cover;
+    background-position: center, center;
     background-repeat: no-repeat;
   }
   /* Giant ghosted trade wordmark — fills the upper-left negative space */
@@ -141,8 +140,11 @@
 
 
 /* ── Section background & text themes ── */
+  /* All section bg classes are semi-transparent so the body's fixed
+     blueprint-background.webp shows through every section as one unified
+     engineering texture behind all scrolling content. */
   .bg-blueprint-dark{
-    background-color: var(--ink);
+    background-color: rgba(10,15,28,0.88);
     background-image: none;
     color: var(--white);
   }
@@ -154,7 +156,7 @@
   .bg-blueprint-dark p, .bg-blueprint-dark li { color: rgba(255,255,255,.78); }
 
   .bg-blueprint-navy{
-    background-color: var(--navy);
+    background-color: rgba(0,39,104,0.88);
     background-image: none;
     color: var(--white);
   }
@@ -166,7 +168,7 @@
   .bg-blueprint-navy p, .bg-blueprint-navy li { color: rgba(255,255,255,.78); }
 
   .bg-blueprint-red{
-    background-color: var(--red);
+    background-color: rgba(168,1,0,0.82);
     background-image: none;
     color: var(--white);
   }
@@ -178,11 +180,8 @@
   .bg-blueprint-red p, .bg-blueprint-red li { color: rgba(255,255,255,.9); }
 
   .bg-blueprint-light{
-    background-color: #FFFFFF;
-    background-image: url('assets/white-engineering-background.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: rgba(236,240,246,0.91);
+    background-image: none;
     color: var(--ink);
   }
   .bg-blueprint-light h1, .bg-blueprint-light h2, .bg-blueprint-light h3,
