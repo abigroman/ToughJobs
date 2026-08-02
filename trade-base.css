@@ -580,6 +580,13 @@ h1, h2, h3, h4, h5, h6,
     gap: 8px !important;
   }
 
+  /* Mobile phone: stack mix cards into a single column for readability */
+  @media (max-width: 560px) {
+    .mix-grid-2, .mix-grid-3, .mix-grid-4, .mix-grid-5 {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
   /* Mix cards: let grid size them; drop fixed min-height from inline style */
   .mix-grid-2 > div,
   .mix-grid-3 > div,

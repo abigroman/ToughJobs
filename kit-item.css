@@ -49,3 +49,6 @@
 .mn{font-family:"Archivo",sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .mp{font-size:12.5px;color:var(--red);font-weight:700}
 @media(max-width:900px){.two-col-kit,.bundle-grid{grid-template-columns:1fr}.more-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){
+  .piece-grid,.up-grid,.svc-grid,.more-grid{grid-template-columns:1fr}
+}
