@@ -550,3 +550,67 @@ h1, h2, h3, h4, h5, h6,
     transform: none;
   }
 }
+
+/* ── Mobile & tablet adaptation ─────────────────────────────────────
+   Rethinks layout for touch contexts; not pixel scaling. */
+
+/* Tablet: 5-wide mix grids wrap to 2-up before 760px stacking kicks in */
+@media (max-width: 960px) {
+  .mix-grid-5 { flex-wrap: wrap; }
+  .mix-grid-5 > div { flex: 1 1 calc(50% - 8px); min-width: 0; }
+}
+
+@media (max-width: 760px) {
+  /* Section rhythm: 120px is desktop-scale, 64px works on mobile */
+  section { padding-block: 64px; }
+
+  /* Container: 32px side padding is desktop-scale; reduce for more card width */
+  .container { padding-inline: 16px !important; }
+
+  /* Hero: service-hero-uniform.css owns the trade figure on mobile (stacks it above copy) */
+  .hero-section { min-height: 0; padding-block: 72px 56px; }
+
+  /* Mix: inline style has margin-top:-60px so !important needed to override */
+  .mix-section { margin-top: 0 !important; padding-block: 72px !important; }
+
+  /* Mix grids: switch to CSS Grid 2-column so no flex-wrap rounding ambiguity */
+  .mix-grid-2, .mix-grid-3, .mix-grid-4, .mix-grid-5 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Mix cards: let grid size them; drop fixed min-height from inline style */
+  .mix-grid-2 > div,
+  .mix-grid-3 > div,
+  .mix-grid-4 > div,
+  .mix-grid-5 > div {
+    flex: unset !important;
+    width: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Drop the shared min-heights that force desktop-style alignment */
+  .mix-grid-2 > div > div:nth-child(1), .mix-grid-3 > div > div:nth-child(1),
+  .mix-grid-4 > div > div:nth-child(1), .mix-grid-5 > div > div:nth-child(1),
+  .mix-grid-2 > div > div:nth-child(2), .mix-grid-3 > div > div:nth-child(2),
+  .mix-grid-4 > div > div:nth-child(2), .mix-grid-5 > div > div:nth-child(2),
+  .mix-grid-2 > div > div:nth-child(3), .mix-grid-3 > div > div:nth-child(3),
+  .mix-grid-4 > div > div:nth-child(3), .mix-grid-5 > div > div:nth-child(3) {
+    min-height: 0 !important;
+  }
+
+  /* CTA: hide logo ring after grid collapses to single column */
+  .team-logo-ring { display: none; }
+
+  /* CTA headline: 48px still fits at mobile but clamp lower */
+  .cta-headline { font-size: clamp(34px, 10vw, 52px); }
+  .cta-section { padding-block: 72px; }
+
+  /* Buttons: stack vertically, fill row for easy thumb tap */
+  .button-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .button-group .btn { width: 100%; justify-content: center; }
+
+  /* Reduce hero H2 subtitle on small screens */
+  .h2-hero { font-size: clamp(22px, 6vw, 34px); margin-bottom: 28px; }
+}

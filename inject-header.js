@@ -237,6 +237,20 @@ function setActiveNavLink() {
 
   document.body.classList.add('js-can-animate');
 
+  // Mobile: strip fixed heights and compress card padding (inline styles block CSS cascade)
+  if (window.innerWidth <= 760) {
+    document.querySelectorAll('.mix-grid-2,.mix-grid-3,.mix-grid-4,.mix-grid-5').forEach(grid => {
+      grid.style.setProperty('display', 'grid', 'important');
+      grid.style.setProperty('grid-template-columns', '1fr', 'important');
+      grid.style.setProperty('gap', '8px', 'important');
+      grid.style.setProperty('margin-bottom', '24px', 'important');
+    });
+    document.querySelectorAll('.mix-grid-2 > div,.mix-grid-3 > div,.mix-grid-4 > div,.mix-grid-5 > div').forEach(card => {
+      card.style.setProperty('min-height', '0', 'important');
+      card.style.setProperty('padding', '14px 16px', 'important');
+    });
+  }
+
   // Mix cards — stagger on viewport entry (cards use inline styles, targeted via grid parent)
   const cards = [...document.querySelectorAll('.mix-grid-2 > div, .mix-grid-3 > div, .mix-grid-4 > div, .mix-grid-5 > div')];
   if (cards.length) {
