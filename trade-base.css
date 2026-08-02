@@ -209,7 +209,7 @@
     background: linear-gradient(180deg, rgba(168, 1, 0, 0.45) 0%, rgba(200, 38, 42, 0.35) 100%);
     position: relative;
     padding-block: 100px;
-    border-bottom: 8px solid #472345;
+    border-bottom: 16px solid #472345;
   }
 
 
@@ -467,3 +467,86 @@ h1, h2, h3, h4, h5, h6,
       min-height:0;
     }
   }
+
+/* ── Motion system ───────────────────────────────────────────────────
+   Focal: hero three-beat entrance (scan → figure → buttons).
+   Continuity: mix-card stagger on scroll entry.
+   Feedback: button tactile lift.
+   Accent: blueprint crosshairs acquire target on section entry.
+   All non-essential motion gated on prefers-reduced-motion. */
+
+@keyframes tj-scan-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0%   0 0); }
+}
+@keyframes tj-figure-in {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes tj-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* — Hero entrance: three-beat sequence — */
+  .h1-hero {
+    animation: tj-scan-in 0.65s cubic-bezier(0.16,1,0.3,1) 0.1s both;
+  }
+  .h2-hero {
+    animation: tj-scan-in 0.5s cubic-bezier(0.16,1,0.3,1) 0.55s both;
+  }
+  .button-group {
+    animation: tj-rise 0.4s cubic-bezier(0.16,1,0.3,1) 0.75s both;
+  }
+  .trade-hero-img {
+    animation: tj-figure-in 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+  }
+
+  /* — Blueprint crosshairs: acquire target on section entry — */
+  .blueprint-marks svg {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  }
+  section.sect-visible .blueprint-marks svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* — Button: tactile depth on hover — */
+  .btn {
+    transition: transform .15s cubic-bezier(0.16,1,0.3,1),
+                filter .2s ease,
+                background .2s ease,
+                box-shadow .15s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+    filter: brightness(0.92);
+  }
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+    filter: brightness(0.88);
+  }
+
+  /* — Mix cards: stagger on scroll entry (targets inline-styled card divs) — */
+  .js-can-animate .mix-grid-2 > div,
+  .js-can-animate .mix-grid-3 > div,
+  .js-can-animate .mix-grid-4 > div,
+  .js-can-animate .mix-grid-5 > div {
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1),
+                transform 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+  .js-can-animate .mix-grid-2 > div.is-visible,
+  .js-can-animate .mix-grid-3 > div.is-visible,
+  .js-can-animate .mix-grid-4 > div.is-visible,
+  .js-can-animate .mix-grid-5 > div.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

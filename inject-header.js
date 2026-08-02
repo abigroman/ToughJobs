@@ -227,3 +227,41 @@ function setActiveNavLink() {
     }
   });
 }
+
+// ── Scroll animations (trade pages only) ─────────────────────────
+
+(function initTradeAnimations() {
+  const page = window.location.pathname.split('/').pop() || '';
+  if (!/^trade-.*\.html$/i.test(page)) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  document.body.classList.add('js-can-animate');
+
+  // Mix cards — stagger on viewport entry (cards use inline styles, targeted via grid parent)
+  const cards = [...document.querySelectorAll('.mix-grid-2 > div, .mix-grid-3 > div, .mix-grid-4 > div, .mix-grid-5 > div')];
+  if (cards.length) {
+    cards.forEach((c, i) => { c.dataset.animIdx = i; });
+    const cardObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const idx = Math.min(parseInt(entry.target.dataset.animIdx || '0'), 5);
+        entry.target.style.transitionDelay = (idx * 70) + 'ms';
+        entry.target.classList.add('is-visible');
+        cardObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.1 });
+    cards.forEach(c => cardObs.observe(c));
+  }
+
+  // Sections — blueprint crosshairs acquire target
+  document.querySelectorAll('main > section').forEach(section => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('sect-visible');
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    obs.observe(section);
+  });
+})();
