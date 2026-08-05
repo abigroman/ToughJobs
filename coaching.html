@@ -12,7 +12,7 @@
 <meta name="keywords" content="business coaching for contractors, trades business coaching, contractor coaching, home services business coach, small business coach for tradesmen, electrician business coaching, HVAC business coach, plumbing business coaching, construction business coaching, trades owner mentorship" />
 <link rel="canonical" href="coaching.html" />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="service-page.css?v=20260729" />
+<link rel="stylesheet" href="service-page.css?v=20260802c" />
 <style>
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;background:#0A0F1C}
@@ -34,7 +34,7 @@
   body{--accent2:#002768}
 
   /* ── FIELD COACHING ───────────────────────────────────── */
-  .hero-img-slot.coaching-hero{left:52%;right:0;padding:0;overflow:hidden}
+  .hero-img-slot.coaching-hero{left:52%;right:0;padding:clamp(24px,4vw,56px) clamp(32px,4vw,64px) clamp(24px,4vw,56px) clamp(16px,2vw,32px);overflow:hidden}
   /* must beat .sp .hero-img-slot img (0,2,1) in service-page.css */
   .sp .hero-img-slot.coaching-hero img{
     width:100%;
@@ -133,7 +133,7 @@
   .evidence-item p{margin:12px 0 10px;color:#30394a;font-size:14px;line-height:1.55}
   .evidence-source{color:var(--navy);font-size:12px;font-weight:800;text-decoration-thickness:1px;text-underline-offset:3px}
   .evidence-note{margin:14px 0 0;color:#596273;font-size:12px;line-height:1.55}
-  @media(max-width:1080px){
+  @media(max-width:768px){
     .hero-img-slot.coaching-hero{display:none!important}
     .sp .hero-text{max-width:100%}
   }
@@ -513,5 +513,8 @@
 <script src="all-services-section.js"></script>
 <script src="accessibility.js?v=20260729"></script>
 <script src="image-finder-tab.js"></script>
+<!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js?token=021c9edd-856b-4a5e-8e8e-cd30296d006f"></script>
+<!-- impeccable-live-end -->
 </body>
 </html>
