@@ -1,0 +1,281 @@
+/* Shared first-section hero media for ToughJobs Trade and Service pages.
+   One responsive override file keeps both page systems consistent without duplicating CSS. */
+
+/* =====================================================================
+   SERVICE PAGES
+   ===================================================================== */
+
+body.is-service-page main > section.hero > .container {
+  position: relative;
+}
+
+body.is-service-page main > section.hero .hero-img-slot {
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  z-index: 1 !important;
+}
+
+body.is-service-page main > section.hero .hero-img-slot > img,
+body.is-service-page main > section.hero .hero-img-slot .pc-slide img {
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* Desktop: service images are 10% larger than the previous shared size. */
+@media (min-width: 1025px) {
+  body.is-service-page main > section.hero > .container {
+    min-height: clamp(540px, 50vw, 690px);
+  }
+
+  body.is-service-page main > section.hero .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 56% !important;
+    padding-right: clamp(16px, 2vw, 30px);
+  }
+
+  body.is-service-page main > section.hero .hero-img-slot {
+    position: absolute !important;
+    inset: 50% clamp(32px, 4.5vw, 72px) auto auto !important;
+    width: 42% !important;
+    height: clamp(470px, 50vw, 615px) !important;
+    transform: translateY(-50%) !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.is-service-page main > section.hero .hero-img-slot > img {
+    width: 100% !important;
+    max-width: 540px !important;
+    height: 100% !important;
+    max-height: 615px !important;
+    object-position: center center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Print & Collateral keeps its intentionally reduced carousel treatment. */
+  body.is-service-page main > section.hero .hero-img-slot:has(.pc-carousel) {
+    width: 44% !important;
+    height: clamp(505px, 55vw, 680px) !important;
+    transform: translateY(calc(-50% - 24px)) !important;
+  }
+
+  body.is-service-page main > section.hero .pc-carousel {
+    width: 85% !important;
+    height: 85% !important;
+    max-width: 517px !important;
+    max-height: 671px !important;
+    min-height: 0 !important;
+    margin: 0 0 0 auto !important;
+  }
+}
+
+/* Tablet: visible, 10% larger, and right aligned. */
+@media (min-width: 681px) and (max-width: 1024px) {
+  body.is-service-page main > section.hero > .container {
+    min-height: clamp(520px, 72vw, 690px);
+    padding-right: clamp(275px, 40vw, 430px) !important;
+  }
+
+  body.is-service-page main > section.hero .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 100% !important;
+  }
+
+  body.is-service-page main > section.hero .hero-img-slot {
+    position: absolute !important;
+    inset: 50% clamp(20px, 3vw, 40px) auto auto !important;
+    width: clamp(253px, 37.5vw, 396px) !important;
+    height: clamp(363px, 55vw, 550px) !important;
+    transform: translateY(-52%) !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.is-service-page main > section.hero .hero-img-slot > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-position: center center !important;
+    margin: 0 auto !important;
+  }
+
+  body.is-service-page main > section.hero .hero-img-slot:has(.pc-carousel) {
+    transform: translateY(calc(-52% - 48px)) !important;
+  }
+
+  body.is-service-page main > section.hero .pc-carousel {
+    width: 85% !important;
+    height: 85% !important;
+    min-height: 0 !important;
+    margin: 0 0 0 auto !important;
+  }
+}
+
+/* Mobile: hero images are always hidden per project rule. */
+@media (max-width: 680px) {
+  body.is-service-page main > section.hero > .container {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+  }
+
+  body.is-service-page main > section.hero .hero-img-slot {
+    display: none !important;
+  }
+
+  body.is-service-page main > section.hero .hero-text {
+    order: 1 !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body.is-service-page main > section.hero .hero-img-slot {
+    display: none !important;
+  }
+}
+
+/* =====================================================================
+   TRADE PAGES
+   ===================================================================== */
+
+body.is-trade-page .hero-section,
+body.is-trade-page .hero-container,
+body.is-trade-page .hero-text,
+body.is-trade-page .h1-hero {
+  overflow: visible;
+}
+
+body.is-trade-page .h1-hero {
+  line-height: 1.04 !important;
+  padding-top: .05em;
+  padding-bottom: .10em;
+  text-wrap: balance;
+}
+
+/* Desktop: trade figures are 10% smaller and leave a safer title column. */
+@media (min-width: 1025px) {
+  body.is-trade-page .trade-hero-img {
+    display: block !important;
+    right: clamp(24px, 6vw, 150px) !important;
+    height: clamp(504px, 82.8%, 900px) !important;
+    width: auto !important;
+    max-width: 42% !important;
+    object-fit: contain !important;
+    object-position: bottom right !important;
+  }
+
+  body.is-trade-page .hero-container {
+    padding-top: 54px !important;
+    padding-right: 28% !important;
+  }
+
+  body.is-trade-page .hero-text {
+    width: 100% !important;
+    max-width: 780px !important;
+  }
+
+  body.is-trade-page .h1-hero {
+    max-width: 780px !important;
+    font-size: clamp(40px, 4.6vw, 66px) !important;
+    text-wrap: balance;
+  }
+}
+
+/* Tablet: keep the reduced figure visible without covering the heading. */
+@media (min-width: 761px) and (max-width: 1024px) {
+  body.is-trade-page .hero-section {
+    min-height: clamp(600px, 78vw, 760px) !important;
+  }
+
+  body.is-trade-page .trade-hero-img {
+    display: block !important;
+    right: clamp(4px, 2vw, 24px) !important;
+    bottom: 0 !important;
+    height: 62% !important;
+    min-height: 340px !important;
+    max-height: 520px !important;
+    width: auto !important;
+    max-width: 26% !important;
+    object-fit: contain !important;
+    object-position: bottom right !important;
+  }
+
+  body.is-trade-page .hero-container {
+    padding-top: 48px !important;
+    padding-right: 18% !important;
+  }
+
+  body.is-trade-page .hero-text {
+    width: 100% !important;
+    max-width: 780px !important;
+  }
+
+  body.is-trade-page .h1-hero {
+    font-size: clamp(38px, 5.2vw, 58px) !important;
+    max-width: 780px !important;
+    text-wrap: balance;
+  }
+
+  body.is-trade-page .h2-hero {
+    font-size: clamp(24px, 3.6vw, 38px) !important;
+  }
+}
+
+/* Mobile: override each page's old display:none rule and stack safely. */
+@media (max-width: 760px) {
+  body.is-trade-page .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    padding-top: 0 !important;
+  }
+
+  body.is-trade-page .trade-hero-img {
+    display: none !important;
+  }
+
+  body.is-trade-page .hero-container {
+    order: 2 !important;
+    display: block !important;
+    min-height: 0 !important;
+    padding: 22px 22px 64px !important;
+  }
+
+  body.is-trade-page .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.is-trade-page .h1-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(38px, 11.5vw, 58px) !important;
+    line-height: 1.06 !important;
+    margin: 12px 0 22px !important;
+    overflow-wrap: break-word;
+  }
+
+  body.is-trade-page .h2-hero {
+    max-width: 100% !important;
+    font-size: clamp(23px, 7vw, 34px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body.is-trade-page .trade-hero-img {
+    width: 68vw !important;
+    max-width: 68vw !important;
+    max-height: 310px !important;
+  }
+
+  body.is-trade-page .h1-hero {
+    font-size: clamp(34px, 10.8vw, 48px) !important;
+  }
+}

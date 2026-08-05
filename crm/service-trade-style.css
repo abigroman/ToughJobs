@@ -1,0 +1,96 @@
+/* service-trade-style.css — ports the trade-*.html visual language onto .sp service pages.
+   Must load LAST in <head>. Every selector matches or beats service-page.css specificity. */
+
+.sp{--tj-shadow-tight:1px 1px 0 rgba(10,15,28,.9)}
+
+/* ── Section themes: flat trade palette ─────────────────────────────── */
+.sp .bg-dark{background:#0A0F1C;background-image:none;color:#FFFFFF}
+.sp .bg-navy{background:linear-gradient(165deg,#002768 0%,#001a4a 100%);background-image:none;color:#FFFFFF}
+.sp .bg-accent2{background:linear-gradient(165deg,#002768 0%,#001a4a 100%);background-image:none;color:#FFFFFF}
+.sp .bg-light{background:#FFFFFF url('assets/partnership-schematics-light.webp') center/cover fixed no-repeat;color:#0A0F1C}
+.sp .bg-light p,.sp .bg-light li{color:rgba(10,15,28,.82);font-weight:700}
+.sp .bg-light .head .lede{color:rgba(10,15,28,.82)}
+.sp .bg-light .eyebrow{color:#C8262A}
+.sp section:not(.hero) .tex{display:none}
+
+/* Trade text-shadow discipline: tight shadow on dark, none on light */
+.sp .bg-dark h1,.sp .bg-dark h2,.sp .bg-dark h3,.sp .bg-dark h4,.sp .bg-dark h5,.sp .bg-dark h6,
+.sp .bg-navy h1,.sp .bg-navy h2,.sp .bg-navy h3,.sp .bg-navy h4,.sp .bg-navy h5,.sp .bg-navy h6,
+.sp .bg-accent2 h1,.sp .bg-accent2 h2,.sp .bg-accent2 h3,.sp .bg-accent2 h4,.sp .bg-accent2 h5,.sp .bg-accent2 h6{color:#FFFFFF;text-shadow:var(--tj-shadow-tight)}
+.sp .bg-light h1,.sp .bg-light h2,.sp .bg-light h3,.sp .bg-light h4,.sp .bg-light h5,.sp .bg-light h6{color:#0A0F1C;text-shadow:none}
+.sp p,.sp a{text-shadow:none}
+
+/* ── Hero: layered blueprint + ghosted watermark + red angular panel ── */
+.sp .hero.bg-dark{
+  position:relative;overflow:hidden;
+  min-height:clamp(620px,calc(100svh - 172px),900px);
+  display:flex;align-items:center;
+  padding:clamp(80px,10vw,150px) 0 clamp(60px,7vw,96px);
+  background-color:#0A0F1C;
+  background-image:
+    radial-gradient(115% 92% at 85% 30%,rgba(200,38,42,.30) 0%,rgba(200,38,42,0) 55%),
+    linear-gradient(90deg,rgba(8,12,22,.97) 0%,rgba(8,12,22,.9) 38%,rgba(8,12,22,.64) 72%,rgba(8,12,22,.82) 100%),
+    url('assets/blueprint-background.webp');
+  background-size:cover,cover,cover;background-position:center;background-repeat:no-repeat;
+}
+.sp .hero>.container{width:100%}
+.sp .hero::before{
+  content:attr(data-watermark);position:absolute;right:-.04em;bottom:-.14em;
+  font-family:"Archivo Black",sans-serif;font-weight:900;text-transform:uppercase;
+  font-size:clamp(130px,19vw,300px);line-height:.8;letter-spacing:-.03em;
+  color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.055);
+  z-index:0;pointer-events:none;white-space:nowrap;user-select:none;
+}
+.sp .hero::after{
+  content:"";position:absolute;top:0;bottom:0;right:0;width:48%;
+  background:
+    linear-gradient(255deg,rgba(200,38,42,.32) 0%,rgba(200,38,42,0) 64%),
+    repeating-linear-gradient(58deg,rgba(200,38,42,.5) 0 3px,transparent 3px 27px);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 42%);
+          mask-image:linear-gradient(90deg,transparent 0%,#000 42%);
+  transform:skewX(-9deg) translateX(16%);transform-origin:top right;
+  z-index:0;pointer-events:none;
+}
+.sp .hero .tex{opacity:.35;z-index:0}
+.sp .hero h1{font-size:clamp(40px,6.2vw,88px);line-height:.95;margin:20px 0 28px;color:#FFFFFF;overflow-wrap:normal;word-break:keep-all;hyphens:none}
+.sp .hero .eyebrow{color:#C8262A;letter-spacing:.08em;font-size:12px}
+.sp .hero .accent2c,.sp .hero .accent{color:#C8262A;text-shadow:var(--tj-shadow-tight)}
+.sp .hero .lede{color:rgba(255,255,255,.82)}
+.sp .hero-img-slot{align-items:center}
+.sp .hero-img-slot img{max-height:100%;max-width:100%;height:auto;width:auto;object-fit:contain;object-position:center}
+
+/* ── Buttons: trade behaviour (brightness, not offset shadow) ───────── */
+.sp .btn{padding:18px 34px;font-size:15px;transition:transform .15s ease,filter .2s ease,background .2s ease}
+.sp .btn:hover{transform:none;box-shadow:none;filter:brightness(.92)}
+.sp .btn:active{transform:translateY(1px)}
+
+/* ── Cards: keep white cards legible on the light engineering ground ── */
+.sp .bg-light .earn .card{background:#FFFFFF;border:1px solid rgba(10,15,28,.12);box-shadow:0 0 2px 0 rgba(10,15,28,.35)}
+.sp .bg-light .earn .card p{opacity:1}
+
+/* ── CTA band: red, matching trade-base .cta-section ────────────────── */
+.sp .ctaband.bg-accent2,.sp .ctaband.bg-navy,.sp .ctaband.bg-dark{background:#C8262A;background-image:none;color:#FFFFFF}
+.sp .ctaband.bg-accent2 h2,.sp .ctaband.bg-navy h2,.sp .ctaband.bg-dark h2{color:#FFFFFF}
+
+/* ── Dark variant of the longform SEO block (.td-analysis) ───────────
+   Used wherever .td-analysis would otherwise sit against another light
+   section. Specificity beats the per-page inline .td-analysis rules. */
+.sp section.td-analysis.td-dark{background:#0A0F1C;color:#FFFFFF}
+.sp section.td-analysis.td-dark h1,.sp section.td-analysis.td-dark h2,.sp section.td-analysis.td-dark h3,.sp section.td-analysis.td-dark h4{color:#FFFFFF;text-shadow:var(--tj-shadow-tight)}
+.sp section.td-analysis.td-dark p,.sp section.td-analysis.td-dark li,.sp section.td-analysis.td-dark td,.sp section.td-analysis.td-dark th{color:rgba(255,255,255,.82)}
+.sp section.td-analysis.td-dark strong{color:#FFFFFF}
+.sp section.td-analysis.td-dark a{color:#C8262A}
+.sp section.td-analysis.td-dark a:hover{color:#FFFFFF}
+.sp section.td-analysis.td-dark .td-soft-cta{border-top-color:rgba(255,255,255,.22);border-bottom-color:rgba(255,255,255,.22)}
+.sp section.td-analysis.td-dark .td-faq-item{border-top-color:rgba(255,255,255,.22)}
+.sp section.td-analysis.td-dark .td-note-list li{color:rgba(255,255,255,.82)}
+
+/* ── Service pill row (injected below the hero, mirrors trade pages) ── */
+.sp .service-pill-row{background:#0A0F1C;padding:18px 0;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:10}
+.sp .service-pill-row .container{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.sp .service-pill{display:flex;align-items:center;justify-content:center;min-width:0;padding:10px 7px;background:#C8262A;border:1px solid #C8262A;border-radius:4px;color:#FFFFFF;font-size:clamp(10px,.8vw,12px);font-weight:600;font-family:"Archivo",sans-serif;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease;text-transform:uppercase;letter-spacing:.01em;line-height:1.1;text-align:center;white-space:nowrap}
+.sp .service-pill:hover{background:#0A0F1C;border-color:#0A0F1C;color:#FFFFFF}
+.sp .service-pill.is-current{background:#0A0F1C;border-color:#C8262A;color:#C8262A}
+@media(max-width:1024px){.sp .service-pill-row{display:none}}
+
+.sp ::selection{background:#C8262A;color:#FFFFFF}
