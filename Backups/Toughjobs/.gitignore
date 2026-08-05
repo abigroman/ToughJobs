@@ -1,0 +1,20 @@
+# Uploaded reference files (425 MB — not source code)
+uploads/
+
+# Old site versions
+v1-quad-cities/
+v1-sacramento/
+v2-peoria/
+
+# Renders and screenshots
+renders/
+screenshots/
+
+# Backup snapshots
+_BACKUP_*/
+_LOCKED/
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini

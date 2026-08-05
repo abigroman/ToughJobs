@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Generator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px;
+      width: 100%;
+      max-width: 720px;
+      height: fit-content;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: #111827;
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+    .field-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 0.875rem; font-weight: 500; color: #374151; }
+    input {
+      padding: 10px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #111827;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
+    .divider { border: none; border-top: 1px solid #e5e7eb; margin: 4px 0 24px; }
+    #line-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+    .line-item {
+      display: grid;
+      grid-template-columns: 1fr 80px 120px 36px;
+      gap: 10px;
+      align-items: center;
+    }
+    .line-item input { width: 100%; }
+    .remove-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #9ca3af;
+      font-size: 1.2rem;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.15s;
+    }
+    .remove-btn:hover { color: #ef4444; }
+    .add-btn {
+      background: none;
+      border: 1px dashed #d1d5db;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      color: #6b7280;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+      margin-bottom: 28px;
+    }
+    .add-btn:hover { border-color: #6366f1; color: #6366f1; }
+    .tax-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .submit-btn:hover { background: #4f46e5; }
+    .success-banner {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      color: #065f46;
+      font-size: 0.9rem;
+    }
+    .success-banner a {
+      color: #059669;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .success-banner a:hover { text-decoration: underline; }
+    .col-labels {
+      display: grid;
+      grid-template-columns: 1fr 80px 120px 36px;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .col-labels span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Invoice Generator</h1>
+
+    {% if doc_url %}
+    <div class="success-banner">
+      Invoice created! <a href="{{ doc_url }}" target="_blank">Open in Google Docs &rarr;</a>
+    </div>
+    {% endif %}
+
+    <form method="POST" action="/generate">
+      <p class="section-title">Client Details</p>
+      <div class="field-group">
+        <div class="field">
+          <label for="invoice_number">Invoice #</label>
+          <input type="number" id="invoice_number" name="invoice_number" required min="1" value="{{ next_invoice }}" />
+        </div>
+        <div class="field">
+          <label for="due_date">Due Date</label>
+          <input type="date" id="due_date" name="due_date" required />
+        </div>
+        <div class="field full">
+          <label for="client_name">Client Name</label>
+          <input type="text" id="client_name" name="client_name" required placeholder="Acme Corp" />
+        </div>
+      </div>
+
+      <hr class="divider" />
+      <p class="section-title">Line Items</p>
+
+      <div class="col-labels">
+        <span>Description</span>
+        <span>Qty</span>
+        <span>Unit Price ($)</span>
+        <span></span>
+      </div>
+
+      <div id="line-items">
+        <div class="line-item">
+          <input type="text" name="description" placeholder="Web design" required />
+          <input type="number" name="quantity" placeholder="1" min="0" step="any" required />
+          <input type="number" name="unit_price" placeholder="0.00" min="0" step="0.01" required />
+          <button type="button" class="remove-btn" onclick="removeLine(this)">&#x2715;</button>
+        </div>
+      </div>
+
+      <button type="button" class="add-btn" onclick="addLine()">+ Add Line Item</button>
+
+      <button type="submit" class="submit-btn">Generate Invoice in Google Docs</button>
+    </form>
+  </div>
+
+  <script>
+    function addLine() {
+      const container = document.getElementById('line-items');
+      const row = document.createElement('div');
+      row.className = 'line-item';
+      row.innerHTML = `
+        <input type="text" name="description" placeholder="Service or product" required />
+        <input type="number" name="quantity" placeholder="1" min="0" step="any" required />
+        <input type="number" name="unit_price" placeholder="0.00" min="0" step="0.01" required />
+        <button type="button" class="remove-btn" onclick="removeLine(this)">&#x2715;</button>
+      `;
+      container.appendChild(row);
+    }
+
+    function removeLine(btn) {
+      const container = document.getElementById('line-items');
+      if (container.children.length > 1) {
+        btn.closest('.line-item').remove();
+      }
+    }
+  </script>
+</body>
+</html>

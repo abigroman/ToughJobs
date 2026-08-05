@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toughjobs — Business Intake | See How We Can Help</title>
+<meta name="description" content="Tell us about your trade business and we'll show you exactly where your marketing is leaking money — and how to fix it." />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0A0F1C;
+    --navy: #002768;
+    --navy-2: #001a4a;
+    --red: #C8262A;
+    --red-2: #A90100;
+    --accent: #C8262A;
+    --smoke: #5B6471;
+    --white: #FFFFFF;
+    --container: 900px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { font-family:"Archivo", sans-serif; color: var(--ink); background: #F5F6F8; }
+  a { color: inherit; }
+
+  /* ── Header (same as sitewide) ─────────────────────────────── */
+  header { background: var(--ink); color: var(--white); position: sticky; top: 0; z-index: 40; width:100%; }
+  .nav-container { display:flex; align-items:center; justify-content:space-between; height:90px; padding:0 32px; }
+  .logo-link { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--white); }
+  .logo-link img { height:56px; width:56px; object-fit:contain; }
+  .logo-text { font-family:"Archivo Black", sans-serif; font-size:22px; font-weight:900; text-transform:uppercase; }
+  .logo-text .tight { color: var(--accent); }
+  .nav-phone { color:var(--white); text-decoration:none; font-weight:700; font-size:13px; }
+  .nav-phone:hover { color: var(--accent); }
+
+  /* ── Progress bar ───────────────────────────────────────────── */
+  .progress-wrap { background: var(--white); border-bottom: 1px solid #E4E6EA; padding: 18px 0; }
+  .progress-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+  .progress-steps { display:flex; justify-content:space-between; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#B7BCC5; margin-bottom:10px; }
+  .progress-steps span.done, .progress-steps span.current { color: var(--accent); }
+  .progress-track { height:6px; background:#E9EBEF; border-radius:99px; overflow:hidden; }
+  .progress-fill { height:100%; background: var(--accent); border-radius:99px; transition: width .3s ease; width:0%; }
+
+  /* ── Main card ──────────────────────────────────────────────── */
+  main { max-width: var(--container); margin: 48px auto 100px; padding: 0 24px; }
+  .card { background: var(--white); border:1px solid #E4E6EA; border-radius:8px; padding: 48px; }
+  .eyebrow { font-weight:800; letter-spacing:.1em; text-transform:uppercase; font-size:12px; color: var(--accent); margin-bottom:14px; }
+  h1.q { font-family:"Archivo Black", sans-serif; font-size: clamp(24px, 3vw, 34px); line-height:1.15; margin-bottom:10px; }
+  .help { color: var(--smoke); font-size:15px; line-height:1.6; margin-bottom:32px; }
+
+  /* Options */
+  .option-list { display:flex; flex-direction:column; gap:12px; }
+  .option-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  .opt { display:flex; align-items:flex-start; gap:14px; padding:16px 18px; border:2px solid #E4E6EA; border-radius:6px; cursor:pointer; transition: border-color .15s ease, background .15s ease; }
+  .opt:hover { border-color: #C8CBD2; }
+  .opt.selected { border-color: var(--accent); background: rgba(200,38,42,.05); }
+  .opt input { margin-top:3px; accent-color: var(--accent); }
+  .opt .label { font-weight:700; font-size:15px; }
+  .opt .sub { font-size:13px; color: var(--smoke); margin-top:2px; }
+
+  /* Dual select fields */
+  .dual-fields { display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
+  .field label { display:block; font-weight:800; font-size:12px; letter-spacing:.04em; text-transform:uppercase; color: var(--smoke); margin-bottom:10px; }
+  select, textarea, input[type=text], input[type=email], input[type=tel] {
+    width:100%; padding:14px 16px; border:2px solid #E4E6EA; border-radius:6px;
+    font-family:"Archivo", sans-serif; font-size:15px; color:var(--ink); background: var(--white);
+  }
+  select:focus, textarea:focus, input:focus { outline:none; border-color: var(--accent); }
+  textarea { min-height:120px; resize:vertical; }
+
+  .other-field { margin-top:14px; }
+  .note-field { margin-top:20px; }
+  .note-field label { font-size:13px; color: var(--smoke); font-weight:600; margin-bottom:8px; display:block; }
+
+  /* Nav buttons */
+  .step-nav { display:flex; justify-content:space-between; align-items:center; margin-top:40px; }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:16px 30px; font-weight:800; letter-spacing:.06em; font-size:13px; text-transform:uppercase; text-decoration:none; background: var(--accent); color: var(--white); border:0; border-radius:6px; cursor:pointer; transition: filter .2s ease, transform .15s ease; }
+  .btn:hover { filter:brightness(.92); }
+  .btn:disabled { background:#D7D9DE; cursor:not-allowed; }
+  .btn-ghost { background:transparent; color: var(--ink); border:2px solid #E4E6EA; }
+  .btn-ghost:hover { border-color:#C8CBD2; filter:none; }
+
+  /* Intro / contact / done screens */
+  .center { text-align:center; }
+  .trade-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top: 8px;}
+  .contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
+  .contact-grid .full { grid-column: 1 / -1; }
+
+  @media (max-width: 680px) {
+    .card { padding:28px 22px; }
+    .option-grid, .dual-fields, .contact-grid, .trade-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo-link">
+      <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" />
+      <span class="logo-text"><span class="tight">TOUGH</span><span>JOBS</span></span>
+    </a>
+    <a href="tel:3092339004" class="nav-phone">(309) 233-9004</a>
+  </div>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-steps" id="progressSteps"></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</div>
+
+<main>
+  <div class="card" id="card"></div>
+</main>
+
+<script src="intake-questions.js"></script>
+<script>
+(function () {
+  const { CATEGORIES, QUESTIONS, TRADES } = window.INTAKE;
+
+  // Steps: 0 = intro, 1..N = questions, N+1 = contact info, N+2 = done
+  const totalQuestionSteps = QUESTIONS.length;
+  const CONTACT_STEP = totalQuestionSteps + 1;
+  const DONE_STEP = totalQuestionSteps + 2;
+
+  let step = 0;
+  const answers = {}; // keyed by question id
+  const contact = { name: "", business: "", trade: "", email: "", phone: "" };
+
+  const card = document.getElementById("card");
+  const progressSteps = document.getElementById("progressSteps");
+  const progressFill = document.getElementById("progressFill");
+
+  function catLabelFor(step) {
+    if (step === 0) return "Start";
+    if (step === CONTACT_STEP) return "Contact";
+    if (step === DONE_STEP) return "Done";
+    const q = QUESTIONS[step - 1];
+    const cat = CATEGORIES.find(c => c.id === q.cat);
+    return cat ? cat.label : "";
+  }
+
+  function renderProgress() {
+    const lastCatShown = new Set();
+    let html = "";
+    CATEGORIES.forEach((c, i) => {
+      const catQuestions = QUESTIONS.map((q, idx) => ({ q, idx: idx + 1 })).filter(x => x.q.cat === c.id);
+      const firstIdx = catQuestions.length ? catQuestions[0].idx : null;
+      const lastIdx = catQuestions.length ? catQuestions[catQuestions.length - 1].idx : null;
+      let cls = "";
+      if (step > 0 && step <= totalQuestionSteps && lastIdx !== null) {
+        if (step > lastIdx) cls = "done";
+        else if (step >= firstIdx && step <= lastIdx) cls = "current";
+      }
+      if (step > totalQuestionSteps) cls = "done";
+      html += `<span class="${cls}">${c.no} ${c.label}</span>`;
+    });
+    progressSteps.innerHTML = html;
+    const pct = Math.min(100, Math.round((step / (DONE_STEP)) * 100));
+    progressFill.style.width = pct + "%";
+  }
+
+  function optionRow(name, value, label, sub, type, checked) {
+    return `
+      <label class="opt ${checked ? 'selected' : ''}" data-name="${name}" data-value="${value}">
+        <input type="${type}" name="${name}" value="${value}" ${checked ? 'checked' : ''} />
+        <div>
+          <div class="label">${label}</div>
+          ${sub ? `<div class="sub">${sub}</div>` : ""}
+        </div>
+      </label>`;
+  }
+
+  function renderIntro() {
+    card.innerHTML = `
+      <div class="center">
+        <div class="eyebrow">Free business teardown</div>
+        <h1 class="q">Let's find out where your marketing is leaking money.</h1>
+        <p class="help">15 quick questions about your trade business — foundations, value, audience, competition, and resources. Takes about 4 minutes. No pressure, no obligation, just a clear picture of what to fix first.</p>
+        <button class="btn" id="startBtn">Start the intake →</button>
+      </div>`;
+    document.getElementById("startBtn").onclick = () => goTo(1);
+  }
+
+  function renderQuestion(qIndex) {
+    const q = QUESTIONS[qIndex - 1];
+    const cat = CATEGORIES.find(c => c.id === q.cat);
+    let body = "";
+
+    if (q.kind === "dual") {
+      body += `<div class="dual-fields">`;
+      q.fields.forEach(f => {
+        const current = (answers[q.id] && answers[q.id][f.id]) || "";
+        body += `
+          <div class="field">
+            <label>${f.label}</label>
+            <select data-qid="${q.id}" data-field="${f.id}" class="dual-select">
+              <option value="">Select…</option>
+              ${f.options.map(o => `<option value="${o}" ${current === o ? "selected" : ""}>${o}</option>`).join("")}
+            </select>
+          </div>`;
+      });
+      body += `</div>`;
+    } else if (q.kind === "single") {
+      const current = answers[q.id] || "";
+      body += `<div class="option-list">`;
+      q.options.forEach(o => {
+        body += optionRow(q.id, o.value, o.label, o.sub, "radio", current === o.value);
+      });
+      body += `</div>`;
+      if (q.note) {
+        const noteVal = (answers[q.id + "_note"] || "");
+        body += `<div class="note-field"><label>${q.note}</label><input type="text" id="noteInput" value="${noteVal.replace(/"/g,'&quot;')}" placeholder="Optional" /></div>`;
+      }
+    } else if (q.kind === "multi") {
+      const current = answers[q.id] || [];
+      body += `<div class="option-grid">`;
+      q.options.forEach(o => {
+        body += optionRow(q.id, o.value, o.label, null, "checkbox", current.includes(o.value));
+      });
+      body += `</div>`;
+      if (q.other) {
+        const otherVal = answers[q.id + "_other"] || "";
+        body += `<div class="other-field"><input type="text" id="otherInput" value="${otherVal.replace(/"/g,'&quot;')}" placeholder="Anything else? (optional)" /></div>`;
+      }
+    } else if (q.kind === "text") {
+      const current = answers[q.id] || "";
+      body += `<textarea id="textInput" placeholder="${q.placeholder || ''}">${current}</textarea>`;
+    }
+
+    card.innerHTML = `
+      <div class="eyebrow">${cat.no} · ${cat.title}</div>
+      <h1 class="q">${q.q}</h1>
+      ${q.help ? `<p class="help">${q.help}</p>` : ""}
+      ${body}
+      <div class="step-nav">
+        <button class="btn btn-ghost" id="backBtn">← Back</button>
+        <button class="btn" id="nextBtn">Continue →</button>
+      </div>`;
+
+    wireQuestionEvents(q);
+    document.getElementById("backBtn").onclick = () => goTo(step - 1);
+    document.getElementById("nextBtn").onclick = () => { saveCurrentQuestion(q); goTo(step + 1); };
+  }
+
+  function wireQuestionEvents(q) {
+    card.querySelectorAll(".opt").forEach(el => {
+      el.addEventListener("click", () => {
+        const input = el.querySelector("input");
+        if (input.type === "radio") {
+          card.querySelectorAll(`.opt[data-name="${q.id}"]`).forEach(o => o.classList.remove("selected"));
+          el.classList.add("selected");
+        } else if (input.type === "checkbox") {
+          input.checked = !input.checked;
+          el.classList.toggle("selected", input.checked);
+        }
+      });
+    });
+  }
+
+  function saveCurrentQuestion(q) {
+    if (q.kind === "dual") {
+      const vals = {};
+      card.querySelectorAll(".dual-select").forEach(sel => { vals[sel.dataset.field] = sel.value; });
+      answers[q.id] = vals;
+    } else if (q.kind === "single") {
+      const checked = card.querySelector(`input[name="${q.id}"]:checked`);
+      answers[q.id] = checked ? checked.value : "";
+      if (q.note) {
+        const noteInput = document.getElementById("noteInput");
+        answers[q.id + "_note"] = noteInput ? noteInput.value : "";
+      }
+    } else if (q.kind === "multi") {
+      const checked = Array.from(card.querySelectorAll(`input[name="${q.id}"]:checked`)).map(i => i.value);
+      answers[q.id] = checked;
+      if (q.other) {
+        const otherInput = document.getElementById("otherInput");
+        answers[q.id + "_other"] = otherInput ? otherInput.value : "";
+      }
+    } else if (q.kind === "text") {
+      const textInput = document.getElementById("textInput");
+      answers[q.id] = textInput ? textInput.value : "";
+    }
+  }
+
+  function renderContact() {
+    card.innerHTML = `
+      <div class="eyebrow">Almost done</div>
+      <h1 class="q">Where should we send your teardown?</h1>
+      <p class="help">We'll put together a plain-English breakdown of where you're leaking leads — and where the fastest wins are.</p>
+      <div class="contact-grid">
+        <div class="field"><label>Your name</label><input type="text" id="c_name" value="${contact.name}" /></div>
+        <div class="field"><label>Business name</label><input type="text" id="c_business" value="${contact.business}" /></div>
+        <div class="field full">
+          <label>Trade</label>
+          <div class="trade-grid">
+            ${TRADES.map(t => `
+              <label class="opt ${contact.trade === t ? 'selected' : ''}" data-trade="${t}">
+                <input type="radio" name="trade" value="${t}" ${contact.trade === t ? "checked" : ""} />
+                <div class="label">${t}</div>
+              </label>`).join("")}
+          </div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" id="c_email" value="${contact.email}" /></div>
+        <div class="field"><label>Phone</label><input type="tel" id="c_phone" value="${contact.phone}" /></div>
+      </div>
+      <div class="step-nav">
+        <button class="btn btn-ghost" id="backBtn">← Back</button>
+        <button class="btn" id="submitBtn">Get my teardown →</button>
+      </div>`;
+
+    card.querySelectorAll(".opt[data-trade]").forEach(el => {
+      el.addEventListener("click", () => {
+        card.querySelectorAll(".opt[data-trade]").forEach(o => o.classList.remove("selected"));
+        el.classList.add("selected");
+        el.querySelector("input").checked = true;
+      });
+    });
+
+    document.getElementById("backBtn").onclick = () => goTo(step - 1);
+    document.getElementById("submitBtn").onclick = () => {
+      contact.name = document.getElementById("c_name").value;
+      contact.business = document.getElementById("c_business").value;
+      contact.email = document.getElementById("c_email").value;
+      contact.phone = document.getElementById("c_phone").value;
+      const tradeChecked = card.querySelector('input[name="trade"]:checked');
+      contact.trade = tradeChecked ? tradeChecked.value : "";
+
+      if (!contact.name || !contact.email || !contact.phone) {
+        alert("Please fill in your name, email, and phone so we can send your teardown.");
+        return;
+      }
+      // Submission hook: replace with your form backend / API call.
+      console.log("Toughjobs intake submission:", { contact, answers });
+      goTo(DONE_STEP);
+    };
+  }
+
+  function renderDone() {
+    card.innerHTML = `
+      <div class="center">
+        <div class="eyebrow">You're all set</div>
+        <h1 class="q">Thanks, ${contact.name.split(" ")[0] || "there"} — we've got it.</h1>
+        <p class="help">We're putting your teardown together now. Expect it in your inbox within one business day. In the meantime, feel free to give us a call.</p>
+        <a class="btn" href="tel:3092339004">Call (309) 233-9004</a>
+      </div>`;
+  }
+
+  function goTo(newStep) {
+    step = Math.max(0, Math.min(DONE_STEP, newStep));
+    renderProgress();
+    if (step === 0) renderIntro();
+    else if (step >= 1 && step <= totalQuestionSteps) renderQuestion(step);
+    else if (step === CONTACT_STEP) renderContact();
+    else if (step === DONE_STEP) renderDone();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  goTo(0);
+})();
+</script>
+
+</body>
+</html>

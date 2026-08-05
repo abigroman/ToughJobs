@@ -1,0 +1,176 @@
+/* ── Toughjobs Trade Page Base Styles ──────────────────────────────
+   Shared by all 27 trade-*.html pages. Edit here to change them all. */
+*,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#001a4a}
+  body{
+    font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background: url('assets/blueprint-background.webp') fixed center/cover no-repeat;
+    background-color: #001a4a;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  :root{
+    --ink:#0A0F1C;
+    --navy:#002768;
+    --navy-2:#001a4a;
+    --red:#C8262A;
+    --red-2:#A90100;
+    --smoke:#5B6471;
+    --mute:#C7CBD2;
+    --mute-2:#E5E7EB;
+    --hairline:#E5E7EB;
+    --surface-alt:#F4F5F7;
+    --surface:#FCFCFD;
+    --white:#FFFFFF;
+
+    --bg-dark: var(--ink);
+    --accent: var(--red);
+    --accent-ink: var(--white);
+    --headline-a: var(--ink);
+    --headline-b: var(--accent);
+    --headline-mute: var(--mute);
+
+    --container: 1240px;
+    --pad-section: 112px;
+    --pad-section-tight: 80px;
+  }
+
+  .display{
+    font-family:"Archivo Black","Archivo",ui-sans-serif,system-ui,sans-serif;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:-0.01em;
+    line-height:.95;
+    text-wrap:balance;
+  }
+  .eyebrow{
+    font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:12px;
+  }
+  .container{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 32px;
+  }
+  section{ padding-block: 120px; }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 26px;
+    font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.06em;
+    font-size:13px;text-transform:uppercase;text-decoration:none;
+    background:var(--accent);color:var(--accent-ink);
+    border:0;cursor:pointer;
+    transition:transform .15s ease, filter .2s ease, background .2s ease;
+  }
+  .btn:hover{ filter:brightness(.92); }
+  .btn:active{ transform:translateY(1px); }
+  .btn-dark{ background:var(--ink); color:var(--white); }
+  .btn-ghost{
+    background:transparent; color:var(--ink);
+    border:2px solid var(--ink);
+    padding:14px 24px;
+  }
+  .btn-ghost:hover{ background:var(--ink); color:var(--white); }
+
+  .split .a{ color:var(--headline-a); }
+  .split .b{ color:var(--headline-b); }
+  .split .m{ color:var(--headline-mute); }
+
+  .section-equal{
+    min-height: clamp(680px, 80vh, 900px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+
+  .bg-blueprint-dark{
+    background-color: transparent;
+    background-image: none;
+  }
+  .bg-blueprint-navy{
+    background-color: transparent;
+    background-image: none;
+  }
+  .bg-blueprint-red{
+    background-color: transparent;
+    background-image: none;
+  }
+  .bg-blueprint-light{
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .on-dark{ color:var(--white); }
+  .on-dark .display{ color:var(--white); }
+  .on-dark .eyebrow{ color:var(--white); opacity:.85; }
+  .on-dark p{ color:rgba(255,255,255,.78); }
+
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+
+  /* ── Service nav section ── */
+  .service-nav {
+    background: var(--ink);
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .service-nav-container {
+    display: flex;
+    gap: clamp(6px, 0.8vw, 12px);
+    flex-wrap: nowrap;
+    justify-content: safe center;
+    align-items: center;
+    max-width: none;
+    padding-inline: clamp(12px, 2.5vw, 40px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .service-nav-link {
+    padding: clamp(7px, 0.9vw, 10px) clamp(9px, 1.3vw, 18px);
+    background: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: clamp(10px, 1.02vw, 13px);
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
+    text-decoration: none;
+    transition: all 200ms ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .service-nav-link:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+  }
+  @media (max-width: 900px) {
+    .service-nav-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding-inline: 16px;
+    }
+    .service-nav-link {
+      flex-shrink: 0;
+    }
+  }
+
+/* ── Text shadow (applied sitewide on trade pages) ──
+   NOTE: intentionally NOT !important so page/element styles can override
+   it with normal CSS (e.g. text-shadow:none) without an !important arms race. */
+h1, h2, h3, h4, h5, h6,
+  p, li, span, a, button, label, td, th,
+  .display, .eyebrow, .stat-num, .stat-label,
+  [class*="title"], [class*="heading"], [class*="label"],
+  [class*="card"], [class*="hero"], [class*="cta"] {
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+  }

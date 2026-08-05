@@ -1,0 +1,317 @@
+// work-app.jsx — Work/Portfolio page layout
+
+function WorkApp() {
+  const [lightbox, setLightbox] = React.useState(null);
+  
+  const caseStudies = [
+    {
+      id: 'erik',
+      image: 'assets/wrap-truck-erik.png',
+      title: 'Erik Electrical',
+      description: 'One-truck electrical operation in Peoria County. Scaled from $180K to $400K+ annually through targeted truck wrap + SEO strategy.'
+    },
+    {
+      id: 'guac',
+      image: 'assets/wrap-trailer-guacnroll.png',
+      title: 'Guac N Roll',
+      description: 'Taco truck expanded into corporate catering through visual branding + social media ads. 280% increase in private event bookings.'
+    },
+    {
+      id: 'herbert',
+      image: 'assets/wrap-sedan-herbert.png',
+      title: 'Herbert Counseling',
+      description: 'Professional therapy practice scaled to full capacity in 18 weeks via car wrap + local SEO targeting high-value counseling searches.'
+    }
+  ];
+  
+  return (
+    <React.Fragment>
+      <Nav />
+      <main>
+        <WorkHero />
+        <CaseStudy1 onImageClick={() => setLightbox(caseStudies[0])} />
+        <CaseStudy2 onImageClick={() => setLightbox(caseStudies[1])} />
+        <CaseStudy3 onImageClick={() => setLightbox(caseStudies[2])} />
+        <ResultsGrid />
+        <CtaBand />
+      </main>
+      <Footer />
+      
+      {/* Lightbox Modal */}
+      {lightbox && (
+        <div style={{
+          position: 'fixed', inset: 0, background: 'rgba(0,0,0,.95)', zIndex: 9999,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          backdropFilter: 'blur(4px)'
+        }} onClick={() => setLightbox(null)}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 48,
+            background: 'var(--ink)', padding: 40, maxWidth: 1200, width: '90%',
+            maxHeight: '90vh', borderRadius: 8, color: 'var(--white)'
+          }} onClick={e => e.stopPropagation()}>
+            {/* Image Column (2/3) */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <img src={lightbox.image} alt={lightbox.title} style={{
+                width: '100%', height: 'auto', display: 'block', borderRadius: 4
+              }} />
+            </div>
+            
+            {/* Content Column (1/3) */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <h3 style={{
+                  fontFamily: '"Archivo Black", sans-serif', fontSize: 32,
+                  textTransform: 'uppercase', letterSpacing: '-0.01em',
+                  margin: '0 0 20px', color: 'var(--accent)'
+                }}>
+                  {lightbox.title}
+                </h3>
+                <p style={{
+                  fontSize: 16, lineHeight: 1.7, margin: 0, opacity: 0.9
+                }}>
+                  {lightbox.description}
+                </p>
+              </div>
+              
+              <button onClick={() => setLightbox(null)} style={{
+                background: 'var(--accent)', color: 'white', border: 'none',
+                padding: '14px 28px', fontFamily: '"Archivo", sans-serif',
+                fontWeight: 800, fontSize: 13, textTransform: 'uppercase',
+                letterSpacing: '0.06em', cursor: 'pointer', borderRadius: 4,
+                transition: 'filter 0.2s ease', alignSelf: 'flex-start'
+              }} onMouseEnter={e => e.target.style.filter = 'brightness(0.92)'}
+                 onMouseLeave={e => e.target.style.filter = 'brightness(1)'}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </React.Fragment>
+  );
+}
+
+// ── Work Hero ──────────────────────────────────────────────────────────────
+function WorkHero() {
+  return (
+    <section data-screen-label="Hero" className="section-equal bg-blueprint-dark" style={{
+      position: "relative", color: "var(--white)", overflow: "hidden"
+    }}>
+      <BlueprintMarks color="rgba(140,170,220,.28)" />
+      <DrawingStamp no="WRK-01" title="PORTFOLIO" scale="1:1" color="rgba(140,170,220,.45)" style={{ top: 28, right: 88 }} />
+      
+      {/* Hand-drawn underline annotation */}
+      <svg viewBox="0 0 1240 800" style={{
+        position: "absolute", inset: 0, width: "100%", height: "100%",
+        pointerEvents: "none", zIndex: 10, overflow: "visible"
+      }}>
+        <g style={{
+          strokeDasharray: 1000, strokeDashoffset: 1000,
+          animation: "drawStroke 2s ease-out 0.8s forwards"
+        }}>
+          <path d="M 170 470 Q 580 465, 1020 460" fill="none" stroke="rgba(200,38,42,.75)" strokeWidth="4" strokeLinecap="round" />
+        </g>
+      </svg>
+      <style>{`
+        @keyframes drawStroke {
+          to { stroke-dashoffset: 0; }
+        }
+      `}</style>
+      
+      <div className="container" style={{ position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+        <div>
+          <span className="eyebrow" style={{ color: "var(--accent)" }}>Case studies</span>
+          <h1 className="display split" style={{ fontSize: "clamp(64px, 9vw, 132px)", margin: "20px 0 32px", maxWidth: 1100 }}>
+            <span className="a" style={{ color: "var(--white)" }}>The work.</span><br />
+            <span className="b" style={{ color: "var(--accent)" }}>The results.</span><br />
+            <span className="m" style={{ color: "var(--white)" }}>The receipts.</span>
+          </h1>
+          <p style={{ maxWidth: 680, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,.82)", margin: 0 }}>
+            We're building a portfolio of case studies from real trades businesses in the Quad Cities.
+            Every project below shows what we built, what it cost, and what it returned in year one.
+          </p>
+        </div>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
+          <img src="assets/woman-power-drill.png" alt="" style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", filter: "drop-shadow(12px 12px 32px rgba(0,0,0,.6))" }} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Case Study 1: Erik Electrical ─────────────────────────────────────────
+function CaseStudy1({ onImageClick }) {
+  const metrics = [
+    { label: "Year-1 ROI", value: "340%", desc: "Revenue from new leads vs. total spend" },
+    { label: "Avg. job value", value: "$4,200", desc: "Residential panel upgrades + service" },
+    { label: "Monthly leads", value: "12–18", desc: "Phone + form submissions" },
+  ];
+  
+  return (
+    <section data-screen-label="Case 1" style={{ position: "relative", paddingBlock: 80 }}>
+      
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "start" }}>
+          <div>
+            <div style={{ marginBottom: 32, cursor: 'pointer' }} onClick={onImageClick}>
+              <img src="assets/wrap-truck-erik.png" alt="Erik Electrical truck wrap" style={{ width: "100%", height: "auto", display: "block", transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
+            </div>
+            <span className="eyebrow" style={{ color: "var(--accent)" }}>Peoria, IL · Electrical</span>
+            <h2 className="display" style={{ fontSize: 42, margin: "12px 0 20px", color: "var(--white)" }}>Erik Electrical</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--white)", marginBottom: 16 }}>
+              One-truck operation serving Peoria County. Owner-operator Erik wanted to scale from
+              $180K/year to $400K+ without hiring a second crew yet.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--white)" }}>
+              <strong>Scope:</strong> Full rebrand, truck wrap, WordPress site, Google Business Profile
+              optimization, and 6 months of Google Ads management.
+            </p>
+          </div>
+          
+          <div>
+            <div style={{ background: "var(--ink)", padding: "28px", color: "var(--white)", marginBottom: 24 }}>
+              <div className="eyebrow" style={{ color: "var(--accent)", marginBottom: 8 }}>Challenge</div>
+              <p style={{ fontSize: 16, lineHeight: 1.6, margin: 0, opacity: 0.9 }}>
+                Competing against 14 established electrical contractors in a saturated market.
+                No existing web presence. Phone number changed twice in 3 years.
+              </p>
+            </div>
+            
+            <div style={{ background: "var(--accent)", padding: "28px", color: "var(--white)", marginBottom: 24 }}>
+              <div className="eyebrow" style={{ opacity: 0.9, marginBottom: 8 }}>Solution</div>
+              <p style={{ fontSize: 16, lineHeight: 1.6, margin: 0 }}>
+                Wrapped the truck to function as a 40K-impression-per-day billboard. Built SEO around
+                "panel upgrade" + "EV charger install" (high-margin services). Ran Google Ads only
+                for emergency calls outside business hours.
+              </p>
+            </div>
+            
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+              {metrics.map((m, i) => (
+                <div key={i} style={{ background: "var(--ink)", padding: "20px 18px", color: "var(--white)" }}>
+                  <div className="display" style={{ fontSize: 32, color: "var(--accent)", marginBottom: 6 }}>{m.value}</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8, opacity: 0.85 }}>{m.label}</div>
+                  <div style={{ fontSize: 11, lineHeight: 1.4, opacity: 0.7 }}>{m.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Case Study 2: Guac N Roll ─────────────────────────────────────────────
+function CaseStudy2({ onImageClick }) {
+  return (
+    <section data-screen-label="Case 2" style={{ position: "relative", color: "var(--white)", paddingBlock: 80 }}>
+      
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, alignItems: "start" }}>
+          <div>
+            <span className="eyebrow" style={{ color: "var(--accent)" }}>Moline, IL · Food truck</span>
+            <h2 className="display" style={{ fontSize: 42, margin: "12px 0 20px", color: "var(--white)" }}>Guac N Roll</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--white)", marginBottom: 16 }}>
+              Taco truck operating at events, breweries, and private catering. Owners wanted to break
+              into corporate lunch contracts and raise awareness in the Quad Cities food scene.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--white)", marginBottom: 20 }}>
+              <strong>Scope:</strong> Trailer wrap design, Instagram/Facebook ads, event booking funnel,
+              and monthly email to a loyalty list.
+            </p>
+            
+            <div style={{ background: "var(--accent)", padding: "28px", marginBottom: 24 }}>
+              <div className="display" style={{ fontSize: 64, marginBottom: 8 }}>280%</div>
+              <p style={{ fontSize: 15, lineHeight: 1.5, margin: 0 }}>
+                Increase in private event bookings (weddings, corporate) in year one. The wrap paid
+                for itself in 4 months.
+              </p>
+            </div>
+            
+            <div style={{ background: "rgba(255,255,255,.08)", padding: "24px", border: "1px solid rgba(255,255,255,.15)" }}>
+              <p style={{ fontSize: 14, lineHeight: 1.6, margin: 0, opacity: 0.9 }}>
+                <em>"We parked at the John Deere Classic and got 9 catering inquiries in 3 days just from
+                people seeing the truck. The wrap is the best marketing decision we ever made."</em>
+              </p>
+              <div style={{ fontSize: 12, marginTop: 12, opacity: 0.7 }}>— Maria, Co-owner</div>
+            </div>
+          </div>
+          
+          <div style={{ cursor: 'pointer' }} onClick={onImageClick}>
+            <img src="assets/wrap-trailer-guacnroll.png" alt="Guac N Roll trailer wrap" style={{ width: "100%", height: "auto", display: "block", transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Case Study 3: Herbert Counseling ──────────────────────────────────────
+function CaseStudy3({ onImageClick }) {
+  return (
+    <section data-screen-label="Case 3" style={{ position: "relative", paddingBlock: 80 }}>
+      
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div style={{ cursor: 'pointer' }} onClick={onImageClick}>
+            <img src="assets/wrap-sedan-herbert.png" alt="Herbert Counseling sedan wrap" style={{ width: "100%", height: "auto", display: "block", marginBottom: 32, transition: 'opacity 0.2s ease' }} onMouseEnter={e => e.target.style.opacity = '0.8'} onMouseLeave={e => e.target.style.opacity = '1'} />
+          </div>
+          
+          <div>
+            <span className="eyebrow" style={{ color: "var(--accent)" }}>Rock Island, IL · Therapy practice</span>
+            <h2 className="display" style={{ fontSize: 42, margin: "12px 0 20px", color: "var(--white)" }}>Herbert Counseling</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--white)", marginBottom: 16 }}>
+              Mobile Divorce Attorney concept website to make every divorce as simple as eating pie.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--white)", marginBottom: 24 }}>
+              <strong>Scope:</strong> Car wrap (subtle + professional for therapy brand), website with
+              online booking, and local SEO targeting "anxiety therapist Rock Island" + "couples counseling."
+            </p>
+            
+            <div style={{ background: "var(--ink)", padding: "28px", color: "var(--white)" }}>
+              <div className="display" style={{ fontSize: 48, color: "var(--accent)", marginBottom: 8 }}>18 weeks</div>
+              <p style={{ fontSize: 15, lineHeight: 1.5, margin: 0, opacity: 0.88 }}>
+                To reach full 20-client capacity from launch. 70% came from organic search, 30% from
+                car wrap awareness + word-of-mouth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Results Grid ───────────────────────────────────────────────────────────
+function ResultsGrid() {
+  const stats = [
+    { value: "$1.2M", label: "Client revenue", desc: "Generated in trailing 12 months" },
+    { value: "38", label: "Avg. leads/mo", desc: "Across active campaigns" },
+    { value: "2.8X", label: "Avg. ROI", desc: "Year-one return on marketing spend" },
+    { value: "48hr", label: "Wrap turnaround", desc: "Design to installed vehicle" },
+  ];
+  
+  return (
+    <section data-screen-label="Results" style={{ position: "relative", color: "var(--white)", paddingBlock: 80, background: "var(--accent)" }}>
+      
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", marginBottom: 48, textAlign: "center" }}>
+          The numbers don't lie.
+        </h2>
+        
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          {stats.map((s, i) => (
+            <div key={i} style={{ background: "rgba(0,0,0,.3)", padding: "32px 24px", textAlign: "center", border: "2px solid rgba(0,0,0,.4)" }}>
+              <div className="display" style={{ fontSize: 56, marginBottom: 12 }}>{s.value}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8, opacity: 0.9 }}>{s.label}</div>
+              <div style={{ fontSize: 12, lineHeight: 1.4, opacity: 0.8 }}>{s.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<WorkApp />);

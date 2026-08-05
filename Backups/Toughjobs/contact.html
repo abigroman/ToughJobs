@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Toughjobs | Marketing for the Trades</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#FCFCFD}
+  body{font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;color:#0A0F1C;-webkit-font-smoothing:antialiased}
+  :root{--ink:#0A0F1C;--navy:#002768;--red:#C8262A;--white:#FFFFFF;--accent:var(--red);--container:1240px}
+  .display{font-family:"Archivo Black",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:.95}
+  .eyebrow{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+  .container{max-width:var(--container);margin:0 auto;padding:0 32px}
+  section{padding-block:80px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;text-decoration:none;background:var(--accent);color:var(--white);border:0;cursor:pointer;transition:filter .2s ease}
+  .btn:hover{filter:brightness(.92)}
+  main{min-height:400px}
+  h1,h2,h3{font-family:"Archivo Black",sans-serif;text-transform:uppercase}
+  h1{font-size:48px}
+  h2{font-size:42px;margin:20px 0}
+  p{line-height:1.6;margin:16px 0}
+  .on-dark{color:var(--white)}
+  .on-dark h1,.on-dark h2,.on-dark h3{color:var(--white)}
+  .on-dark p{color:rgba(255,255,255,.82)}
+  form{max-width:600px;display:flex;flex-direction:column;gap:20px}
+  .form-group{display:flex;flex-direction:column}
+  label{font-family:"Archivo",sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+  input,textarea,select{font-family:inherit;padding:14px 16px;border:1px solid #D0D0D0;border-radius:4px;font-size:15px}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,38,42,.1)}
+  textarea{resize:vertical;min-height:140px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:640px){
+    .form-row{grid-template-columns:1fr}
+  }
+</style>
+<link rel="stylesheet" href="shared-header.css" />
+<link rel="stylesheet" href="page-styles.css" />
+<style id="white-texture-sweep">
+/* Engineering blueprint texture on all white surfaces */
+.bg-white, .bg-light, .light-section, .on-light, .blurbs-section {
+  background-color:#FFFFFF !important;
+  background-image:url('assets/white-engineering-background.png') !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-attachment:fixed !important;
+}
+</style>
+</head>
+<body data-page="contact">
+<main>
+  <section class="on-dark" style="background:#0A0F1C">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--accent)">Let's talk</span>
+      <h1 class="display">
+        Ready to fill<br />your calendar?
+      </h1>
+      <p style="max-width:720px;font-size:18px;color:rgba(255,255,255,.82)">
+        We work with HVAC, plumbing, electrical, roofing, and contractor businesses across Illinois, Missouri, Iowa, Wisconsin, and Indiana. Fill out the form below and we'll get back to you within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+        <div>
+          <h2 style="margin-top:0">Get in touch</h2>
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" required />
+            </div>
+
+            <div class="form-group">
+              <label for="trade">Trade / Service</label>
+              <select id="trade" name="trade" required>
+                <option value="">Select your trade...</option>
+                <option value="hvac">HVAC</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="electrical">Electrical</option>
+                <option value="roofing">Roofing</option>
+                <option value="general">General Contractor</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="interest">What are you interested in?</label>
+              <select id="interest" name="interest" required>
+                <option value="">Select a service...</option>
+                <option value="websites">Websites</option>
+                <option value="seo">SEO</option>
+                <option value="paid-ads">Paid Ads</option>
+                <option value="social">Social Media</option>
+                <option value="branding">Branding</option>
+                <option value="automation">AI Automations</option>
+                <option value="full-service">Full Service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us a bit about your business (optional)</label>
+              <textarea id="message" name="message" placeholder="What's your biggest marketing challenge right now?"></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="align-self:flex-start;font-size:15px;padding:18px 40px">Send message</button>
+          </form>
+        </div>
+
+        <div>
+          <h2 style="margin-top:0">Other ways to reach us</h2>
+          
+          <div style="background:var(--ink);padding:32px;color:var(--white);border-radius:8px;margin-bottom:24px">
+            <div class="eyebrow" style="color:var(--accent);margin-bottom:12px">Call us</div>
+            <a href="tel:3092339004" style="display:block;font-size:24px;font-weight:700;color:var(--accent);text-decoration:none;margin-bottom:4px">(309) 233-9004</a>
+            <p style="margin:0;font-size:14px;opacity:.75">Available Mon–Fri, 8am–6pm CST</p>
+          </div>
+
+          <div style="background:var(--ink);padding:32px;color:var(--white);border-radius:8px;margin-bottom:24px">
+            <div class="eyebrow" style="color:var(--accent);margin-bottom:12px">Email</div>
+            <a href="mailto:team@toughjobs.org" style="display:block;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;margin-bottom:4px">team@toughjobs.org</a>
+            <p style="margin:0;font-size:14px;opacity:.75">We'll respond within 24 hours</p>
+          </div>
+
+          <div style="background:#C8262A;padding:32px;color:var(--white);border-radius:8px">
+            <div class="eyebrow" style="color:rgba(255,255,255,.9);margin-bottom:12px">Want a free consultation?</div>
+            <p style="margin:0 0 16px;font-size:15px">Book a 30-minute strategy call with our team. No pitch. Just honest feedback on your current marketing and what's working in your market.</p>
+            <button class="btn" style="background:var(--white);color:var(--accent);font-weight:800;font-size:13px">Schedule a call →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-dark" style="background:#0A0F1C">
+    <div class="container" style="text-align:center">
+      <h2 style="color:var(--white);margin-bottom:20px">Service Area</h2>
+      <p style="max-width:600px;margin:0 auto 20px;color:rgba(255,255,255,.82)">
+        We serve HVAC, plumbing, electrical, roofing, and contractor businesses across:
+      </p>
+      <p style="max-width:600px;margin:0 auto;color:var(--white);font-size:16px;line-height:1.8">
+        Illinois • Missouri • Iowa • Wisconsin • Indiana
+      </p>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer style="position:relative;overflow:hidden;background:linear-gradient(135deg,#001a4a 0%,#002768 100%);color:var(--white);border-top:3px solid var(--accent)">
+  <style>
+    @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .footer-video-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.6;z-index:0}
+    .footer-content{position:relative;z-index:1}
+    .footer-ticker{display:flex;gap:0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3);padding:20px 0;margin:0 calc(-50vw + 50%);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%)}
+    .ticker-track{display:flex;gap:60px;white-space:nowrap;animation:tickerScroll 60s linear infinite}
+    .ticker-item{font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.02em;color:var(--accent);font-weight:900;flex-shrink:0}
+    .ticker-item::after{content:"●";margin-left:60px;color:rgba(255,255,255,.3);font-size:6px}
+    .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding:60px 0;margin-bottom:0}
+    .footer-section h3{font-family:"Archivo Black",sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 24px;font-weight:900;display:flex;align-items:center;gap:12px}
+    .footer-section h3 img{height:50px;width:50px;object-fit:contain}
+    .footer-section h4{font-family:"Archivo",sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--accent);margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.15)}
+    .footer-section ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+    .footer-section a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:500;transition:all .2s ease;display:inline-block}
+    .footer-section a:hover{color:var(--accent)}
+    .footer-brand p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.7);margin:0}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.1);gap:32px;flex-wrap:wrap}
+    .footer-bottom-copy{font-size:12px;color:rgba(255,255,255,.55)}
+    .footer-contact{display:flex;align-items:center;gap:20px}
+    .footer-phone{text-align:right}
+    .footer-phone-label{font-family:"Archivo",sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:4px}
+    .footer-phone-number{font-family:"Archivo Black",sans-serif;font-size:22px;font-weight:900;color:var(--accent);text-decoration:none;letter-spacing:-.01em;transition:all .2s ease}
+    .footer-phone-number:hover{transform:scale(1.05)}
+    @media(max-width:1024px){.footer-main{grid-template-columns:1fr 1fr;gap:40px}}
+    @media(max-width:768px){.footer-main{grid-template-columns:1fr;gap:40px}.footer-bottom{flex-direction:column;align-items:flex-start}}
+  </style>
+
+  <video class="footer-video-bg" autoPlay muted loop playsInline>
+    <source src="assets/construction-workers.mp4" type="video/mp4" />
+  </video>
+
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,26,74,.88) 0%,rgba(0,39,104,.84) 100%);z-index:0"></div>
+
+  <div class="footer-content">
+    <div class="footer-ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">HVAC</span>
+        <span class="ticker-item">PLUMBING</span>
+        <span class="ticker-item">ELECTRICAL</span>
+        <span class="ticker-item">MASONRY</span>
+        <span class="ticker-item">ROOFING</span>
+        <span class="ticker-item">JANITORIAL</span>
+        <span class="ticker-item">CARPET CLEANING</span>
+        <span class="ticker-item">PAINTING</span>
+        <span class="ticker-item">CONCRETE</span>
+        <span class="ticker-item">LANDSCAPING</span>
+        <span class="ticker-item">WELDING</span>
+        <span class="ticker-item">EXCAVATION</span>
+        <span class="ticker-item">HVAC</span>
+        <span class="ticker-item">PLUMBING</span>
+        <span class="ticker-item">ELECTRICAL</span>
+        <span class="ticker-item">MASONRY</span>
+        <span class="ticker-item">ROOFING</span>
+        <span class="ticker-item">JANITORIAL</span>
+        <span class="ticker-item">CARPET CLEANING</span>
+        <span class="ticker-item">PAINTING</span>
+        <span class="ticker-item">CONCRETE</span>
+        <span class="ticker-item">LANDSCAPING</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-section footer-brand">
+          <h3>
+            <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" />
+            <span><span style="color:var(--accent)">TOUGH</span><span style="color:var(--white)">JOBS</span></span>
+          </h3>
+          <p>Marketing & branding solutions built for the trades. We help service businesses get found, win jobs, and grow their revenue through integrated digital strategies.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our story</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="intake-landing.html">Free Tools</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="citations.html">Citations</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Toughjobs Digital Marketing · 140 Oakmoor Dr, East Peoria, IL 61611</div>
+        <div class="footer-contact">
+          <div class="footer-phone">
+            <div class="footer-phone-label">Call us</div>
+            <a href="tel:3092339004" class="footer-phone-number">(309) 233-9004</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="inject-header.js"></script>
+<script src="accessibility.js"></script>
+<script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    console.log('Form submitted:', data);
+    alert('Thanks for reaching out! We\'ll be in touch within 24 hours.');
+    this.reset();
+  });
+</script>
+<script src="sticky-cta.js"></script>
+</body>
+</html>

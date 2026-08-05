@@ -1,0 +1,16 @@
+=== NAP MASTER RECORD (use this exact info on every submission) ===
+NAME:      Toughjobs Digital Marketing
+ADDRESS:   140 Oakmoor Dr, East Peoria, IL 61611
+PHONE:     [ NEEDS A REAL NUMBER BEFORE SUBMITTING — most directories require one ]
+EMAIL:     info@toughjobs.org
+WEBSITE:   https://toughjobs.org
+CATEGORY:  Marketing Agency / Web Design / Branding for Home Service & Trade Businesses
+HOURS:     Mon–Sat 9 AM – 6 PM
+PAYMENT:   Visa, Mastercard, Cash, Venmo, Cash App
+KEYWORDS:  Peoria IL marketing agency, trades marketing, home service business marketing,
+           Central Illinois digital marketing, Quad Cities web design, trade business branding
+
+RULE: Use this exact spelling/format for name, address, and phone on every single
+directory below. Any variation (Ste vs Suite, Rd vs Road, abbreviated vs spelled out
+state) creates a NAP inconsistency that actively hurts local SEO instead of helping it.
+Pick ONE format now and never deviate.

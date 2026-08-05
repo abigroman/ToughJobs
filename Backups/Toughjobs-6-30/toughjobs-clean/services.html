@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Services — Toughjobs | Marketing for the Trades</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;color:#0A0F1C;background:#FCFCFD;-webkit-font-smoothing:antialiased}
+  :root{--ink:#0A0F1C;--navy:#002768;--red:#C8262A;--white:#FFFFFF;--accent:var(--red);--container:1240px;--pad-section:112px}
+  .display{font-family:"Archivo Black",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em}
+  .eyebrow{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+  .container{max-width:var(--container);margin:0 auto;padding:0 32px}
+  section{padding-block:var(--pad-section)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;text-decoration:none;background:var(--accent);color:var(--white);border:0;cursor:pointer;transition:filter .2s ease}
+  .btn:hover{filter:brightness(.92)}
+  main{min-height:400px}
+  h1,h2,h3{font-family:"Archivo Black",sans-serif;text-transform:uppercase}
+  h1{font-size:clamp(48px,6vw,96px);margin:20px 0 32px}
+  h2{font-size:clamp(40px,5vw,72px);margin:20px 0}
+  p{line-height:1.6;margin:16px 0}
+  .split .a{color:var(--ink)}
+  .split .b{color:var(--accent)}
+  
+  .hero-section{background:#0A0F1C;color:var(--white);position:relative;overflow:hidden;padding-top:20px;padding-bottom:40px}
+  .hero-section h1{color:var(--white)}
+  .hero-section h1 .b{color:var(--accent)}
+  .hero-section p{color:rgba(255,255,255,.82)}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;min-height:75vh}
+  .hero-image{display:flex;justify-content:center;align-items:flex-end;position:relative;height:100%}
+  .hero-image img{height:calc(85vh * 1.15);width:auto;max-height:1035px;min-height:748px;max-width:none;display:block;filter:drop-shadow(20px 20px 50px rgba(0,0,0,.75));margin-bottom:-80px;object-fit:contain;object-position:bottom center}
+  
+  .light-section{background:#FCFCFD}
+  .dark-section{background:#0A0F1C;color:var(--white)}
+  .dark-section h2{color:var(--white)}
+  .dark-section p{color:rgba(255,255,255,.82)}
+  
+  .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .service-card{background:var(--ink);padding:24px 28px;color:var(--white);margin-bottom:16px}
+  .service-card .eyebrow{color:var(--accent)}
+  .service-card .display{font-size:42px;margin:8px 0 4px;color:var(--white)}
+  .service-card p{color:rgba(255,255,255,.85);font-size:14px;margin:0}
+  
+  .feature-list{display:flex;flex-direction:column;gap:16px}
+  .feature-item{background:var(--ink);padding:20px 24px;color:var(--white);display:flex;gap:16px;align-items:flex-start}
+  .feature-item-number{font-size:28px;font-family:monospace;color:var(--accent);font-weight:700;min-width:40px}
+  .feature-item-label{font-family:"Archivo";font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+  .feature-item-desc{font-size:13px;opacity:.75}
+  
+  .cta-band{background:var(--accent);color:var(--white);padding:40px 32px;margin:40px 0;border-radius:0}
+  .cta-band p{color:rgba(255,255,255,.9);font-size:18px;line-height:1.6;margin:0}
+  
+  @media(max-width:1024px){
+    .service-grid{grid-template-columns:1fr;gap:40px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-image img{height:60vh;margin-left:0}
+  }
+</style>
+<link rel="stylesheet" href="shared-header.css" />
+<link rel="stylesheet" href="page-styles.css" />
+</head>
+<body data-page="services">
+<main>
+  <!-- Hero Section -->
+  <section class="hero-section" data-screen-label="Hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div style="display:flex;justify-content:center;align-items:flex-end;position:relative;height:100%">
+          <img src="assets/woman-trowel-fullbody.png" alt="Toughjobs construction worker with trowel" style="height:calc(85vh * 1.15);width:auto;max-height:1035px;min-height:748px;max-width:none;display:block;filter:drop-shadow(20px 20px 50px rgba(0,0,0,.75));margin-bottom:-80px;object-fit:contain;object-position:bottom center" />
+        </div>
+        
+        <div style="padding-bottom:60px">
+          <span class="eyebrow" style="color:var(--accent)">What we build</span>
+          <h1 class="display split" style="font-size:clamp(48px,6vw,96px);margin:20px 0 32px;line-height:1.0">
+            <span class="a" style="color:var(--white)">Ten cylinders.</span><br />
+            <span class="b" style="color:var(--accent);text-shadow:0 8px 16px rgba(0,0,0,.6),0 4px 8px rgba(0,0,0,.4),-2px 2px 4px rgba(0,39,104,.5)">One mission.</span>
+          </h1>
+          <p style="max-width:600px;font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 36px">
+            Toughjobs is a digital marketing agency built for the trades. We help HVAC, plumbing, electrical, roofing, and contractor businesses get found online, win more jobs, and grow profit. We run every cylinder: Websites, SEO, Social Media, Paid Ads, Branding, Local SEO, and AI automations.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn" href="#websites">Websites</a>
+            <a class="btn" style="background:var(--ink);color:var(--white)" href="#seo">SEO</a>
+            <a class="btn" style="background:var(--ink);color:var(--white)" href="#social">Social Media</a>
+            <a class="btn" style="background:var(--ink);color:var(--white)" href="#paid">Paid Ads</a>
+            <a class="btn" style="background:var(--ink);color:var(--white)" href="#branding">Branding</a>
+            <a class="btn" style="background:var(--ink);color:var(--white)" href="#ai">AI Automations</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Websites Section -->
+  <section class="light-section" id="websites" data-screen-label="Websites">
+    <div class="container">
+      <div class="service-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--accent)">Websites that convert</span>
+          <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 24px">
+            <span class="a">Websites.</span><br />
+            <span class="b">Built to last.</span>
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px">
+            Whether WordPress, Webflow, or custom code — we choose the platform that makes sense for YOUR business. No proprietary platforms. You own the code, the data, and the domain.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px">
+            Every site is mobile-first, loads in under 2 seconds on rural LTE, and has your phone number in 6+ places. Because a pretty site that doesn't convert is just an expensive business card.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:32px">
+            <strong>You own it all:</strong> Analytics access, customer data, and full transparency. We work with your existing tools and give you real numbers.
+          </p>
+          <a class="btn" href="contact.html">Get a free teardown</a>
+        </div>
+        
+        <div class="feature-list">
+          <div class="service-card">
+            <div class="eyebrow">Typical build</div>
+            <div class="display">4 weeks</div>
+            <p>Complete Website Development</p>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-item-number">01</div>
+            <div style="flex:1">
+              <div class="feature-item-label">WordPress CMS</div>
+              <div class="feature-item-desc">Full admin access — you own the code</div>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-item-number">02</div>
+            <div style="flex:1">
+              <div class="feature-item-label">Mobile-first</div>
+              <div class="feature-item-desc">Loads in &lt;2s on rural LTE</div>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-item-number">03</div>
+            <div style="flex:1">
+              <div class="feature-item-label">Lead capture</div>
+              <div class="feature-item-desc">Phone, form, chat — 3 ways to convert</div>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-item-number">04</div>
+            <div style="flex:1">
+              <div class="feature-item-label">Local schema</div>
+              <div class="feature-item-desc">Structured data for every service area</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Section -->
+  <section class="dark-section" id="seo" data-screen-label="SEO">
+    <div class="container">
+      <div class="service-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--accent)">Local SEO that ranks</span>
+          <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 24px">
+            <span class="a">Rank for the </span>
+            <span class="b">searches</span><br />
+            <span class="a">that book jobs.</span>
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:24px">
+            "HVAC repair near me" gets 40X more searches than your company name. We optimize for the high-intent, high-volume local searches that fill your calendar.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:24px">
+            Google Business Profile optimization, local citations, service-area pages, review generation, and monthly keyword tracking.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:32px">
+            <strong>Real data, real results:</strong> We give you access to everything — analytics, search performance, customer insights. Monthly reporting shows exactly what's working.
+          </p>
+          <a class="btn" href="contact.html">Book a strategy call</a>
+        </div>
+        
+        <div style="background:var(--accent);padding:32px;color:var(--white)">
+          <div class="display" style="font-size:96px;line-height:0.9;margin-bottom:16px">60%</div>
+          <p style="font-size:16px;line-height:1.5;color:rgba(255,255,255,.9);margin:0">
+            of your local SEO work happens in Google Business Profile. Not your website. We optimize both, but GBP is where the war is won.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="light-section" id="social" data-screen-label="Social">
+    <div class="container">
+      <div class="service-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--accent)">Social that builds community</span>
+          <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 24px">
+            <span class="a">Posts aren't</span><br />
+            <span class="b">strategy.</span><br />
+            <span class="a">Community is.</span>
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px">
+            Most agencies post and ghost. We build engagement — responding to comments, building relationships, and creating content that gets shared.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px">
+            We develop a content strategy that reflects YOUR voice. We create the content. We post on a schedule that works for your audience.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:32px">
+            <strong>You stay in control:</strong> Quick approvals keep posts live when they're relevant. We give you the data — which posts drive calls, which comments deserve responses.
+          </p>
+          <a class="btn" href="contact.html">Start a social audit</a>
+        </div>
+        
+        <div class="feature-list">
+          <div class="service-card">
+            <div class="eyebrow">Posting frequency</div>
+            <div class="display">4–6x/wk</div>
+            <p>Per platform, optimized for your audience</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow">Real engagement</div>
+            <p style="margin:0;font-size:14px">Comments, shares, and saved posts drive trust. We don't buy followers.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow">Monthly reporting</div>
+            <p style="margin:0;font-size:14px">Engagement rate, reach, clicks, and leads traced back to posts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paid Ads Section -->
+  <section class="light-section" id="paid" data-screen-label="Paid">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--accent)">Paid media that performs</span>
+      <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 32px;max-width:900px">
+        <span class="a">Ads that </span>
+        <span class="b">respect your CPL</span>
+        <span style="color:var(--ink)">(Cost Per Lead).</span>
+      </h2>
+      
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px">
+        <div class="service-card">
+          <div class="eyebrow">Platform 1</div>
+          <div class="display">Google Ads</div>
+          <p style="margin:0;font-size:14px">High-intent search ("emergency plumber")</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="eyebrow">Platform 2</div>
+          <div class="display">Bing Ads</div>
+          <p style="margin:0;font-size:14px">20% cheaper CPCs, older homeowners</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="eyebrow">Platform 3</div>
+          <div class="display">Meta (FB/IG)</div>
+          <p style="margin:0;font-size:14px">Retargeting + awareness in target zip codes</p>
+        </div>
+      </div>
+      
+      <div class="cta-band">
+        <p><strong>We optimize keyword sets weekly, not monthly. We pause underperformers daily. We A/B test ad copy every 2 weeks.</strong> And we cap your spend at whatever you're comfortable losing while we dial it in. Quick approvals and honest feedback keep campaigns live and relevant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branding Section -->
+  <section class="dark-section" id="branding" data-screen-label="Branding">
+    <div class="container">
+      <div class="service-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--accent)">Branding + print collateral</span>
+          <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 24px">
+            <span class="a">Consistent </span>
+            <span class="b">branding</span><br />
+            <span class="a">across everything you touch.</span>
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:24px">
+            Logo design, color palette, fonts, voice & tone guidelines — and the printed materials that bring your brand to life. From job site signs to your crew's shirts, every touchpoint tells the same story.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:24px">
+            We handle the design, printing, and fulfillment. You get consistent branding that makes a one-person operation look professional.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:32px">
+            <strong>Show us your work:</strong> Share authentic photos and videos of your team, trucks, and jobs. That's how we create marketing that actually reflects who you are.
+          </p>
+          <a class="btn" href="contact.html">Get a branding quote</a>
+        </div>
+        
+        <div class="feature-list">
+          <div class="service-card">
+            <div class="eyebrow">Truck wraps</div>
+            <p style="margin:0;font-size:14px">40K+ daily impressions. Your truck is a rolling billboard.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow">Business cards</div>
+            <p style="margin:0;font-size:14px">First impression that fits in a pocket. Leave them everywhere.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow">Lawn signs</div>
+            <p style="margin:0;font-size:14px">Job site visibility. Free neighborhood advertising.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow">Apparel</div>
+            <p style="margin:0;font-size:14px">Polo shirts, hoodies, hats. Your crew becomes walking ads.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local SEO Section -->
+  <section class="light-section" id="local-seo" data-screen-label="Local SEO">
+    <div class="container">
+      <div class="service-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--accent)">Own your service area</span>
+          <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 24px">
+            <span class="a">Local SEO.</span><br />
+            <span class="b">Win your zip code.</span>
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px">
+            We get you to the top of Google for the searches that pay — "plumber near me," "HVAC repair," and every service term your customers actually type.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:24px">
+            We dial in your Google Business Profile, build local citations, manage reviews, and tune on-page SEO so you own the map pack. Beat the franchises in your own backyard.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink);margin-bottom:32px">
+            <strong>The ROI is simple:</strong> Rank in the top 3 of the map pack and you capture the lion's share of local clicks. Most clients see a 5–15x return.
+          </p>
+          <a class="btn" href="contact.html">Claim your map pack</a>
+        </div>
+        
+        <div class="feature-list">
+          <div class="service-card">
+            <div class="eyebrow">Typical investment</div>
+            <div class="display">$800–2,500</div>
+            <p>Per month, per market</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow" style="color:var(--accent)">Top 3</div>
+            <p style="margin:0;font-size:14px">Map-pack rankings capture the bulk of local "near me" clicks.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="eyebrow" style="color:var(--accent)">60–90 days</div>
+            <p style="margin:0;font-size:14px">First moves in 30 days. Real ranking gains in two to three months.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Automations Section -->
+  <section class="dark-section" id="ai" data-screen-label="AI Automations">
+    <div class="container">
+      <div class="service-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--accent)">AI Automations</span>
+          <h2 class="split" style="font-size:clamp(40px,5vw,72px);margin:16px 0 24px">
+            <span class="a">Let robots </span>
+            <span class="b">work</span><br />
+            <span class="a">while you sleep.</span>
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:24px">
+            Marketing automation, chatbots, review management, lead scoring, and intelligent workflows that capture opportunities 24/7. These systems qualify leads, book appointments, send reminders, and nurture prospects.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:24px">
+            We build integrations between your website, CRM, calendar, and SMS/email platforms so no lead falls through the cracks.
+          </p>
+          <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:32px">
+            <strong>The ROI is simple:</strong> A chatbot that books 2–3 appointments/week at a $50 CPL pays for itself in days. Automated review requests generate 15–20% more reviews.
+          </p>
+          <a class="btn" href="contact.html">Audit your workflows</a>
+        </div>
+        
+        <div class="feature-list">
+          <div class="service-card">
+            <div class="eyebrow">Implementation time</div>
+            <div class="display">2–4 weeks</div>
+            <p>From strategy to full system live</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="display" style="font-size:28px;margin-bottom:12px">24/7</div>
+            <p style="margin:0;font-size:14px">Systems work nights, weekends, holidays. Leads never go unanswered.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="display" style="font-size:28px;margin-bottom:12px">No coding</div>
+            <p style="margin:0;font-size:14px">We set it up. You own it. No custom development required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section (CTA-1) -->
+  <section class="cta-section" data-screen-label="CTA-1" style="background:var(--accent);position:relative;overflow:hidden;padding-block:100px;color:var(--white)">
+    <video style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;z-index:0;pointer-events:none" autoPlay muted loop playsInline aria-hidden="true">
+      <source src="assets/audio-visualizer.mp4" type="video/mp4" />
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,15,28,0.7) 0%,rgba(168,1,0,0.5) 100%);z-index:0.5"></div>
+    
+    <div class="container" style="display:grid;grid-template-columns:3fr 1fr;gap:40;align-items:center;position:relative;z-index:1">
+      <div style="margin:0;padding:0">
+        <h2 style="color:var(--white);margin:0 0 24px;font-size:48px;line-height:1.1;letter-spacing:-0.01em">Ready to get started?</h2>
+        <p style="color:rgba(255,255,255,0.9);font-size:18px;margin:0 0 40px">Let's talk about how Toughjobs can help your trades business grow and win more jobs.</p>
+        <a href="intake.html" class="btn" style="background:var(--white);color:var(--accent);font-weight:700;padding:16px 48px">
+          Start Your Partnership
+        </a>
+      </div>
+      
+      <div style="display:flex;align-items:center;justify-content:center;position:relative">
+        <div style="position:relative;width:clamp(140px,15vw,240px);aspect-ratio:1;display:flex;align-items:center;justify-content:center">
+          <svg style="animation:spin 14s linear infinite;position:absolute;inset:0;width:100%;height:100%;z-index:2" viewBox="0 0 200 200">
+            <defs>
+              <path id="circlePath" d="M 100, 100 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0" fill="none" />
+            </defs>
+            <text style="font-size:15px;font-weight:700;fill:rgba(255,255,255,0.95);font-family:'Archivo Black',sans-serif;text-transform:uppercase">
+              <textPath href="#circlePath" startOffset="0%" textLength="534" lengthAdjust="spacingAndGlyphs">
+                TEAM TOUGHJOBS • TEAM TOUGHJOBS •
+              </textPath>
+            </text>
+          </svg>
+          <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" style="width:58%;height:auto;position:relative;z-index:3" />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer style="position:relative;overflow:hidden;background:linear-gradient(135deg,#001a4a 0%,#002768 100%);color:var(--white);border-top:3px solid var(--accent)">
+  <style>
+    @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .footer-video-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.6;z-index:0}
+    .footer-content{position:relative;z-index:1}
+    .footer-ticker{display:flex;gap:0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3);padding:20px 0;margin:0 calc(-50vw + 50%);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%)}
+    .ticker-track{display:flex;gap:60px;white-space:nowrap;animation:tickerScroll 60s linear infinite}
+    .ticker-item{font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.02em;color:var(--accent);font-weight:900;flex-shrink:0}
+    .ticker-item::after{content:"●";margin-left:60px;color:rgba(255,255,255,.3);font-size:6px}
+    .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding:60px 0;margin-bottom:0}
+    .footer-section h3{font-family:"Archivo Black",sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 24px;font-weight:900;display:flex;align-items:center;gap:12px}
+    .footer-section h3 img{height:50px;width:50px;object-fit:contain}
+    .footer-section h4{font-family:"Archivo",sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--accent);margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.15)}
+    .footer-section ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+    .footer-section a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:500;transition:all .2s ease;display:inline-block}
+    .footer-section a:hover{color:var(--accent)}
+    .footer-brand p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.7);margin:0}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.1);gap:32px;flex-wrap:wrap}
+    .footer-bottom-copy{font-size:12px;color:rgba(255,255,255,.55)}
+    .footer-contact{display:flex;align-items:center;gap:20px}
+    .footer-phone{text-align:right}
+    .footer-phone-label{font-family:"Archivo",sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:4px}
+    .footer-phone-number{font-family:"Archivo Black",sans-serif;font-size:22px;font-weight:900;color:var(--accent);text-decoration:none;letter-spacing:-.01em;transition:all .2s ease}
+    .footer-phone-number:hover{transform:scale(1.05)}
+    @media(max-width:1024px){.footer-main{grid-template-columns:1fr 1fr;gap:40px}}
+    @media(max-width:768px){.footer-main{grid-template-columns:1fr;gap:40px}.footer-bottom{flex-direction:column;align-items:flex-start}}
+  </style>
+
+  <video class="footer-video-bg" autoPlay muted loop playsInline>
+    <source src="assets/construction-workers.mp4" type="video/mp4" />
+  </video>
+
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,26,74,.88) 0%,rgba(0,39,104,.84) 100%);z-index:0"></div>
+
+  <div class="footer-content">
+    <div class="footer-ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">HVAC</span>
+        <span class="ticker-item">PLUMBING</span>
+        <span class="ticker-item">ELECTRICAL</span>
+        <span class="ticker-item">MASONRY</span>
+        <span class="ticker-item">ROOFING</span>
+        <span class="ticker-item">JANITORIAL</span>
+        <span class="ticker-item">CARPET CLEANING</span>
+        <span class="ticker-item">PAINTING</span>
+        <span class="ticker-item">CONCRETE</span>
+        <span class="ticker-item">LANDSCAPING</span>
+        <span class="ticker-item">WELDING</span>
+        <span class="ticker-item">EXCAVATION</span>
+        <span class="ticker-item">HVAC</span>
+        <span class="ticker-item">PLUMBING</span>
+        <span class="ticker-item">ELECTRICAL</span>
+        <span class="ticker-item">MASONRY</span>
+        <span class="ticker-item">ROOFING</span>
+        <span class="ticker-item">JANITORIAL</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-section footer-brand">
+          <h3>
+            <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" />
+            <span><span style="color:var(--accent)">TOUGH</span><span style="color:var(--white)">JOBS</span></span>
+          </h3>
+          <p>Marketing & branding solutions built for the trades. We help service businesses get found, win jobs, and grow their revenue through integrated digital strategies.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our story</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="intake-landing.html">Free Tools</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="citations.html">Citations</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">© 2026 Toughjobs Digital Marketing · 140 Oakmoor Dr, East Peoria, IL 61611</div>
+        <div class="footer-contact">
+          <div class="footer-phone">
+            <div class="footer-phone-label">Call us</div>
+            <a href="tel:3092339004" class="footer-phone-number">(309) 233-9004</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="inject-header.js"></script>
+<script src="accessibility.js"></script>
+</body>
+</html>

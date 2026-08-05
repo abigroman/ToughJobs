@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toughjobs — Powerful Marketing for the Trades | Peoria, IL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0A0F1C;
+      --navy: #002768;
+      --red: #C8262A;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { font-family: "Archivo", sans-serif; color: var(--ink); background: var(--white); }
+
+    /* Header */
+    header {
+      background: var(--ink);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 120px;
+      transition: height 0.3s ease;
+      width: 100%;
+      padding: 0 32px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .logo-link img {
+      height: 100px;
+      width: 150px;
+      transition: all 0.3s ease;
+      display: block;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .logo-text .tough { color: var(--red); }
+    .logo-text .jobs { color: var(--white); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nav-link {
+      font-family: "Archivo", sans-serif;
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ink);
+      border-top: 3px solid var(--red);
+      width: 920px;
+      z-index: 999;
+      padding: 32px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      margin-top: 0;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu { display: grid; }
+
+    .nav-dd-cat {
+      font-family: "Archivo", sans-serif;
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .nav-dd-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .nav-dropdown-item {
+      font-family: "Archivo", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .nav-dropdown-item:hover { color: var(--red); }
+
+    .nav-right {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-phone {
+      color: var(--white);
+      text-decoration: none;
+      font-family: "Archivo", sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      animation: phone-pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes phone-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 26px;
+      font-family: "Archivo", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: var(--red);
+      color: var(--white);
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.15s ease, filter 0.2s ease;
+    }
+
+    .btn:hover { filter: brightness(0.92); }
+    .btn:active { transform: translateY(1px); }
+
+    /* Sections */
+    main {
+      width: 100%;
+    }
+
+    main > section {
+      padding: 100px 32px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .display {
+      font-family: "Archivo Black", sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      color: var(--red);
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--ink) url('assets/blueprint-background.webp') center/cover;
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      padding-left: 32px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(48px, 8vw, 120px);
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    /* Section colors */
+    .bg-ink { background: var(--ink); color: var(--white); }
+    .bg-white { background: var(--white); }
+    .bg-navy { background: var(--navy); color: var(--white); }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      padding: 32px;
+      background: rgba(0,0,0,.05);
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--ink);
+      color: var(--white);
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,.4);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/toughjobs-monogram-logo.png" alt="Toughjobs" width="150" height="100" />
+        <span class="logo-text"><span class="tough">TOUGH</span><span class="jobs">JOBS</span></span>
+      </a>
+      <nav class="nav-links">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link nav-dropdown-toggle">TRADES ▾</a>
+          <div class="nav-dropdown-menu">
+            <div>
+              <div class="nav-dd-cat">Building &amp; Construction</div>
+              <div class="nav-dd-list">
+                <a href="trade-roofing.html" class="nav-dropdown-item">Roofing Contractors</a>
+                <a href="trade-general-contractors.html" class="nav-dropdown-item">General Contractors</a>
+                <a href="trade-concrete-paving.html" class="nav-dropdown-item">Concrete &amp; Asphalt Pavers</a>
+                <a href="trade-masonry.html" class="nav-dropdown-item">Masonry &amp; Bricklaying</a>
+                <a href="trade-framing-drywall.html" class="nav-dropdown-item">Framing &amp; Drywall</a>
+              </div>
+            </div>
+            <div>
+              <div class="nav-dd-cat">Mechanical &amp; Essential</div>
+              <div class="nav-dd-list">
+                <a href="trade-hvac.html" class="nav-dropdown-item">HVAC Technicians</a>
+                <a href="trade-plumbing.html" class="nav-dropdown-item">Plumbers</a>
+                <a href="trade-electricians.html" class="nav-dropdown-item">Electricians</a>
+                <a href="trade-locksmiths.html" class="nav-dropdown-item">Locksmiths</a>
+                <a href="trade-solar.html" class="nav-dropdown-item">Solar Panel Installers</a>
+              </div>
+            </div>
+            <div>
+              <div class="nav-dd-cat">Finishing &amp; Maintenance</div>
+              <div class="nav-dd-list">
+                <a href="trade-painters.html" class="nav-dropdown-item">Painters</a>
+                <a href="trade-carpet-cleaning.html" class="nav-dropdown-item">Carpet &amp; Upholstery Cleaners</a>
+                <a href="trade-pressure-washing.html" class="nav-dropdown-item">Pressure Washing &amp; Window Cleaning</a>
+                <a href="trade-janitorial.html" class="nav-dropdown-item">Janitorial &amp; Commercial Cleaning</a>
+                <a href="trade-restoration.html" class="nav-dropdown-item">Restoration (Water/Fire/Mold)</a>
+                <a href="trade-junk-removal.html" class="nav-dropdown-item">Junk Removal</a>
+              </div>
+            </div>
+            <div>
+              <div class="nav-dd-cat">General Services &amp; Maintenance</div>
+              <div class="nav-dd-list">
+                <a href="trade-handyman.html" class="nav-dropdown-item">Handyman Services</a>
+                <a href="trade-appliance-repair.html" class="nav-dropdown-item">Appliance Repair</a>
+              </div>
+            </div>
+            <div>
+              <div class="nav-dd-cat">Outdoor &amp; Landscaping</div>
+              <div class="nav-dd-list">
+                <a href="trade-landscaping.html" class="nav-dropdown-item">Landscaping &amp; Lawn Care</a>
+                <a href="trade-tree-service.html" class="nav-dropdown-item">Tree Removal &amp; Arborists</a>
+                <a href="trade-pest-control.html" class="nav-dropdown-item">Pest Control</a>
+                <a href="trade-pools.html" class="nav-dropdown-item">Pool Construction &amp; Maintenance</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="services.html" class="nav-link">SERVICES</a>
+        <a href="partnerships.html" class="nav-link">PARTNERSHIPS</a>
+        <a href="intake-landing.html" class="nav-link">FREE TOOLS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:3092339004" class="nav-phone">(309) 233-9004</a>
+        <a href="contact.html" class="btn">REQUEST A QUOTE</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>YOUR <span style="color: var(--red);">TRADES BUSINESS</span> DESERVES A <span style="color: var(--red);">DIGITAL EDGE</span></h1>
+          <p>Purpose-built digital marketing for HVAC, electrical, plumbing, and roofing contractors in Central Illinois.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="bg-white">
+      <div class="container">
+        <span class="eyebrow">What We Do</span>
+        <h2 class="display" style="font-size: clamp(48px, 6vw, 86px); margin-bottom: 40px;">Four levers / Every one / pulled hard <span style="color: var(--red);">WITH PURPOSE</span></h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Websites</h3>
+            <p>WordPress, mobile-first, SEO-ready. Built for leads, not looks.</p>
+          </div>
+          <div class="card">
+            <h3>SEO</h3>
+            <p>Local search dominance. Get found by customers actively seeking your service.</p>
+          </div>
+          <div class="card">
+            <h3>Paid Ads</h3>
+            <p>Google Ads, Facebook, Instagram. Targeted spend that converts.</p>
+          </div>
+          <div class="card">
+            <h3>Branding</h3>
+            <p>Logo, brand voice, truck wraps. Stand out in a crowded market.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-ink" style="text-align: center; padding: 120px 32px;">
+      <div class="container">
+        <h2 class="display" style="font-size: clamp(48px, 6vw, 86px); color: var(--white); margin-bottom: 40px;">Ready to grow?</h2>
+        <p style="font-size: 18px; color: rgba(255,255,255,.9); max-width: 600px; margin: 0 auto 40px;">Talk to our team about how Toughjobs can help your trades business reach new customers and scale faster.</p>
+        <a href="contact.html" class="btn">REQUEST A CONSULTATION</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Toughjobs. Helping trades businesses build their digital presence.</p>
+    </div>
+  </footer>
+
+  <script src="sticky-cta.js"></script>
+</body>
+</html>
