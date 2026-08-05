@@ -44,8 +44,6 @@ Do NOT edit anything inside `_LOCKED/` — it is the backup of last resort.
 
 **Never let two same-background sections touch.** Adjacent sections must contrast each other — alternate light (white) ⇄ dark (ink/navy). A white section must never sit directly above or below another white section; the same goes for two dark sections. If two same-color sections would end up adjacent, merge them into one or change one's background. Going down a page the backgrounds should visibly alternate.
 
-**The footer is dark navy and DOES count as a neighbor.** The last `<section>` before `<footer>` must contrast with the footer's dark navy gradient — meaning the final section must be light or red, never dark or navy. Treat the footer as a dark section when checking alternation at the bottom of every page.
-
 **Text color contrast — critical for readability:**
 - Navy backgrounds (`#002768`) → use white (`#FFFFFF`) or red (`#C8262A`) text ONLY. Never use navy or near-navy text on navy backgrounds.
 - Ink backgrounds (`#0A0F1C`) → use white or red text ONLY.
@@ -84,7 +82,7 @@ This is the single source of truth. Every page must match this exactly.
    - Free Tools → `intake-landing.html`
    - Contact → `contact.html`
 3. **Right side** (in order):
-   - Phone: `(309) 928-9080` as plain text link to `tel:3099289080`
+   - Phone: `(309) 233-9004` as plain text link to `tel:3092339004`
    - CTA button: "Request a Quote" → `contact.html` (red accent, white text)
 
 ### Behavior
@@ -137,7 +135,7 @@ Use this exact HTML block in every plain HTML page. Change only the `active` cla
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
     <div class="nav-right">
-      <a href="tel:3099289080" class="nav-phone">(309) 928-9080</a>
+      <a href="tel:3092339004" class="nav-phone">(309) 233-9004</a>
       <a href="contact.html" class="btn">Request a Quote</a>
     </div>
   </div>
@@ -227,7 +225,7 @@ Tweak defaults stored in `window.__TWEAK_DEFAULTS__` in `index.html`.
 
 ## Contact Information
 
-- Phone: (309) 928-9080
+- Phone: (309) 233-9004
 
 
 ## Notes

@@ -52,8 +52,12 @@ body {
   position: relative;
 }
 
-.bg-blueprint-light {
-  background: #FCFCFD;
+.bg-blueprint-light, .bg-white, .light-section, .on-light, .blurbs-section {
+  background-color: #f8f9fb;
+  background-image: url('assets/partnership-schematics-light.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .bg-blueprint-navy {

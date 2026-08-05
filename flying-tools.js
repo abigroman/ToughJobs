@@ -161,7 +161,7 @@
   }
 
   function run() {
-    document.querySelectorAll('section.on-light, section.bg-light').forEach(populate);
+    document.querySelectorAll('section.on-light, section.bg-light, section.bg-white, section.light-section, section.blurbs-section, section.td-analysis:not(.td-lf-dark)').forEach(populate);
   }
 
   document.addEventListener('visibilitychange', function () {

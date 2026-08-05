@@ -793,219 +793,78 @@
           </div>
         </div>
       </section>
-      <section
-        class="tj-clipped-edge"
-        data-screen-label="Services"
-        style="
-          position: relative;
-          padding: 112px 0;
-          overflow: hidden;
-          background: url(&quot;assets/blueprint-background.webp&quot;)
-            center/cover;
-          background-attachment: fixed;
-          color: var(--white);
-        "
-      >
+      <section class="tj-clipped-edge" data-screen-label="Services" style="position:relative;padding:112px 0;overflow:hidden;background:url(&quot;assets/blueprint-background.webp&quot;) center/cover;background-attachment:fixed;color:var(--white);">
         <style>
-          .tj-svc-edge-accent {
-            position: absolute;
-            inset: 0 0 auto;
-            height: 6px;
-            background: repeating-linear-gradient(
-              45deg,
-              var(--accent) 0 8px,
-              var(--navy) 8px 16px
-            );
-            z-index: 4;
-            pointer-events: none;
-          }
-          .tj-svc-card {
-            position: relative;
-            background: #10192b;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            padding: 28px 26px 30px;
-            transition:
-              border-color 0.18s ease,
-              transform 0.18s ease,
-              background 0.18s ease,
-              box-shadow 0.18s ease;
-          }
-          .tj-svc-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--red);
-            background: var(--red);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-          }
-          .tj-svc-card h3 {
-            font-family: "Archivo Black", sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.01em;
-            font-size: 22px;
-            margin: 0 0 10px;
-            color: var(--white);
-            transition: color 0.18s ease;
-          }
-          .tj-svc-card:hover h3 {
-            color: var(--white);
-          }
-          .tj-svc-card p {
-            margin: 0;
-            font-size: 14.5px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.72);
-            transition: color 0.18s ease;
-          }
-          .tj-svc-card:hover p {
-            color: rgba(255, 255, 255, 0.94);
-          }
-          @media (max-width: 1024px) {
-            .tj-svc-grid {
-              grid-template-columns: 1fr 1fr !important;
-            }
-            .tj-svc-top {
-              grid-template-columns: 1fr !important;
-            }
-            .tj-svc-copy {
-              text-align: left !important;
-            }
-            .tj-svc-girl {
-              display: none !important;
-            }
-          }
-          @media (max-width: 560px) {
-            .tj-svc-grid {
-              grid-template-columns: 1fr !important;
-            }
-          }
+.tj-svc-edge-accent{position:absolute;inset:0 0 auto;height:6px;background:repeating-linear-gradient(45deg,var(--accent) 0 8px,var(--navy) 8px 16px);z-index:4;pointer-events:none}
+.tj-svc-panel{position:relative;background:var(--navy);padding:48px 40px;overflow:hidden;border:8px solid transparent;border-image:repeating-linear-gradient(45deg,var(--red) 0 8px,var(--navy) 8px 16px) 8}
+.tj-svc-panel-bg{position:absolute;inset:0;background:url("assets/engineering-schematics.jpg") center/cover;background-attachment:fixed;opacity:.28;pointer-events:none;mix-blend-mode:screen}
+.tj-svc-cat{position:relative;z-index:1;display:flex;align-items:center;gap:16px;margin:40px 0 18px}
+.tj-svc-cat:first-of-type{margin-top:0}
+.tj-svc-cat-name{font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:15px;letter-spacing:.06em;color:#fff;white-space:nowrap}
+.tj-svc-cat-rule{flex:1;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 8px,transparent 8px 16px)}
+.tj-svc-cat-count{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--red)}
+.tj-svc-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tj-svc-card{position:relative;background:#10192b;border:1px solid rgba(255,255,255,.14);border-top:3px solid rgba(200,38,42,.55);padding:24px 22px 26px;text-decoration:none;color:inherit;display:block;overflow:hidden;transition:border-color .18s ease,transform .18s ease,background .18s ease,box-shadow .18s ease}
+.tj-svc-card::after{content:"";position:absolute;right:-40px;bottom:-40px;width:110px;height:110px;background:repeating-linear-gradient(45deg,rgba(255,255,255,.09) 0 3px,transparent 3px 10px);transform:rotate(12deg);pointer-events:none;transition:opacity .18s ease}
+.tj-svc-card:hover{transform:translateY(-4px);border-color:var(--red);border-top-color:#fff;background:var(--red);box-shadow:0 12px 28px rgba(0,0,0,.3)}
+.tj-svc-num{display:block;font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--red);margin-bottom:10px;transition:color .18s ease}
+.tj-svc-card:hover .tj-svc-num{color:#fff}
+.tj-svc-card h3{font-family:"Archivo Black",sans-serif;text-transform:uppercase;letter-spacing:.01em;font-size:19px;line-height:1.1;margin:0 0 8px;color:var(--white)}
+.tj-svc-card p{margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);transition:color .18s ease}
+.tj-svc-card:hover p{color:rgba(255,255,255,.94)}
+.tj-svc-foot{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:40px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18)}
+.tj-svc-foot p{margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,.8);max-width:60ch}
+.tj-svc-foot a{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:#fff;background:var(--red);padding:14px 24px;text-decoration:none;white-space:nowrap;transition:background .18s ease}
+.tj-svc-foot a:hover{background:#A90100;color:#fff}
+@media(max-width:1024px){.tj-svc-grid{grid-template-columns:1fr 1fr}.tj-svc-top{grid-template-columns:1fr !important}.tj-svc-copy{text-align:left !important}.tj-svc-girl{display:none !important}}
+@media(max-width:560px){.tj-svc-grid{grid-template-columns:1fr}.tj-svc-panel{padding:32px 20px}}
         </style>
         <div class="tj-svc-edge-accent" aria-hidden="true"></div>
         <div class="container">
-          <div
-            class="tj-svc-top"
-            style="
-              display: grid;
-              grid-template-columns: 0.82fr 1.18fr;
-              gap: 56px;
-              align-items: center;
-            "
-          >
-            <div
-              class="tj-svc-girl"
-              style="
-                display: flex;
-                align-items: flex-end;
-                justify-content: flex-start;
-                position: relative;
-                z-index: 2;
-              "
-            >
-              <img
-                src="assets/girl-saw.webp"
-                alt="Tradesperson with a cut-off saw"
-                loading="lazy"
-                decoding="async"
-                style="
-                  display: block;
-                  width: 100%;
-                  max-width: 600px;
-                  height: auto;
-                  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35));
-                "
-              />
+          <div class="tj-svc-top" style="display:grid;grid-template-columns:0.82fr 1.18fr;gap:56px;align-items:center;">
+            <div class="tj-svc-girl" style="display:flex;align-items:flex-end;justify-content:flex-start;position:relative;z-index:2;">
+              <img src="assets/girl-saw.webp" alt="Tradesperson with a cut-off saw" loading="lazy" decoding="async" style="display:block;width:100%;max-width:600px;height:auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35));" />
             </div>
-            <div class="tj-svc-copy" style="text-align: right">
-              <span class="eyebrow" style="color: var(--red)">What we do</span>
-              <h2
-                class="display"
-                style="
-                  font-size: clamp(38px, 5vw, 72px);
-                  margin: 16px 0 0;
-                  line-height: 1.02;
-                  color: var(--white);
-                "
-              >
-                Four levers<br />
-                <span style="color: var(--white)">Every one</span><br />
-                <span style="color: var(--red)">pulled hard</span
-                ><span style="color: var(--red); white-space: nowrap">
-                  WITH PURPOSE</span
-                >
+            <div class="tj-svc-copy" style="text-align:right">
+              <span class="eyebrow" style="color:var(--red)">What we do</span>
+              <h2 class="display" style="font-size:clamp(38px,5vw,72px);margin:16px 0 0;line-height:1.02;color:var(--white);">
+                Fourteen tools<br />
+                <span style="color:var(--white)">One job:</span><br />
+                <span style="color:var(--red)">keep your phone</span><span style="color:var(--red);white-space:nowrap"> RINGING</span>
               </h2>
             </div>
           </div>
-          <div
-            style="
-              position: relative;
-              margin-top: 0;
-              background: var(--navy);
-              padding: 48px 40px;
-              overflow: hidden;
-            "
-          >
-            <div
-              aria-hidden="true"
-              style="
-                position: absolute;
-                inset: 0;
-                background: url(&quot;assets/engineering-schematics.jpg&quot;)
-                  center/cover;
-                background-attachment: fixed;
-                opacity: 0.28;
-                pointer-events: none;
-                mix-blend-mode: screen;
-              "
-            ></div>
-            <div
-              class="tj-svc-grid"
-              style="
-                position: relative;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-              "
-            >
-              <a
-                class="tj-svc-card"
-                href="websites.html"
-                style="text-decoration: none; color: inherit; display: block"
-              >
-                <h3>Websites</h3>
-                <p>
-                  WordPress, mobile-first, SEO-ready. Built for leads, not
-                  looks.
-                </p>
-              </a>
-              <a
-                class="tj-svc-card"
-                href="local-seo.html"
-                style="text-decoration: none; color: inherit; display: block"
-              >
-                <h3>SEO</h3>
-                <p>
-                  Local search dominance. Get found by customers actively
-                  seeking your service.
-                </p>
-              </a>
-              <a
-                class="tj-svc-card"
-                href="paid-ads.html"
-                style="text-decoration: none; color: inherit; display: block"
-              >
-                <h3>Paid Ads</h3>
-                <p>
-                  Google Ads, Facebook, Instagram. Targeted spend that converts.
-                </p>
-              </a>
-              <a
-                class="tj-svc-card"
-                href="branding.html"
-                style="text-decoration: none; color: inherit; display: block"
-              >
-                <h3>Branding</h3>
-                <p>
-                  Logo, brand voice, truck wraps. Stand out in a crowded market.
-                </p>
-              </a>
+          <div class="tj-svc-panel">
+            <div aria-hidden="true" class="tj-svc-panel-bg"></div>
+            <div class="tj-svc-cat"><span class="tj-svc-cat-name">Get Found</span><span class="tj-svc-cat-rule"></span><span class="tj-svc-cat-count">04</span></div>
+            <div class="tj-svc-grid">
+              <a class="tj-svc-card" href="websites.html"><span class="tj-svc-num">01</span><h3>Websites</h3><p>A site built to make the phone ring. Fast, easy on a phone screen, no fluff.</p></a>
+              <a class="tj-svc-card" href="seo.html"><span class="tj-svc-num">02</span><h3>SEO</h3><p>Show up when folks search for the work you do. Free clicks, every day.</p></a>
+              <a class="tj-svc-card" href="local-seo.html"><span class="tj-svc-num">03</span><h3>Local SEO</h3><p>Own the map. Land in the top three when someone nearby needs you now.</p></a>
+              <a class="tj-svc-card" href="paid-ads.html"><span class="tj-svc-num">04</span><h3>Paid Ads</h3><p>Buy the top spot on Google. Turn it on today, book jobs this week.</p></a>
+            </div>
+            <div class="tj-svc-cat"><span class="tj-svc-cat-name">Look The Part</span><span class="tj-svc-cat-rule"></span><span class="tj-svc-cat-count">05</span></div>
+            <div class="tj-svc-grid">
+              <a class="tj-svc-card" href="branding.html"><span class="tj-svc-num">05</span><h3>Branding</h3><p>A logo and look that says you do good work before you say a word.</p></a>
+              <a class="tj-svc-card" href="social-media.html"><span class="tj-svc-num">06</span><h3>Social Media</h3><p>Job photos and short clips that keep your name in front of the town.</p></a>
+              <a class="tj-svc-card" href="reviews.html"><span class="tj-svc-num">07</span><h3>Reviews</h3><p>More five-star reviews, handled for you. Good reviews close the deal.</p></a>
+              <a class="tj-svc-card" href="print-collateral.html"><span class="tj-svc-num">08</span><h3>Print</h3><p>Cards, flyers, door hangers, yard signs. Stuff you hand out and leave behind.</p></a>
+              <a class="tj-svc-card" href="clothing-apparel.html"><span class="tj-svc-num">09</span><h3>Apparel</h3><p>Shirts, hoodies, and hats with your name on them. Your crew is a billboard.</p></a>
+            </div>
+            <div class="tj-svc-cat"><span class="tj-svc-cat-name">Run It Smarter</span><span class="tj-svc-cat-rule"></span><span class="tj-svc-cat-count">04</span></div>
+            <div class="tj-svc-grid">
+              <a class="tj-svc-card" href="software.html"><span class="tj-svc-num">10</span><h3>Software</h3><p>One place for leads, quotes, and jobs. Stop running the shop off sticky notes.</p></a>
+              <a class="tj-svc-card" href="ai-automations.html"><span class="tj-svc-num">11</span><h3>AI Automations</h3><p>Every call and text answered fast, even when both hands are full.</p></a>
+              <a class="tj-svc-card" href="database-reactivation.html"><span class="tj-svc-num">12</span><h3>Re-Marketing</h3><p>Wake up your old customer list. Cheapest work you will ever book.</p></a>
+              <a class="tj-svc-card" href="coaching.html"><span class="tj-svc-num">13</span><h3>Coaching</h3><p>Straight talk on pricing, hiring, and growth from folks who know trades.</p></a>
+            </div>
+            <div class="tj-svc-cat"><span class="tj-svc-cat-name">Make It Legal</span><span class="tj-svc-cat-rule"></span><span class="tj-svc-cat-count">01</span></div>
+            <div class="tj-svc-grid">
+              <a class="tj-svc-card" href="llc-filing.html"><span class="tj-svc-num">14</span><h3>LLC &amp; Licenses</h3><p>Get your LLC filed and your licenses squared away. Paperwork off your plate.</p></a>
+            </div>
+            <div class="tj-svc-foot">
+              <p>Take one. Take all fourteen. Most shops start with two or three and add more once the calendar fills up.</p>
+              <a href="javascript:void(0)">Back to home</a>
             </div>
           </div>
         </div>
@@ -1213,7 +1072,7 @@
 
       <!-- SERVICE AREA -->
       <section
-        class="bg-blueprint-dark tj-clipped-edge"
+        class="bg-blueprint-light tj-clipped-edge"
         data-screen-label="Service Area"
         style="padding: 112px 0"
       >
@@ -1235,7 +1094,7 @@
                 style="
                   font-size: clamp(38px, 4.6vw, 66px);
                   margin: 18px 0 24px;
-                  color: var(--white);
+                  color: var(--ink);
                   line-height: 1.02;
                 "
               >
@@ -1246,7 +1105,7 @@
                 style="
                   font-size: 16px;
                   line-height: 1.6;
-                  color: rgba(255,255,255,.82);
+                  color: var(--ink);
                   max-width: 380px;
                 "
               >
@@ -2554,8 +2413,5 @@
     <script src="inject-header.js?v=20260802b"></script>
     <script src="image-finder-tab.js"></script>
     <script src="quiz-peek.js"></script>
-  <!-- impeccable-live-start -->
-<script src="http://localhost:8400/live.js?token=021c9edd-856b-4a5e-8e8e-cd30296d006f"></script>
-<!-- impeccable-live-end -->
-</body>
+  </body>
 </html>

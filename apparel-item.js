@@ -113,6 +113,24 @@
   var chartHtml=chart?'<div class="chart-toggle"><button class="ct-btn active" data-u="in">Inches</button><button class="ct-btn" data-u="cm">Centimeters</button></div>'
     +'<table class="size-chart" id="sizeChart"></table>':'';
 
+  var cuffHtml = (id==="long-sleeve-tshirts") ?
+    '<section class="bg-light cuff-guide"><div class="tex tex-dots-d"></div><div class="container">'
+    +'<div class="head"><span class="eyebrow">Cuff style</span><h2 class="display">Hemmed or ribbed cuffs?</h2></div>'
+    +'<p class="sec-sub">Choosing between loose-sleeve and ribbed long-sleeve shirts depends on style and comfort goals. Loose sleeves offer a relaxed, breathable, casual fit, while ribbed cuffs give a form-fitting, textured, structured silhouette that layers easily. Ribbed cuffs may come with an additional charge. We will apprise you of our inventory.</p>'
+    +'<div class="cuff-grid">'
+      +'<div class="cuff-card"><image-slot id="cuffHemmedSlot" shape="rect" style="aspect-ratio:1/1;display:block" data-placeholder="Hemmed (loose) cuff photo"></image-slot>'
+        +'<h3>Hemmed cuffs (loose sleeve)</h3>'
+        +'<p><b>Fit:</b> Relaxed, baggy, or oversized through the arms and body.</p>'
+        +'<p><b>Comfort:</b> Highly breathable, airy and unrestrictive.</p>'
+        +'<p><b>Best for:</b> Casual streetwear, lounging, hot weather, or an effortless laid-back look.</p></div>'
+      +'<div class="cuff-card"><image-slot id="cuffRibbedSlot" shape="rect" style="aspect-ratio:1/1;display:block" data-placeholder="Ribbed cuff photo"></image-slot>'
+        +'<h3>Ribbed cuffs</h3>'
+        +'<p><b>Fit:</b> Slim, snug and stretchy, hugging the arms and torso.</p>'
+        +'<p><b>Texture:</b> Vertical knit lines add visual interest and flexibility.</p>'
+        +'<p><b>Best for:</b> Layering under jackets, smart-casual outfits, cooler weather, or a clean, fitted aesthetic.</p></div>'
+    +'</div>'
+    +'</div></section>' : '';
+
   var root=document.getElementById('itemRoot');
   root.innerHTML=
   // 1 — HERO
@@ -153,6 +171,7 @@
     +'<div class="mx-bar"><div class="tier" id="tierMsg">Volume pricing kicks in at 12+ units — the more you order, the lower the per-unit price.</div>'
     +'<a class="btn" id="quoteBtn" href="contact.html">Request quote for <span id="qCount">0</span> units &rarr;</a></div>'
   +'</div></section>')
+  +cuffHtml
   // 3 — SIZING & FIT
   +(id==="patches"?'<section class="bg-navy"><div class="tex tex-dots"></div><div class="container">'
     +'<div class="two-col"><div>'
