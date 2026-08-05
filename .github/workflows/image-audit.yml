@@ -13,7 +13,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 3
     steps:
       - name: Check out active website files
         uses: actions/checkout@v4
@@ -52,14 +52,38 @@ jobs:
               if Path(p).suffix.lower() in IMAGE_EXTS:
                   by_name[Path(p).name.lower()].append(p)
 
-          sources = [
-              p for p in tracked
-              if '/' not in p and Path(p).suffix.lower() in SOURCE_EXTS
-          ]
+          sources = [p for p in tracked if '/' not in p and Path(p).suffix.lower() in SOURCE_EXTS]
 
-          ref_re = re.compile(r'(?i)(?P<base>(?:https?://abigroman\.github\.io/ToughJobs/|/ToughJobs/|/|\.\.?/)?[^"\'`\s<>()=]+?\.(?:webp|png|jpe?g|gif|svg|avif|ico))(?P<suffix>[?#][^"\'`\s<>()]*)?')
-          rows = []
-          changed = {}
+          quoted_patterns = [
+              re.compile(r'(?i)"([^"\r\n]{1,500}\.(?:webp|png|jpe?g|gif|svg|avif|ico)(?:[?#][^"\r\n]{0,200})?)"'),
+              re.compile(r"(?i)'([^'\r\n]{1,500}\.(?:webp|png|jpe?g|gif|svg|avif|ico)(?:[?#][^'\r\n]{0,200})?)'"),
+              re.compile(r'(?i)`([^`\r\n]{1,500}\.(?:webp|png|jpe?g|gif|svg|avif|ico)(?:[?#][^`\r\n]{0,200})?)`'),
+          ]
+          css_pattern = re.compile(r'(?i)url\(\s*["\']?([^\)"\'\r\n]{1,500}\.(?:webp|png|jpe?g|gif|svg|avif|ico)(?:[?#][^\)"\'\r\n]{0,200})?)["\']?\s*\)')
+
+          def extract_refs(text):
+              refs = set()
+              for line in text.splitlines():
+                  for pattern in quoted_patterns:
+                      refs.update(match.group(1).strip() for match in pattern.finditer(line))
+                  refs.update(match.group(1).strip() for match in css_pattern.finditer(line))
+              expanded = set()
+              for ref in refs:
+                  if ',' in ref and ' ' in ref:
+                      for part in ref.split(','):
+                          token = part.strip().split()[0] if part.strip() else ''
+                          if token:
+                              expanded.add(token)
+                  else:
+                      expanded.add(ref)
+              return expanded
+
+          def split_suffix(ref):
+              for marker in ('?', '#'):
+                  index = ref.find(marker)
+                  if index >= 0:
+                      return ref[:index], ref[index:]
+              return ref, ''
 
           def resolve(ref, source):
               decoded = unquote(ref).replace('\\', '/')
@@ -81,16 +105,18 @@ jobs:
 
           def replacement_for(source, target, suffix):
               start = posixpath.dirname(source) or '.'
-              return posixpath.relpath(target, start) + (suffix or '')
+              return posixpath.relpath(target, start) + suffix
+
+          rows = []
+          changed = {}
 
           for source in sources:
               path = ROOT / source
               text = path.read_text(encoding='utf-8', errors='replace')
               replacements = {}
 
-              for match in ref_re.finditer(text):
-                  base = match.group('base')
-                  suffix = match.group('suffix') or ''
+              for original in extract_refs(text):
+                  base, suffix = split_suffix(original)
                   resolved = resolve(base, source)
                   if resolved is None:
                       continue
@@ -125,9 +151,9 @@ jobs:
                   replacement = ''
                   if target and status in {'ROOT_RELATIVE', 'CASE_MISMATCH', 'WRONG_FOLDER'}:
                       replacement = replacement_for(source, target, suffix)
-                      replacements[base + suffix] = replacement
+                      replacements[original] = replacement
 
-                  rows.append([source, status, base + suffix, candidate, target or '', replacement])
+                  rows.append([source, status, original, candidate, target or '', replacement])
 
               if replacements:
                   new_text = text
