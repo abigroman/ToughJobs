@@ -15,26 +15,31 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Check out repository
+      - name: Check out active website files
         uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout: |
+            /*
+            !/*/
+          sparse-checkout-cone-mode: false
 
       - name: Audit image references and build patch
         shell: bash
         run: |
           python3 - <<'PY'
           import csv
-          import os
           import posixpath
           import re
           import subprocess
           from collections import defaultdict
           from pathlib import Path
-          from urllib.parse import unquote, urlsplit
+          from urllib.parse import unquote
 
           ROOT = Path('.').resolve()
           SOURCE_EXTS = {'.html', '.htm', '.css', '.js', '.jsx', '.ts', '.tsx'}
           IMAGE_EXTS = {'.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.avif', '.ico'}
-          EXCLUDED = ('Backups/', '_ARCHIVE/', '_BACKUP', '_LOCKED/', 'scraps/', 'node_modules/', '.next/')
 
           raw = subprocess.check_output(['git', 'ls-files', '-z'])
           tracked = [p for p in raw.decode('utf-8', 'surrogateescape').split('\0') if p]
@@ -47,9 +52,12 @@ jobs:
               if Path(p).suffix.lower() in IMAGE_EXTS:
                   by_name[Path(p).name.lower()].append(p)
 
-          sources = [p for p in tracked if Path(p).suffix.lower() in SOURCE_EXTS and not p.startswith(EXCLUDED)]
-          ref_re = re.compile(r'(?i)(?P<base>(?:https?://abigroman\.github\.io/ToughJobs/|/ToughJobs/|/|\.\.?/)?[^"\'`\s<>()=]+?\.(?:webp|png|jpe?g|gif|svg|avif|ico))(?P<suffix>[?#][^"\'`\s<>()]*)?')
+          sources = [
+              p for p in tracked
+              if '/' not in p and Path(p).suffix.lower() in SOURCE_EXTS
+          ]
 
+          ref_re = re.compile(r'(?i)(?P<base>(?:https?://abigroman\.github\.io/ToughJobs/|/ToughJobs/|/|\.\.?/)?[^"\'`\s<>()=]+?\.(?:webp|png|jpe?g|gif|svg|avif|ico))(?P<suffix>[?#][^"\'`\s<>()]*)?')
           rows = []
           changed = {}
 
@@ -66,32 +74,27 @@ jobs:
                   return decoded[len('/ToughJobs/'):], False
               if decoded.startswith('/'):
                   return decoded.lstrip('/'), True
-              source_dir = posixpath.dirname(source)
-              candidate = posixpath.normpath(posixpath.join(source_dir, decoded))
+              candidate = posixpath.normpath(posixpath.join(posixpath.dirname(source), decoded))
               if candidate == '..' or candidate.startswith('../'):
                   return None
               return candidate, False
 
           def replacement_for(source, target, suffix):
               start = posixpath.dirname(source) or '.'
-              rel = posixpath.relpath(target, start)
-              return rel + (suffix or '')
+              return posixpath.relpath(target, start) + (suffix or '')
 
           for source in sources:
               path = ROOT / source
-              try:
-                  text = path.read_text(encoding='utf-8', errors='replace')
-              except Exception as exc:
-                  rows.append([source, 'READ_ERROR', '', '', '', str(exc)])
-                  continue
-
+              text = path.read_text(encoding='utf-8', errors='replace')
               replacements = {}
+
               for match in ref_re.finditer(text):
                   base = match.group('base')
                   suffix = match.group('suffix') or ''
                   resolved = resolve(base, source)
                   if resolved is None:
                       continue
+
                   candidate, root_risk = resolved
                   status = None
                   target = None
@@ -145,8 +148,7 @@ jobs:
 
           with open('image-audit-summary.txt', 'w', encoding='utf-8') as handle:
               handle.write(f'Scanned source files: {len(sources)}\n')
-              handle.write(f'Files with safe automatic edits: {len(changed)}\n')
-              handle.write('\n')
+              handle.write(f'Files with safe automatic edits: {len(changed)}\n\n')
               for key in sorted(summary):
                   handle.write(f'{key}: {summary[key]}\n')
               handle.write('\nChanged files:\n')
